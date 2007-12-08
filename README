@@ -1,0 +1,25 @@
+Moxy version 0.0.1
+
+a mobile development proxy.
+
+INSTALLATION
+
+see http://www.au.kddi.com/ezfactory/tec/spec/emoji_kyodaku.html
+
+To install this module, run the following commands:
+
+    perl Makefile.PL
+    make
+    make install
+
+DEPENDENCIES
+
+None.
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2007, KAN Fushihara
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.

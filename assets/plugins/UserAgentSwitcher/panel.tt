@@ -1,0 +1,16 @@
+<form method="post" action="http://uaswitcher.moxy/[% current_uri | uri %]">
+<!-- pass thru current params -->
+[%- FOR query IN params.keys %]
+<input type="hidden" name="[% query | html %]" value="[% params.item(query) | html %]" />
+[%- END %]
+端末の種類:
+<select name="moxy_user_agent" onchange="if(this.value){this.form.submit()}">
+[% FOR key IN agents.keys %]
+<option value="" style="background-color:gray">[% key %]</option>
+[% FOR ua IN agents.item(key) %]
+<option value="[% ua.agent %]" [% IF moxy_user_agent == ua.agent %]selected="selected"[% END %]>  [% ua.name %][% IF ua.flash %][Flash対応][% END %]</option>
+[% END %]
+[% END %]
+</select>
+<input type="submit" value="設定" />
+</form>

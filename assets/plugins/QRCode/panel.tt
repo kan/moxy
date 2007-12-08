@@ -1,0 +1,1 @@
+<div id="qrcode_placeholder"><a href="#" onclick="var qrdiv=document.getElementById('qrcode_placeholder');if (qrdiv){qrdiv.innerHTML='<img src=\'http://qrcode.moxy/[% current | uri %]\' />';}">show qrcode for [% current | html %]</a></div>

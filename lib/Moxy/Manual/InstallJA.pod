@@ -1,0 +1,32 @@
+=encoding utf-8
+
+=head1 おなまえ
+
+Moxy::Manual::InstallJA - Moxy インストールマニュアル(ニホンゴバン)
+
+=head1 必要なもの
+
+perl のライブラリに関しては perl Makefile.PL;make test でほとんど自動的にインストールできるはずです。
+問題はそれ以外のものです。
+
+それ以外のものというのは、主に絵文字スクレイピング用のコマンドです。au の絵文字ファイルは lzh の中に *.ai が入っているという変態さなので、これの変換が行える perl の module は現在のところ存在しません。
+lzh+*.ai から *.gif を生成するために具体的には lha と ImageMagick と GhostScript が必要です。debian であれば
+
+  aptitude install lha imagemagick gs
+
+で入ります。
+
+=head1 実際にインストールしてみるみる
+
+まずは Moxy 本体をダウンロードします。Moxy 本体は現在のところ svn でのみ配布されています。
+
+基本的にはごく標準的な Perl スクリプトの配布方法をとっていますので
+
+    svn co http://code.mfac.jp/svn/Moxy/
+    cd Moxy
+    perl Makefile.PL
+    make test
+    ./moxy.pl -c config.yaml
+
+という手順ですぐに使いはじめることができます。
+

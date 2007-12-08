@@ -1,0 +1,6 @@
+<div>
+    <form method="post" action="http://userid.moxy/[% referer | uri %]">
+        UserID: <input type="text" name="user_id" value="[% user_id %]" />
+        <input type="submit" value="send" />
+    </form>
+</div>

@@ -1,0 +1,24 @@
+---
+global:
+  storage:
+    module: DBM_File
+    file: /tmp/moxy.gdbm
+    dbm_class: NDBM_File
+  server:
+    module: HTTPProxy
+    port: 9999
+    host: localhost
+    max_clients: 80
+
+plugins:
+  - module: Pictogram
+  - module: HTMLWidth
+  - module: HTTPEnv
+  - module: ControlPanel
+  - module: GPS
+  - module: UserAgentSwitcher
+  - module: XMLisHTML
+  - module: RefererCutter
+  - module: FlashUseImgTag
+  - module: DisableTableTag
+

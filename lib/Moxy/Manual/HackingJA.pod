@@ -1,0 +1,85 @@
+=encoding utf-8
+
+=head1 おなまえ
+
+Moxy::Manual::HackingJA - Moxy hacking guide(ニホンゴ)
+
+=head1 この文書はなにか
+
+Moxy を Hack しようと考える人のための文書なのであって一般ユーザ向けではなく云々。
+
+=head1 モジュール構成
+
+=head2 Moxy.pm
+
+コア。コンテキスト。
+
+=head2 Moxy::Plugin.pm
+
+プラグインのベースクラス。継承するとちょっと便利な機能が使えるようになるけど
+必ず継承しなくちゃいけないってわけでもなかったりする。
+
+=head2 Moxy::Plugin::*
+
+いろいろ register_hook 呼ぶの人。load_plugins の段階で  register メソッドが呼ばれる
+あたりは Plagger をまるぱくりしてるといえる。
+
+=head2 Moxy::Storage.pm
+
+ストレージ系のベースクラス。
+
+=head2 Moxy::Storage::*
+
+ストレージ。ストレージってのは、単なるハッシュのことだったりする。Storage の利用用途は
+現在の UserAgent 情報を保存することだったりするので別に DBM_File とか使う必要はない。本質的には。
+でも、HTTP::Proxy は都度 fork 実装なので、プロセス間での通信手段を適当に実装する手段として
+DBM_File を使ってるというだけだったり。このへんは今後変化する可能性が高そうだ。
+
+=head2 Moxy::Scraper
+
+かなり異色。絵文字をキャリヤのサイトからスクレイピングしてくる人。これ単体でも利用価値があったりする。
+しかしこれ、ImageMagick+GhostScript+LHa for Unix が必要だったりして依存が激しい。面倒な存在だ。
+
+=head2 Moxy::Util
+
+ユーティリティ関数が入るところ。が、今のところは文字コードの判別が入ってるだけ。しかも code は
+Plagger::Util からのまるぱくりだったりするw
+
+=head1 フックポイントについて
+
+Moxy は Plagger や qpsmtpd のようなプラガブルな構成になっている。
+プラグインを入れない状態では単なるプロキシサーバーとして動作する。
+
+というわけで、フックポイントは Moxy のキモである。
+
+現在 Moxy に設けられているフックポイントは大別すると2種類ある。
+Moxy::Server::HTTPProxy の中で設定されているフックポイントと
+Moxy::Plugin::ControlPanel で設定されているフックポイントである。
+
+Moxy::Server::HTTPProxy で呼ばれるフックは
+
+  リクエスト前
+    request_filter_process_agent ユーザーエージェントの設定
+    request_filter     リクエストの処理
+    request_filter_E   リクエストに対する処理(特定キャリヤ用)
+  レスポンス前
+    response_filter_header   レスポンスヘッダーに対する処理
+    response_filter_header_E レスポンスヘッダーに対する処理(特定キャリヤ用)
+    response_filter          レスポンスボディに対する処理
+    response_filter_E        レスポンスボディに対する処理(特定キャリヤ用)
+
+といったところ。基本的には HTTP::Proxy のフックを愚直にラッピングしていると考えれば
+よろしい。
+
+Moxy::Plugin::ControlPanel で呼ばれるのは control_panel というフックのみ。
+これはコントロールパネルを生成する人なのでちょっと他のとは赴きが違う。
+
+=head1 いいわけ
+
+基本的に今日現在の情報を書いただけなので作者の気紛れによってフックポイントやらなんやらは
+まだまだ変わる可能性があるし、この文書も obsolete になる可能性が多々あることを
+いいわけしておく。
+
+=head1 AUTHOR
+
+Tokuhiro Matsuno.

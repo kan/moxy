@@ -1,0 +1,45 @@
+- Moxy::Plugin
+ - store UI
+
+- Store::SQLite
+- plugin should be server implementation independent
+
+- plugins
+ - live http headers
+   - by comet?
+ - GPS Support(carrier strict, selectable)
+ - support utn
+ - check contents size(max pdu)
+
+- Server::HTTPProxy
+
+- plugins: use render_template
+- plugins: $self is not a self... just a $class.
+
+- add tests.
+
+http://kokogiko.net/m/archives/001955.html
+
+__END__
+- known bugs
+ - can't use gmail(with CookieCutter)
+ - can't use hiki(with StickyUA)
+
+ - set subscribe number
+ - auto select subclass
+ - pict convert
+ - html width change
+ - split referer cutter from core.
+
+- config file
+ - YAML format
+ - plagger type config (one file)
+
+ - set patch id:milkjelly
+ - set http_env
+
+- TODO
+ - pict convert other carrier
+ - pict image server
+
+- store data to gdbm/sqlite?
