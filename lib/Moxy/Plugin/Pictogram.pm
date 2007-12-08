@@ -28,7 +28,7 @@ sub register {
     my $ez_code = $class->_load_file( $context, 'ez.sjis.txt' );
     $ez_sjis_pattern = join('|', grep { quotemeta($_) } split /\n/, $ez_code);
     my $cnt = 0;
-    %ez_sjis_map = map { $_ =~ s/\\x//g; lc($_) => ++$cnt } split /\n/, $ez_code;
+    %ez_sjis_map = map { $_ =~ s/\\x//g; lc($_) => ++$cnt } split /\n/, $ez_code; ## no critic.
 
     # registering pictogram replacer.
     for my $carrier (qw/I E V/) {
