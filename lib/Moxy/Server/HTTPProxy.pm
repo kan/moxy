@@ -14,7 +14,7 @@ sub new {
 
     my $proxy = HTTP::Proxy->new(
         port        => $config->{port},
-        host        => $config->{host} || "localhost",
+        host        => $config->{host} || '',
         max_clients => $config->{max_clients},
     );
 
