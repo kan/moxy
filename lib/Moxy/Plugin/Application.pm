@@ -31,7 +31,7 @@ sub register {
                     my $auth = decode_base64($1);
                     $context->log(debug => "auth: $auth");
                     my $url = +{$uri->query_form}->{q};
-                    $context->log(debug => "fetching @{[ $url || '' ]}");
+                    $context->log(info => "REQUEST $auth, @{[ $url || '' ]}");
                     my $response =
                       $class->_make_response( $context, $url, $args->{request},
                         $base, $auth );

@@ -1,5 +1,6 @@
 ---
 global:
+  hostname: moxy.gp.ath.cx
   storage:
     module: DBM_File
     file: /tmp/moxy.gdbm
@@ -7,8 +8,20 @@ global:
   server:
     module: HTTPProxy
     port: 9999
-    host: localhost
+    host: ""
     max_clients: 80
+  log:
+    targets:
+      - module: Log::Dispatch::Screen
+        conf:
+          name: screen
+          min_level: debug
+          stderr: 1
+      - module: Log::Dispatch::File
+        conf:
+          name: file
+          min_level: info
+          filename: log.txt
 
 plugins:
   - module: Application
@@ -22,4 +35,6 @@ plugins:
   - module: RefererCutter
   - module: FlashUseImgTag
   - module: DisableTableTag
+  - module: ShowHTTPHeaders
+  - module: QRCode
 

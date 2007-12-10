@@ -12,6 +12,8 @@ sub new {
     my ($class, $context, $config) = @_;
     my $self = bless {config => $config}, $class;
 
+    $context->log(debug => "setup proxy server");
+
     my $proxy = HTTP::Proxy->new(
         port        => $config->{port},
         host        => $config->{host} || '',

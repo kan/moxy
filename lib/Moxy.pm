@@ -14,12 +14,15 @@ use Encode;
 use FindBin;
 use UNIVERSAL::require;
 use Carp;
+use Log::Dispatch;
 my $TERM_ANSICOLOR_ENABLED = eval { use Term::ANSIColor; 1; };
 
 sub new {
     my ($class, $config) = @_;
 
     my $self = bless { config => $config, }, $class;
+
+    $self->{logger} = Log::Dispatch->new;
 
     $self->_init_server;
 
@@ -28,6 +31,8 @@ sub new {
     $self->_init_ua_info;
 
     $self->_init_storage;
+
+    $self->_init_logger;
 
     return $self;
 }
@@ -115,10 +120,17 @@ sub storage { shift->{storage} }
 
 # -------------------------------------------------------------------------
 
+sub _init_logger {
+    my ($self, ) = @_;
+
+    for my $target (@{$self->config->{global}->{log}->{targets}}) {
+        $target->{module}->use or die $@;
+        $self->{logger}->add( $target->{module}->new( %{ $target->{conf} } ) );
+    }
+}
+
 sub log {
     my ($self, $level, $msg, %opt) = @_;
-
-    return unless $self->should_log($level);
 
     # hack to get the original caller as Plugin or Server
     my $caller = $opt{caller};
@@ -136,25 +148,8 @@ sub log {
         $msg = Encode::decode_utf8($msg) unless utf8::is_utf8($msg);
         $msg = Encode::encode( $self->config->{global}->{log}->{encoding}, $msg );
     }
-    if ($TERM_ANSICOLOR_ENABLED) {
-        print STDERR Term::ANSIColor::color("red");
-    }
-    warn "$caller [$level] $msg\n";
-    if ($TERM_ANSICOLOR_ENABLED) {
-        print STDERR Term::ANSIColor::color("reset");
-    }
-}
 
-my %levels = (
-    debug => 0,
-    warn  => 1,
-    info  => 2,
-    error => 3,
-);
-
-sub should_log {
-    my($self, $level) = @_;
-    $levels{$level} >= $levels{$self->config->{global}->{log}->{level}};
+    $self->{logger}->log(level => $level, message => "$caller [$level] $msg\n");
 }
 
 # -------------------------------------------------------------------------

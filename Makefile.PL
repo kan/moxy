@@ -18,6 +18,7 @@ requires('Getopt::Long');
 requires('Pod::Usage');
 requires('Class::Accessor');
 requires('UNIVERSAL::require');
+requires('Log::Dispatch');
 
 build_requires('Test::More');
 build_requires('Path::Class');
