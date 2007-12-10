@@ -45,14 +45,15 @@ sub scrape_i {
         'http://www.nttdocomo.co.jp/service/imode/make/content/pictograph/extention/'
         )
     {
+        warn "call $base_uri";
         my $scraper = scraper {
             process 'tr.acenter', 'i_pictograms[]' => scraper {
                 process 'td > span.txt', 'fields[]' => 'TEXT';
                 process 'td > img',      'image'    => '@src';
             };
             result 'i_pictograms[]';
-        }
-        ->scrape( URI->new($base_uri) );
+        }->scrape( URI->new($base_uri) );
+        use Data::Dumper;warn Dumper($scraper);
 
         for my $pictogram ( @{ $scraper->{i_pictograms} } ) {
             next unless $pictogram->{fields};
@@ -75,7 +76,7 @@ sub scrape_e {
     $self->_ua->get(
         'http://www.au.kddi.com/ezfactory/tec/spec/lzh/icon_image.lzh',
         ':content_file' => $filename->stringify );
-    qx{ lha -xqw=@{[$output->stringify]} $filename };
+    qx{ lha -xq -w=@{[$output->stringify]} $filename };
 
     $output->recurse(
         callback => sub {

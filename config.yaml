@@ -11,6 +11,7 @@ global:
     max_clients: 80
 
 plugins:
+  - module: Application
   - module: Pictogram
   - module: HTMLWidth
   - module: HTTPEnv

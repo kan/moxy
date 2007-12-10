@@ -31,6 +31,16 @@ sub new {
         response => HTTP::Proxy::BodyFilter::complete->new,
         request  => HTTP::Proxy::HeaderFilter::simple->new(
             sub {
+                my ($filter, $x, $request) = @_;
+
+                $context->run_hook(
+                    'request_filter_before_auth',
+                    {   request => $request, # HTTP::Request object
+                        filter  => $filter, # filter object itself
+                    }
+                );
+                return if $filter->proxy->response;
+
                 my ($user, $pass) = $_[0]->proxy->hop_headers->proxy_authorization_basic();
                 if ($user) {
                     $_[0]->proxy->stash(user => $user);
