@@ -45,22 +45,21 @@ sub scrape_i {
         'http://www.nttdocomo.co.jp/service/imode/make/content/pictograph/extention/'
         )
     {
-        warn "call $base_uri";
         my $scraper = scraper {
             process 'tr.acenter', 'i_pictograms[]' => scraper {
-                process 'td > span.txt', 'fields[]' => 'TEXT';
-                process 'td > img',      'image'    => '@src';
+                process 'td:nth-child(2) > img', 'image'   => '@src';
+                process 'td:nth-child(3)',       'sjishex' => 'TEXT';
             };
-            result 'i_pictograms[]';
         }->scrape( URI->new($base_uri) );
-        use Data::Dumper;warn Dumper($scraper);
 
         for my $pictogram ( @{ $scraper->{i_pictograms} } ) {
-            next unless $pictogram->{fields};
+            next unless $pictogram->{sjishex};
+            next unless $pictogram->{sjishex} =~ /^[A-Z0-9]{4}$/;
+
             my $filename = $self->_assets_path->file( 'i',
-                hex( $pictogram->{fields}->[1] ) . '.gif' );
+                hex( $pictogram->{sjishex} ) . '.gif' );
             print "fetch $filename\n";
-            $self->_ua->get( $base_uri . '/' . $pictogram->{image},
+            $self->_ua->get( $pictogram->{image},
                 ':content_file' => $filename->stringify );
             print "convert $filename\n";
             qx{convert -transparent white $filename $filename.t.gif};
@@ -99,24 +98,20 @@ sub scrape_e {
 sub scrape_v {
     my $self = shift;
 
-    my $base_uri = 'http://developers.softbankmobile.co.jp/dp/tool_dl/web';
+    my @uri = map { "http://developers.softbankmobile.co.jp/dp/tool_dl/web/picword_0$_.php" } 1..6;
 
-    for my $num ( 1 .. 6 ) {
-        my $uri = sprintf( "$base_uri/picword_%02d.php", $num );
+    for my $uri ( @uri ) {
         my $scraper = scraper {
-            process 'table[width="100%"] > tr', 'v_pictograms[]' => scraper {
-                process 'td > font.j10', 'fields[]' => 'TEXT';
-                process 'td > img',      'image'    => '@src';
+            process '//table[@width="100%"]/tr[position()>=2]', 'v_pictograms[]' => scraper {
+                process 'td:nth-child(1) > img',      'image'    => '@src';
+                process 'td:nth-child(2) > font.j10', 'unicode' => 'TEXT';
             };
-            result 'v_pictograms[]';
-        }
-        ->scrape( URI->new($uri) );
+        }->scrape( URI->new($uri) );
 
         for my $pictogram ( @{ $scraper->{v_pictograms} } ) {
-            next unless $pictogram->{fields};
-            my $filename = $self->_assets_path->file('v', sprintf("%s.gif", hex( $pictogram->{fields}->[0] )));
+            my $filename = $self->_assets_path->file('v', sprintf("%s.gif", hex( $pictogram->{unicode} )));
             print "fetch $filename\n";
-            $self->_ua->get( $base_uri . '/' . $pictogram->{image},
+            $self->_ua->get( $pictogram->{image},
                 ':content_file' => $filename->stringify );
             print "convert $filename\n";
             qx{convert -transparent white $filename $filename.t.gif};
