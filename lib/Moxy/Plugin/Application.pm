@@ -57,9 +57,10 @@ qq{Basic realm="Moxy needs basic auth.Only for identification.Password is dummy.
 
 sub _render_control_panel {
     my ($class, $base, $current_url) = @_;
-    return <<"...";
+
+    return sprintf(<<"...", encode_entities($current_url));
     <form method="get" action="$base">
-        <input type="text" name="q" value="$current_url" size="40" />
+        <input type="text" name="q" value="\%s" size="40" />
         <input type="submit" value="go" />
     </form>
 ...
