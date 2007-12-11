@@ -132,7 +132,7 @@ sub _rewrite {
                       sprintf( qq{href="$base?q=%s"},
                         uri_escape(URI->new($href)->abs($base_url)) );
                 }
-                push @parts, map { sprintf qq{$_="%s"}, encode_entities($attr->{$_}) } keys %$attr;
+                push @parts, map { sprintf qq{%s="%s"}, encode_entities($_), encode_entities($attr->{$_}) } keys %$attr;
                 $output .= join " ", @parts;
                 $output .= ">";
             } elsif ($tagname =~ /form/i) {
@@ -158,7 +158,7 @@ sub _rewrite {
                         uri_escape(URI->new($src)->abs($base_url))
                     );
                 }
-                push @parts, map { sprintf qq{$_="%s"}, encode_entities($attr->{$_}) } grep !/^\/$/, keys %$attr;
+                push @parts, map { sprintf qq{%s="%s"}, encode_entities($_), encode_entities($attr->{$_}) } grep !/^\/$/, keys %$attr;
                 $output .= join " ", @parts;
                 $output .= ">";
             } else {
