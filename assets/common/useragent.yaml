@@ -1,97 +1,1281 @@
---- 
-pc:
-  - 
-    name: Internet Explorer 6 (Windows XP)
-    agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
-    width:
-    height:
-    size:
-    flash: 1
-    cookie: 1
-
-i-mode:
-  - 
-    name: SH901iC(端末IDあり)
-    agent: DoCoMo/2.0 SH901iC(c100;TB;W24H12;serTESTI7890ABCDE;icc12345678901234567890)
-    width: 240
-    height: 320
-    size:
-    flash: 
-  - 
-    name: SH901iC(端末ID無し)
-    agent: DoCoMo/2.0 SH901iC(c100;TB;W24H12)
-    width: 240
-    height: 320
-    size:
-    flash: 
-
+---
 ez:
-  - 
-    name: W43H(デコメ対応)
-    agent: KDDI-HI38 UP.Browser/6.2.0.11.1.2 (GUI) MMP/2.0
-    width: 240
-    height: 400
-    size:
-    flash: 1
+  - agent: KDDI-TS3G UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
     cookie: 1
-  - 
-    name: W22H(デコメ非対応)
-    agent: KDDI-HI33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    width: 240
-    height: 320
-    size:
-    flash: 
+    flash: 2.0
+    height: 245
+    name: W55T
+    width: 229
+  - agent: KDDI-HI3B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
     cookie: 1
-  - 
-    name: A1013K(WAP1端末)
-    agent: UP.Browser/3.04-KC15 UP.Link/3.4.5.9
-    width: 120
+    flash: 2.0
+    height: 323
+    name: W53H
+    width: 232
+  - agent: KDDI-KC3B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 325
+    name: W53K
+    width: 240
+  - agent: KDDI-ST33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 323
+    name: INFOBAR 2
+    width: 228
+  - agent: KDDI-KC3E UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 245
+    name: W44K IIカメラなしモデル
+    width: 232
+  - agent: KDDI-SN3B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 345
+    name: W53S
+    width: 228
+  - agent: KDDI-CA39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 323
+    name: W53CA
+    width: 232
+  - agent: KDDI-ST32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 323
+    name: W53SA
+    width: 228
+  - agent: KDDI-TS3E UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 325
+    name: W54T
+    width: 229
+  - agent: KDDI-SH33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 323
+    name: W52SH
+    width: 229
+  - agent: KDDI-CA38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 323
+    name: W52CA
+    width: 232
+  - agent: KDDI-MA32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 323
+    name: W52P
+    width: 232
+  - agent: KDDI-SN3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 345
+    name: W52S
+    width: 228
+  - agent: KDDI-TS3D UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 325
+    name: W53T
+    width: 229
+  - agent: KDDI-SA3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 323
+    name: W52SA
+    width: 228
+  - agent: KDDI-HI3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 323
+    name: W52H
+    width: 232
+  - agent: KDDI-KC3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 245
+    name: MEDIA SKIN
+    width: 232
+  - agent: KDDI-SH32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 323
+    name: W51SH
+    width: 229
+  - agent: KDDI-SN39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 345
+    name: W51S
+    width: 228
+  - agent: KDDI-TS3C UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 325
+    name: W52T
+    width: 229
+  - agent: KDDI-TS3B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 245
+    name: W51T
+    width: 229
+  - agent: KDDI-SA39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 243
+    name: W51SA
+    width: 228
+  - agent: KDDI-HI39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 323
+    name: W51H
+    width: 232
+  - agent: KDDI-CA37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 323
+    name: W51CA
+    width: 232
+  - agent: KDDI-MA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 323
+    name: W51P
+    width: 232
+  - agent: KDDI-KC39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 325
+    name: W51K
+    width: 240
+  - agent: KDDI-TS39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 225
+    name: DRAPE
+    width: 229
+  - agent: KDDI-TS3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 225
+    name: W47T
+    width: 229
+  - agent: KDDI-SN38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 345
+    name: W44S
+    width: 228
+  - agent: KDDI-KC38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 237
+    name: W44K/K II
+    width: 232
+  - agent: KDDI-SA38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 243
+    name: W43SA
+    width: 228
+  - agent: KDDI-TS38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 268
+    name: W45T
+    width: 229
+  - agent: KDDI-CA35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 315
+    name: W43CA
+    width: 232
+  - agent: KDDI-HI38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 315
+    name: W43H/H II
+    width: 232
+  - agent: KDDI-SN37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 368
+    name: W43S
+    width: 228
+  - agent: KDDI-KC37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 237
+    name: W43K
+    width: 232
+  - agent: KDDI-ST31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 234
+    name: W42SA
+    width: 235
+  - agent: KDDI-SH31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 315
+    name: W41SH
+    width: 229
+  - agent: KDDI-CA34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 243
+    name: W42CA
+    width: 232
+  - agent: KDDI-HI37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 243
+    name: W42H
+    width: 232
+  - agent: KDDI-TS37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 268
+    name: W44T/T II/T III
+    width: 229
+  - agent: KDDI-TS35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 244
+    name: neon
+    width: 229
+  - agent: KDDI-TS36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 244
+    name: W43T
+    width: 229
+  - agent: KDDI-SN36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 250
+    name: W42S
+    width: 228
+  - agent: KDDI-KC36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 245
+    name: W42K
+    width: 232
+  - agent: KDDI-KC35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 245
+    name: W41K
+    width: 232
+  - agent: KDDI-SA36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 243
+    name: W41SA
+    width: 228
+  - agent: KDDI-TS34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 244
+    name: W41T
+    width: 229
+  - agent: KDDI-HI36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 323
+    name: W41H
+    width: 230
+  - agent: KDDI-CA33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 323
+    name: W41CA
+    width: 230
+  - agent: KDDI-SN34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 250
+    name: W41S
+    width: 228
+  - agent: KDDI-HI34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 266
+    name: PENCK
+    width: 230
+  - agent: KDDI-SA35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 243
+    name: W33SA/SA II
+    width: 228
+  - agent: KDDI-TS33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 244
+    name: W32T
+    width: 229
+  - agent: KDDI-SA34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 243
+    name: W32SA
+    width: 228
+  - agent: KDDI-KC34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 266
+    name: W32K
+    width: 234
+  - agent: KDDI-HI35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 235
+    name: W32H
+    width: 230
+  - agent: KDDI-ARRAY(0x8e7be10) UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 242
+    name: W32S
+    width: 228
+  - agent: KDDI-CA32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 323
+    name: W31CA
+    width: 230
+  - agent: KDDI-TS32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 244
+    name: W31T
+    width: 229
+  - agent: KDDI-SN32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 238
+    name: W31S
+    width: 228
+  - agent: KDDI-KC33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 268
+    name: W31K/K II
+    width: 234
+  - agent: KDDI-SA33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 268
+    name: W31SA/SA II
+    width: 230
+  - agent: KDDI-SA32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 266
+    name: W22SA
+    width: 230
+  - agent: KDDI-HI33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 266
+    name: W22H
+    width: 230
+  - agent: KDDI-CA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 346
+    name: W21CA/CA II
+    width: 230
+  - agent: KDDI-TS31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 270
+    name: W21T
+    width: 229
+  - agent: KDDI-SA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 266
+    name: W21SA
+    width: 225
+  - agent: KDDI-SN31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 266
+    name: W21S
+    width: 228
+  - agent: KDDI-KC32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 266
+    name: W21K
+    width: 234
+  - agent: KDDI-HI32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 147
+    name: W21H
+    width: 123
+  - agent: KDDI-KC31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 268
+    name: W11K
+    width: 233
+  - agent: KDDI-HI31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 268
+    name: W11H
+    width: 233
+  - agent: KDDI-ST2C UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 242
+    name: Sweets cute
+    width: 235
+  - agent: KDDI-ST29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 242
+    name: Sweets pure
+    width: 235
+  - agent: KDDI-CA28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 243
+    name: G'zOne TYPE-R
+    width: 230
+  - agent: KDDI-ST26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 270
+    name: Sweets
+    width: 235
+  - agent: KDDI-ST25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 270
+    name: talby
+    width: 235
+  - agent: KDDI-ST22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 145
+    name: INFOBAR
+    width: 125
+  - agent: KDDI-TS2E UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 245
+    name: A5529T
+    width: 229
+  - agent: KDDI-KC2A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 245
+    name: A5528K
+    width: 232
+  - agent: KDDI-SA2A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 242
+    name: A5527SA
+    width: 235
+  - agent: KDDI-KC29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 245
+    name: A5526K
+    width: 232
+  - agent: KDDI-ST2D UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 242
+    name: A5525SA
+    width: 235
+  - agent: KDDI-TS2D UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 2.0
+    height: 245
+    name: A5523T
+    width: 229
+  - agent: KDDI-SA29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 234
+    name: A5522SA
+    width: 235
+  - agent: KDDI-KC28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 248
+    name: A5521K
+    width: 234
+  - agent: KDDI-ST2A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 242
+    name: A5520SA/SA II
+    width: 235
+  - agent: KDDI-ST28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 242
+    name: A5518SA
+    width: 235
+  - agent: KDDI-TS2C UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 246
+    name: A5517T
+    width: 229
+  - agent: KDDI-TS2B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 246
+    name: A5516T
+    width: 229
+  - agent: KDDI-KC27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 248
+    name: A5515K
+    width: 234
+  - agent: KDDI-ST27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 242
+    name: A5514SA
+    width: 235
+  - agent: KDDI-CA27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 243
+    name: A5512CA
+    width: 230
+  - agent: KDDI-TS2A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 246
+    name: A5511T
+    width: 229
+  - agent: KDDI-TS29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 270
+    name: A5509T
+    width: 229
+  - agent: KDDI-ST24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 270
+    name: A5507SA
+    width: 235
+  - agent: KDDI-TS28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 270
+    name: A5506T
+    width: 229
+  - agent: KDDI-SA27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 263
+    name: A5505SA
+    width: 225
+  - agent: KDDI-TS27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 270
+    name: A5504T
+    width: 229
+  - agent: KDDI-SA26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 263
+    name: A5503SA
+    width: 225
+  - agent: KDDI-ARRAY(0x8db9404) UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 262
+    name: A5502K
+    width: 234
+  - agent: KDDI-TS26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 270
+    name: A5501T
+    width: 240
+  - agent: KDDI-CA26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 266
+    name: A5407CA
+    width: 230
+  - agent: KDDI-CA25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 266
+    name: A5406CA
+    width: 230
+  - agent: KDDI-ST23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 145
+    name: A5405SA
+    width: 127
+  - agent: KDDI-SN25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 256
+    name: A5404S
+    width: 240
+  - agent: KDDI-CA24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 266
+    name: A5403CA
+    width: 230
+  - agent: KDDI-SN24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
     height: 160
-    size:
-    flash: 
-    cookie: 1
-
-softbank:
-  - 
-    name: V902SH
-    agent: Vodafone/1.0/V902SH/SHJ001 Browser/UP.Browser/7.0.2.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-J-Profile/JSCL-1.2.2 Ext-V-Profile/VSCL-2.0.0
-    width: 240
-    height: 320
-    size:
-    flash: 1
-  - 
-    name: V702NK(Nokia端末)
-    agent: Vodafone/1.0/V702NK/NKJ001 Series60/2.6 Nokia6630/2.39.148 Profile/MIDP-2.0 Configuration/CLDC-1.1
-    width: 208
-    height: 176
-    size:
-    flash: 
-  - name: J-SH07(type C3)
-    agent: J-PHONE/3.0/J-SH07
+    name: A5402S
     width: 120
-    height: 117
-    size:
-    flash:
-
-googlebot:
-  - 
-    name: KDDI-Googlebot
-    agent: KDDI-SA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0 (compatible;
-  - 
-    name: Googlebot-Mobile(DoCoMo)
-    agent: DoCoMo/1.0/N505i/c20/TB/W20H10 (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)
-  -
-    name: Googlebot-Mobile(Nokia)
-    agent: Nokia6820/2.0 (4.83) Profile/MIDP-1.0 Configuration/CLDC-1.0 (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)
-
-willcom:
-  -
-    name: WX310K
-    agent: Mozilla/3.0(WILLCOM;KYOCERA/WX310K/2;1.1.5.15.000000/0.1/C100) Opera 7.0
-    width: 240
-
-none:
-  -
-    name: UserAgent無変更
-    agent: none
+  - agent: KDDI-CA23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
     cookie: 1
+    flash: ~
+    height: 147
+    name: A5401CA II
+    width: 123
+  - agent: KDDI-CA23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 147
+    name: A5401CA
+    width: 123
+  - agent: KDDI-ST21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 145
+    name: A5306ST
+    width: 125
+  - agent: KDDI-KC22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 144
+    name: A5305K
+    width: 125
+  - agent: KDDI-TS24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 140
+    name: A5304T
+    width: 144
+  - agent: KDDI-HI24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 144
+    name: A5303H II
+    width: 125
+  - agent: KDDI-HI23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 144
+    name: A5303H
+    width: 125
+  - agent: KDDI-CA22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 147
+    name: A5302CA
+    width: 125
+  - agent: KDDI-TS23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 140
+    name: A5301T
+    width: 144
+  - agent: KDDI-TS21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 135
+    name: C5001T
+    width: 144
+  - agent: KDDI-SA22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 144
+    name: A3015SA
+    width: 126
+  - agent: KDDI-SN21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 120
+    name: A3014S
+    width: 120
+  - agent: KDDI-TS22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 135
+    name: A3013T
+    width: 144
+  - agent: KDDI-CA21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 147
+    name: A3012CA
+    width: 125
+  - agent: KDDI-SA21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 144
+    name: A3011SA
+    width: 126
+  - agent: KDDI-MA21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 144
+    name: C3003P
+    width: 132
+  - agent: KDDI-KC21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 132
+    name: C3002K
+    width: 128
+  - agent: KDDI-HI21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 130
+    name: C3001H
+    width: 120
+  - agent: KDDI-PT23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 240
+    name: A1407PT
+    width: 240
+  - agent: KDDI-PT22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 236
+    name: A1406PT
+    width: 240
+  - agent: KDDI-PT21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 236
+    name: A1405PT
+    width: 240
+  - agent: KDDI-SN29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 230
+    name: A1404S/S II
+    width: 228
+  - agent: KDDI-KC26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 266
+    name: A1403K
+    width: 234
+  - agent: KDDI-SN27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 244
+    name: A1402S II
+    width: 228
+  - agent: KDDI-SN28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 244
+    name: A1402S IIカメラ無し
+    width: 228
+  - agent: KDDI-SN26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 244
+    name: A1402S
+    width: 228
+  - agent: KDDI-KC23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 136
+    name: A1401K
+    width: 126
+  - agent: KDDI-SA28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 144
+    name: A1305SA
+    width: 124
+  - agent: KDDI-TS25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 140
+    name: A1304T II
+    width: 144
+  - agent: KDDI-TS25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 140
+    name: A1304T
+    width: 144
+  - agent: KDDI-TS25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 140
+    name: A1304Tカメラ無し
+    width: 144
+  - agent: KDDI-SA25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 144
+    name: A1303SA
+    width: 124
+  - agent: KDDI-SA24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 144
+    name: A1302SA
+    width: 124
+  - agent: KDDI-SN23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 123
+    name: A1301S
+    width: 120
+  - agent: KDDI-SN22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 120
+    name: A1101S
+    width: 120
+  - agent: UP.Browser/3.04-ST14 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 108
+    name: A1014ST
+    width: 120
+  - agent: UP.Browser/3.04-KC15 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 126
+    name: A1013K
+    width: 120
+  - agent: UP.Browser/3.04-KC14 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 126
+    name: A1012K II
+    width: 120
+  - agent: UP.Browser/3.04-KC14 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 126
+    name: A1012K
+    width: 120
+  - agent: UP.Browser/3.04-ST13 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 126
+    name: A1011ST
+    width: 120
+  - agent: UP.Browser/3.04-SN17 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 120
+    name: C1002S
+    width: 120
+  - agent: UP.Browser/3.04-SY15 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 128
+    name: C1001SA
+    width: 120
+  - agent: UP.Browser/3.04-CA14 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 109
+    name: C452CA
+    width: 120
+  - agent: UP.Browser/3.04-HI14 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 113
+    name: C451H
+    width: 120
+  - agent: UP.Browser/3.04-TS14 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 98
+    name: C415T
+    width: 96
+  - agent: UP.Browser/3.04-KC13 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 128
+    name: C414K II
+    width: 120
+  - agent: UP.Browser/3.04-KC13 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 128
+    name: C414K
+    width: 120
+  - agent: UP.Browser/3.04-ARRAY(0x8edad8c) UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 120
+    name: C413S
+    width: 120
+  - agent: UP.Browser/3.04-SY14 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 128
+    name: C412SA
+    width: 120
+  - agent: UP.Browser/3.04-ST12 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 126
+    name: C411ST
+    width: 120
+  - agent: UP.Browser/3.04-TS13 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 98
+    name: C410T
+    width: 96
+  - agent: UP.Browser/3.04-CA13 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 96
+    name: C409CA
+    width: 120
+  - agent: UP.Browser/3.04-MA13 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 129
+    name: C408P
+    width: 115
+  - agent: UP.Browser/3.04-HI13 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 113
+    name: C407H
+    width: 120
+  - agent: UP.Browser/3.04-SN13 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 120
+    name: C406S
+    width: 120
+  - agent: UP.Browser/3.04-SY13 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 96
+    name: C405SA
+    width: 120
+  - agent: UP.Browser/3.04-ARRAY(0x8e7175c) UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 120
+    name: C404S
+    width: 120
+  - agent: UP.Browser/3.04-ST11 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 126
+    name: C403ST
+    width: 120
+  - agent: UP.Browser/3.04-DN11 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 112
+    name: C402DE
+    width: 120
+  - agent: UP.Browser/3.04-SY12 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 128
+    name: C401SA
+    width: 120
+  - agent: KDDI-CA36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 243
+    name: E03CA
+    width: 232
+  - agent: KDDI-SA37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: 1.1
+    height: 243
+    name: E02SA
+    width: 228
+  - agent: KDDI-KC26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 266
+    name: B01K
+    width: 234
+  - agent: UP.Browser/3.04-KCTE UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 137
+    name: TK51
+    width: 120
+  - agent: UP.Browser/3.04-TST9 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 112
+    name: TT51
+    width: 120
+  - agent: KDDI-KCU1 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+    cookie: 1
+    flash: ~
+    height: 137
+    name: TK41
+    width: 114
+  - agent: UP.Browser/3.04-SYT5 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 144
+    name: TS41
+    width: 132
+  - agent: UP.Browser/3.04-KCTD UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 137
+    name: TK40
+    width: 120
+  - agent: UP.Browser/3.04-TST8 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 120
+    name: TT32
+    width: 140
+  - agent: UP.Browser/3.04-TST7 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 120
+    name: TT31
+    width: 140
+  - agent: UP.Browser/3.04-KCTC UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 137
+    name: TK31
+    width: 120
+  - agent: UP.Browser/3.04-KCTB UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 137
+    name: TK23
+    width: 120
+  - agent: UP.Browser/3.04-KCTA UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 137
+    name: TK22
+    width: 120
+  - agent: UP.Browser/3.04-TST6 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 120
+    name: TT22
+    width: 140
+  - agent: UP.Browser/3.04-KCT9 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 137
+    name: TK21
+    width: 120
+  - agent: UP.Browser/3.04-TST5 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 133
+    name: TT21
+    width: 140
+  - agent: UP.Browser/3.04-SYT4 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 108
+    name: TS31
+    width: 120
+  - agent: UP.Browser/3.04-TST4 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 129
+    name: TT11
+    width: 120
+  - agent: UP.Browser/3.04-KCT8 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 137
+    name: TK12
+    width: 120
+  - agent: UP.Browser/3.04-SYT3 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 128
+    name: TS11
+    width: 120
+  - agent: UP.Browser/3.04-KCT7 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 104
+    name: TK11
+    width: 96
+  - agent: UP.Browser/3.04-MIT1 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 117
+    name: TD11
+    width: 120
+  - agent: UP.Browser/3.04-MAT3 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 94
+    name: TP11
+    width: 96
+  - agent: UP.Browser/3.04-KCT6 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 104
+    name: TK05
+    width: 96
+  - agent: UP.Browser/3.04-TST3 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 117
+    name: TT03
+    width: 120
+  - agent: UP.Browser/3.04-KCT5 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 104
+    name: TK04
+    width: 96
+  - agent: UP.Browser/3.04-KCT4 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 104
+    name: TK03
+    width: 96
+  - agent: UP.Browser/3.04-SYT2 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 72
+    name: TS02
+    width: 96
+  - agent: UP.Browser/3.04-ARRAY(0x8ee5594) UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 78
+    name: TP01
+    width: 122
+  - agent: UP.Browser/3.04-TST2 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 84
+    name: TT02
+    width: 120
+  - agent: UP.Browser/3.04-KCT3 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 94
+    name: TK0K
+    width: 121
+  - agent: UP.Browser/3.04-KCT2 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 94
+    name: TK02
+    width: 121
+  - agent: UP.Browser/3.04-KCT1 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 94
+    name: TK01
+    width: 121
+  - agent: UP.Browser/3.04-TST1 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 84
+    name: TT01
+    width: 120
+  - agent: UP.Browser/3.04-SYT1 UP.Link/3.4.5.9
+    cookie: 1
+    flash: ~
+    height: 96
+    name: TS01
+    width: 128
+googlebot:
+  - agent: KDDI-SA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0 (compatible;
+    name: KDDI-Googlebot
+  - agent: DoCoMo/1.0/N505i/c20/TB/W20H10 (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)
+    name: Googlebot-Mobile(DoCoMo)
+  - agent: Nokia6820/2.0 (4.83) Profile/MIDP-1.0 Configuration/CLDC-1.0 (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)
+    name: Googlebot-Mobile(Nokia)
+i-mode:
+  - agent: DoCoMo/2.0 SH901iC(c100;TB;W24H12;serTESTI7890ABCDE;icc12345678901234567890)
+    flash: ~
+    height: 320
+    name: SH901iC(端末IDあり)
+    size: ~
+    width: 240
+  - agent: DoCoMo/2.0 SH901iC(c100;TB;W24H12)
+    flash: ~
+    height: 320
+    name: SH901iC(端末ID無し)
+    size: ~
+    width: 240
+none:
+  - agent: none
+    cookie: 1
+    name: UserAgent無変更
+pc:
+  - agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+    cookie: 1
+    flash: 1
+    height: ~
+    name: Internet Explorer 6 (Windows XP)
+    size: ~
+    width: ~
+softbank:
+  - agent: Vodafone/1.0/V902SH/SHJ001 Browser/UP.Browser/7.0.2.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-J-Profile/JSCL-1.2.2 Ext-V-Profile/VSCL-2.0.0
+    flash: 1
+    height: 320
+    name: V902SH
+    size: ~
+    width: 240
+  - agent: Vodafone/1.0/V702NK/NKJ001 Series60/2.6 Nokia6630/2.39.148 Profile/MIDP-2.0 Configuration/CLDC-1.1
+    flash: ~
+    height: 176
+    name: V702NK(Nokia端末)
+    size: ~
+    width: 208
+  - agent: J-PHONE/3.0/J-SH07
+    flash: ~
+    height: 117
+    name: J-SH07(type C3)
+    size: ~
+    width: 120
+willcom:
+  - agent: Mozilla/3.0(WILLCOM;KYOCERA/WX310K/2;1.1.5.15.000000/0.1/C100) Opera 7.0
+    name: WX310K
+    width: 240
