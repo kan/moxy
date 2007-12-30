@@ -15,8 +15,8 @@ our $TIMEOUT = 10;
 sub register {
     my ($class, $context) = @_;
 
-    my $base_host = $context->config->{global}->{hostname};
-    my $base_port = $context->config->{global}->{server}->{port};
+    my $base_host = $context->config->{global}->{application}->{host};
+    my $base_port = $context->config->{global}->{application}->{port};
     my $base = "http://$base_host:$base_port/";
 
     $context->register_hook(

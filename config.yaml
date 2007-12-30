@@ -1,6 +1,8 @@
 ---
 global:
-  hostname: moxy.gp.ath.cx
+  application:
+    host: moxy.gp.ath.cx
+    port: 9999
   storage:
     module: DBM_File
     file: /tmp/moxy.gdbm
@@ -22,6 +24,7 @@ global:
           name: file
           min_level: info
           filename: log.txt
+          mode: append
 
 plugins:
   - module: Application
