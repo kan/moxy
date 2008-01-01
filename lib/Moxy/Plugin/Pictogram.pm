@@ -102,7 +102,7 @@ sub filter_pictogram_E {
 
     my $disp = sub {
         my ($context, $carrier, $number) = @_;
-        $class->pict_html($context, $carrier, sprintf("%03d", $number||0));
+        $class->pict_html($context, $carrier, sprintf("%d", $number||0));
     };
 
     # do convert pictogram
