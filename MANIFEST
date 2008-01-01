@@ -1,4 +1,3 @@
-assets/common/panel.tt
 assets/common/useragent.yaml
 assets/plugins/ControlPanel/panelcontainer.tt
 assets/plugins/GPS/iarea.tt
@@ -1385,8 +1384,8 @@ assets/server/pictogram/v/58678.gif
 assets/server/pictogram/v/58679.gif
 AUTHORS
 bin/update_ez_model_list.pl
+Changes
 config.yaml
-deps.txt
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
 inc/Module/Install/AutoInstall.pm
@@ -1432,7 +1431,6 @@ MANIFEST			This list of files
 META.yml
 moxy.pl
 README
-scandeps-moxy.pl
 t/00.load.t
 t/perlcritic.t
 t/plugin-application.t
