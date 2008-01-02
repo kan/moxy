@@ -1,7 +1,7 @@
 ---
 global:
   application:
-    host: moxy.gp.ath.cx
+    host: localhost
     port: 9999
   storage:
     module: DBM_File
@@ -10,7 +10,7 @@ global:
   server:
     module: HTTPProxy
     port: 9999
-    host: ""
+    host: "localhost"
     max_clients: 80
   log:
     targets:
@@ -40,4 +40,6 @@ plugins:
   - module: DisableTableTag
   - module: ShowHTTPHeaders
   - module: QRCode
+  - module: CookieCutter
+
 
