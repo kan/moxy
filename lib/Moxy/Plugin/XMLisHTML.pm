@@ -17,9 +17,11 @@ sub register {
 1;
 __END__
 
+=for stopwords: html xml
+
 =head1 NAME
 
-Moxy::Plugin::XMLisHTML - xml is html
+Moxy::Plugin::XMLisHTML - XML is HTML
 
 =head1 SYNOPSIS
 

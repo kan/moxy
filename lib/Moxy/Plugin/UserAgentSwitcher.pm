@@ -67,7 +67,7 @@ Moxy::Plugin::UserAgentSwitcher - change your user agent
 
 =head1 DESCRIPTION
 
-you can selct your user agent.
+you can select your user agent.
 
 =head1 AUTHOR
 

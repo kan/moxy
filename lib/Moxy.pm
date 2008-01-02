@@ -199,4 +199,4 @@ Moxy is a mobile web development proxy.
 
 =head1 SEE ALSO
 
-ssb
+L<http://coderepos.org/share/wiki/ssb>

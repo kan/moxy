@@ -140,6 +140,8 @@ sub filter_pictogram_V {
 1;
 __END__
 
+=for stopwords  pictograms
+
 =head1 NAME
 
 Moxy::Plugin::Pictogram - show pictograms

@@ -30,7 +30,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::HTMLWidth - limit the html width
+Moxy::Plugin::HTMLWidth - limit the HTML width
 
 =head1 SYNOPSIS
 
@@ -38,7 +38,7 @@ Moxy::Plugin::HTMLWidth - limit the html width
 
 =head1 DESCRIPTION
 
-limit the html width
+limit the HTML width
 
 =head1 SEE ALSO
 
