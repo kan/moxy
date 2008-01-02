@@ -47,6 +47,10 @@ __END__
 
 Moxy::Plugin::QRCode - QRCode generator for Moxy
 
+=head1 SYNOPSIS
+
+    - module: QRCode
+
 =head1 DESCRIPTION
 
 QRCode generator for Moxy.

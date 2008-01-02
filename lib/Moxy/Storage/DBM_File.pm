@@ -46,3 +46,17 @@ sub set {
 }
 
 1;
+__END__
+
+=head1 NAME
+
+Moxy::Storage::DBM_File - DBM_File based Storage class
+
+=head1 AUTHORS
+
+Tokuhiro Matsuno
+
+=head1 SEE ALSO
+
+L<Moxy>, L<HTTP::Proxy>
+

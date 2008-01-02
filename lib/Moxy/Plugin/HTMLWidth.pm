@@ -26,3 +26,20 @@ sub response_filter {
 }
 
 1;
+__END__
+
+=head1 NAME
+
+Moxy::Plugin::HTMLWidth - limit the html width
+
+=head1 SYNOPSIS
+
+  - module: HTMLWidth
+
+=head1 DESCRIPTION
+
+limit the html width
+
+=head1 SEE ALSO
+
+L<Moxy>

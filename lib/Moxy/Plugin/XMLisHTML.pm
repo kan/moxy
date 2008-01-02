@@ -17,10 +17,26 @@ sub register {
 1;
 __END__
 
+=head1 NAME
+
+Moxy::Plugin::XMLisHTML - xml is html
+
+=head1 SYNOPSIS
+
+    - module: XMLisHTML
+
 =head1 DESCRIPTION
 
 If you want to use the CSS, DoCoMo UA needs to use 'application/xhtml+xml' for Content-Type.
 But, DoCoMo's XHTML is not valid, likes '<a href="/login" utn>login</a>', Firefox reject this... orz.
 
 This plugin replace Content-Type header.
+
+=head1 AUTHORS
+
+Tokuhiro Matsuno
+
+=head1 SEE ALSO
+
+L<Moxy>
 

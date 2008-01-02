@@ -177,3 +177,26 @@ sub _rewrite {
 
 1;
 
+__END__
+
+=head1 NAME
+
+Moxy::Plugin::Application - web proxy mode.
+
+=head1 SYNOPSIS
+
+  - module: ControlPanel
+
+
+=head1 DESCRIPTION
+
+This is web proxy mode plugin.
+
+=head1 AUTHOR
+
+    Tokuhiro Matsuno
+
+=head1 SEE ALSO
+
+L<Moxy>
+
