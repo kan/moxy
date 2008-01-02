@@ -28,6 +28,8 @@ sub response_filter {
 1;
 __END__
 
+=for stopwords localsrc HTML
+
 =head1 NAME
 
 Moxy::Plugin::HTMLWidth - limit the HTML width
