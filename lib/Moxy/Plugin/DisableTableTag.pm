@@ -45,18 +45,17 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::FlashUseImgTag - ezweb can use <img src="/boofy.swf">
-
+Moxy::Plugin::DisableTableTag - docomo can't use <TABLE>
 =head1 SYNOPSIS
 
-  - module: FlashUseImgTag
+  - module: DisableTableTag
 
 =head1 DESCRIPTION
 
-EZweb real machine can use <img src="/boofy.swf" /> style.
+DoCoMo real machine can't use <TABLE><TR><TH><TD> tags.
 This plugin can simulate it.
 
-This plugin replace img tag to object tag.
+This plugin cut these tags.
 
 =head1 AUTHOR
 
