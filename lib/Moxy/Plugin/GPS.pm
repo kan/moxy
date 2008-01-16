@@ -86,16 +86,19 @@ sub register {
                     $errstr = 'nl too long(256)';
                 }
 
-                my $output = $class->render_template(
-                    $context,
-                    'iarea.tt' => {
-                        errstr  => $errstr,
-                        queries => \%queries,
-                    }
-                );
+                my $redirect_to = $queries{nl} . "?";
+                my $coordinates = "LAT=%2B35.39.55.197&LON=%2B139.43.54.653&GEO=wgs84&XACC=1";
+                my $area = "AREACODE=06000";
+                if (!$queries{posinfo}) {
+                    $redirect_to .= $area;
+                } elsif ($queries{posinfo} == 1) {
+                    $redirect_to .= "$area&$coordinates";
+                } elsif ($queries{posinfo} == 2) {
+                    $redirect_to .= $coordinates;
+                }
 
-                my $response = HTTP::Response->new( 200, 'Moxy(GPS iarea)' );
-                $response->content($output);
+                my $response = HTTP::Response->new( 302, 'Redirect by Moxy(GPS willcom)' );
+                $response->header(Location => $redirect_to);
                 return $args->{filter}->proxy->response($response);
             }
         }

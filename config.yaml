@@ -9,7 +9,7 @@ global:
     dbm_class: NDBM_File
   server:
     module: HTTPProxy
-    port: 9999
+    port: 10000
     host: "localhost"
     max_clients: 80
   log:
@@ -38,8 +38,8 @@ plugins:
   - module: RefererCutter
   - module: FlashUseImgTag
   - module: DisableTableTag
+  - module: UserID
   - module: ShowHTTPHeaders
   - module: QRCode
-  - module: CookieCutter
 
 
