@@ -17,7 +17,7 @@ sub register {
             my ( $context, $args ) = @_;
 
             ${ $args->{content_ref} }
-                =~ s{device:location\?url=([^'"> ]+)}{"http://gps.moxy/au/?redirect_to=" . uri_escape($1)}ge;
+                =~ s{device:location\?url=([^'"> ]+)}{"http://gps.moxy/au/?redirect_to=$1"}ge;
         },
         request_filter_E => sub {
             my ( $context, $args ) = @_;
