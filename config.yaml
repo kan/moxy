@@ -2,7 +2,7 @@
 global:
   application:
     host: localhost
-    port: 9999
+    port: 10000
   storage:
     module: DBM_File
     file: /tmp/moxy.gdbm
