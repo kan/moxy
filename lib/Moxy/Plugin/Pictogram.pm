@@ -67,7 +67,7 @@ sub pict_html {
 
     my $pict_html = $class->_load_file( $context, 'pict.tmpl' );
     if ($class->config($context)->{no_pict}) {
-        # ³¨Ê¸»úÈóÉ½¼¨¥â¡¼¥É
+        # çµµæ–‡å­—éè¡¨ç¤ºãƒ¢ãƒ¼ãƒ‰
         return sprintf("[%s:%03d]", $carrier, $number||1);
     } else {
         return sprintf( $pict_html, $carrier, $number||1 );

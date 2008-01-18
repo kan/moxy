@@ -9,7 +9,7 @@ sub register {
     $context->register_hook(response_filter => sub { $class->response_filter(@_) });
 }
 
-# HTMLÁ´ÂÎ¤Î²£Éı¤òUA¤Î²èÌÌ¥µ¥¤¥º¤Ë¹ç¤ï¤»¤ë
+# HTMLå…¨ä½“ã®æ¨ªå¹…ã‚’UAã®ç”»é¢ã‚µã‚¤ã‚ºã«åˆã‚ã›ã‚‹
 sub response_filter {
     my ($class, $context, $args) = @_;
 

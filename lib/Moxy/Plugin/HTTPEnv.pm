@@ -11,13 +11,13 @@ sub register {
         request_filter_E => sub {
             my ($context, $args) = @_;
 
-            # EZ¤Î²èÌÌ¾ðÊó
+            # EZã®ç”»é¢æƒ…å ±
             if ($args->{agent} && $args->{agent}->{width}) {
                 $args->{request}->header(
                     'X-UP-DEVCAP-SCREENPIXELS' => $args->{agent}->{width} . "," . 
                                                         $args->{agent}->{height} );
             }
-            # Flash»È¤¨¤ë¤«¤É¤¦¤«
+            # Flashä½¿ãˆã‚‹ã‹ã©ã†ã‹
             if ($args->{agent} && $args->{agent}->{flash}) {
                 $args->{request}->header(Accept => "application/x-shockwave-flash");
             }
@@ -28,7 +28,7 @@ sub register {
         request_filter_V => sub {
             my ($context, $args) = @_;
 
-            # SoftBank¤Î²èÌÌ¾ðÊó
+            # SoftBankã®ç”»é¢æƒ…å ±
             if ($args->{agent} && $args->{agent}->{width}) {
                 $args->{request}->header(
                     'X-JPHONE-DISPLAY' => $args->{agent}->{width} . "*" . 
