@@ -61,3 +61,21 @@ sub render_template {
 }
 
 1;
+__END__
+
+=head1 NAME
+
+Moxy::Plugin - abstract base class of Moxy plugin
+
+=head1 DESCRIPTION
+
+This is abstract base class of Moxy plugins.
+
+=head1 AUTHOR
+
+    Kan Fushihara
+    Tokuhiro Matsuno
+
+=head1 SEE ALSO
+
+L<Moxy>

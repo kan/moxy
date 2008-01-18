@@ -1,6 +1,7 @@
 package Moxy::Plugin::RefererCutter;
 use strict;
 use warnings;
+
 sub register {
     my ($class, $context) = @_;
 
@@ -16,6 +17,10 @@ sub register {
 1;
 __END__
 
+=head1 NAME
+
+Moxy::Plugin::RefererCutter - remove referer
+
 =head1 DESCRIPTION
 
 do not send referer.
@@ -23,3 +28,8 @@ do not send referer.
 =head1 AUTHOR
 
 Tokuhiro Matsuno
+
+=head1 SEE ALSO
+
+L<Moxy>
+

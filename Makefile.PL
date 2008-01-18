@@ -47,8 +47,3 @@ auto_install;
 install_script('moxy.pl');
 WriteAll;
 
-use lib qw(lib);
-print "Running pictogram scraper\n";
-require Moxy::Scraper;
-Moxy::Scraper->new->run(qw/i e v/);
-

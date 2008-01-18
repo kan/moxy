@@ -4,7 +4,7 @@ use warnings;
 require Class::Accessor::Fast;
 use base qw/Class::Accessor::Fast/;
 
-our $VERSION = 0.03;
+our $VERSION = '0.05';
 
 __PACKAGE__->mk_accessors(qw/config/);
 
@@ -182,3 +182,21 @@ sub get_hooks {
 }
 
 1;
+__END__
+
+=head1 NAME
+
+Moxy - Mobile web development proxy
+
+=head1 DESCRIPTION
+
+Moxy is a mobile web development proxy.
+
+=head1 AUTHOR
+
+    Kan Fushihara
+    Tokuhiro Matsuno
+
+=head1 SEE ALSO
+
+L<http://coderepos.org/share/wiki/ssb>

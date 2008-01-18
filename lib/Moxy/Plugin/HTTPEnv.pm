@@ -39,3 +39,24 @@ sub register {
 }
 
 1;
+__END__
+
+=head1 NAME
+
+Moxy::Plugin::HTTPEnv - set the http headers
+
+=head1 SYNOPSIS
+
+  - module: HTTPEnv
+
+=head1 DESCRIPTION
+
+set some http headers.
+
+=head1 KNOWN BUGS
+
+    hey. this is bad name.
+
+=head1 SEE ALSO
+
+L<Moxy>

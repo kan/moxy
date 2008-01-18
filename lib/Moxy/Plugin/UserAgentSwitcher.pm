@@ -59,3 +59,22 @@ sub register {
 }
 
 1;
+__END__
+
+=head1 NAME
+
+Moxy::Plugin::UserAgentSwitcher - change your user agent
+
+=head1 DESCRIPTION
+
+you can select your user agent.
+
+=head1 AUTHOR
+
+    Kan Fushihara
+    Tokuhiro Matsuno
+
+=head1 SEE ALSO
+
+L<Moxy>
+

@@ -125,3 +125,17 @@ sub run {
 }
 
 1;
+__END__
+
+=head1 NAME
+
+Moxy::Server::HTTPProxy - proxy server based on HTTP::Proxy
+
+=head1 AUTHORS
+
+Tokuhiro Matsuno
+
+=head1 SEE ALSO
+
+L<Moxy>, L<HTTP::Proxy>
+
