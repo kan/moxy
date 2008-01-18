@@ -182,21 +182,3 @@ sub get_hooks {
 }
 
 1;
-__END__
-
-=head1 NAME
-
-Moxy - Mobile web development proxy
-
-=head1 DESCRIPTION
-
-Moxy is a mobile web development proxy.
-
-=head1 AUTHOR
-
-    Kan Fushihara
-    Tokuhiro Matsuno
-
-=head1 SEE ALSO
-
-L<http://coderepos.org/share/wiki/ssb>
