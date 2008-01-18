@@ -1,0 +1,9 @@
+<form method="post" action="http://http-header.moxy/[% current_uri | uri %]">
+<!-- pass thru current params -->
+[%- FOR query IN params.keys %]
+<input type="hidden" name="[% query | html %]" value="[% params.item(query) | html %]" />
+[%- END %]
+headers:
+<textarea name="moxy_http_header" cols="40">[% headers %]</textarea>
+<input type="submit" value="ÀßÄê" />
+</form>
