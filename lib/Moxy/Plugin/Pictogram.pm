@@ -102,7 +102,7 @@ sub filter_pictogram_E {
 
     my $disp = sub {
         my ($context, $carrier, $number) = @_;
-        $class->pict_html($context, $carrier, sprintf("%d", $number||0));
+        $class->pict_html($context, $carrier, sprintf("%03d", $number||0));
     };
 
     # do convert pictogram
@@ -138,22 +138,3 @@ sub filter_pictogram_V {
 }
 
 1;
-__END__
-
-=for stopwords  pictograms
-
-=head1 NAME
-
-Moxy::Plugin::Pictogram - show pictograms
-
-=head1 SYNOPSIS
-
-  - module: Pictogram
-
-=head1 DESCRIPTION
-
-show pictograms.
-
-=head1 SEE ALSO
-
-L<Moxy>

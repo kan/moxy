@@ -37,21 +37,3 @@ sub detect_charset {
 }
 
 1;
-__END__
-
-=head1 NAME
-
-Moxy::Util - utility functions
-
-=head1 SYNOPSIS
-
-this is just a internal class.
-
-=head1 AUTHORS
-
-Tokuhiro Matsuno
-
-=head1 SEE ALSO
-
-L<Moxy>, L<HTTP::Proxy>
-
