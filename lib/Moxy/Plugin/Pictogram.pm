@@ -138,3 +138,22 @@ sub filter_pictogram_V {
 }
 
 1;
+__END__
+
+=for stopwords  pictograms
+
+=head1 NAME
+
+Moxy::Plugin::Pictogram - show pictograms
+
+=head1 SYNOPSIS
+
+  - module: Pictogram
+
+=head1 DESCRIPTION
+
+show pictograms.
+
+=head1 SEE ALSO
+
+L<Moxy>

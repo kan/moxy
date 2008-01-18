@@ -1403,7 +1403,6 @@ inc/Test/More.pm
 inc/Web/Scraper.pm
 lib/Moxy.pm
 lib/Moxy/Manual/HackingJA.pod
-lib/Moxy/Manual/InstallJA.pod
 lib/Moxy/Manual/PluginGuideJA.pod
 lib/Moxy/Plugin.pm
 lib/Moxy/Plugin/Application.pm
