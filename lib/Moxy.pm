@@ -4,7 +4,7 @@ use warnings;
 require Class::Accessor::Fast;
 use base qw/Class::Accessor::Fast/;
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 __PACKAGE__->mk_accessors(qw/config/);
 
