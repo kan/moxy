@@ -1,5 +1,11 @@
 Revision history for Moxy
 
+0.08
+
+    - (INCOMPATIBLE CHANGE) plugin hook point is all changed.
+    - internal code is utf-8 instead of euc-jp.
+    - Moxy::Plugin::Application is direct access to the server.
+
 0.07
 
     - rewrote Moxy::Plugin::Pictogram by HTML::ReplacePictogramMobileJp
