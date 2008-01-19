@@ -3,7 +3,6 @@
 
 - 内部コードが euc-jp なのがきもい
 - 絵文字入力できるようにしたい
-- Plugin::* は HTTP::Proxy に依存しないように。
 
 - plugins
  - GPS Support(select point by google map?)
