@@ -37,14 +37,14 @@ sub register {
                     my $response =
                       $class->_make_response( $context, $url, $args->{request},
                         $base, $auth );
-                    return $args->{filter}->proxy->response($response);
+                    return $response;
                 } else {
                     my $response = HTTP::Response->new(401, 'Moxy needs authentication');
                     $response->header( 'WWW-Authenticate' =>
 qq{Basic realm="Moxy needs basic auth.Only for identification.Password is dummy."}
                     );
                     $response->content('authentication required');
-                    return $args->{filter}->proxy->response($response);
+                    return $response;
                 }
             }
             return; # DECLINED

@@ -44,7 +44,7 @@ sub register {
             $response->header( 'Expires' => 'Thu, 15 Apr 2030 20:00:00 GMT' );
             $response->content_type("image/gif");
             $response->content($content);
-            $args->{filter}->proxy->response($response);
+            $response;
         }
     });
 }

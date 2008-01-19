@@ -15,7 +15,7 @@ sub register {
 
             if ($args->{agent} && $args->{agent}->{agent}) {
                 my $carrier = HTTP::MobileAgent->new($args->{agent}->{agent})->carrier;
-                my $key = join(',', __PACKAGE__, $args->{filter}->proxy->stash('user'), $args->{agent}->{agent});
+                my $key = join(',', __PACKAGE__, $args->{user}, $args->{agent}->{agent});
                 my $user_id = $context->storage->get($key);
                 if ($user_id) {
                     # au subscriber id.
@@ -34,19 +34,19 @@ sub register {
                 my $r = CGI->new($args->{request}->content);
 
                 # store to user stash.
-                my $key = join(',', __PACKAGE__, $args->{filter}->proxy->stash('user'), $args->{agent}->{agent});
+                my $key = join(',', __PACKAGE__, $args->{user}, $args->{agent}->{agent});
                 $context->storage->set($key => $r->param('user_id'));
 
                 my $response = HTTP::Response->new( 302, 'Moxy(UserID)' );
                 $response->header(Location => $back);
-                return $args->{filter}->proxy->response($response);
+                $response;
             }
         },
         control_panel => sub {
             my ($context, $args) = @_;
 
             if ($args->{agent} && $args->{agent}->{agent}) {
-                my $key = join(',', __PACKAGE__, $args->{filter}->proxy->stash('user'), $args->{agent}->{agent});
+                my $key = join(',', __PACKAGE__, $args->{user}, $args->{agent}->{agent});
                 my $user_id = $context->storage->get($key);
 
                 return $class->render_template(

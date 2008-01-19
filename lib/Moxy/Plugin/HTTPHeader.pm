@@ -14,7 +14,7 @@ sub register {
         request_filter => sub {
             my ($context, $args) = @_;
 
-            my $http_header = $context->storage->get(__PACKAGE__. $args->{filter}->proxy->stash('user'));
+            my $http_header = $context->storage->get(__PACKAGE__. $args->{user});
 
             if ($http_header) {
                 for my $header (split /\n/, $http_header) {
@@ -41,7 +41,7 @@ sub register {
                     ),
                     params      => \%params,
                     current_uri => $args->{response}->request->uri,
-                    headers     => $context->storage->get(__PACKAGE__ . $args->{filter}->proxy->stash('user')),
+                    headers     => $context->storage->get(__PACKAGE__ . $args->{user}),
                 }
             );
         },
@@ -53,12 +53,12 @@ sub register {
 
                 # store settings
                 my $r = CGI->new($args->{request}->content);
-                $context->storage->set(__PACKAGE__ . $args->{filter}->proxy->stash('user') => $r->param('moxy_http_header'));
+                $context->storage->set(__PACKAGE__ . $args->{user} => $r->param('moxy_http_header'));
 
                 # back
                 my $response = HTTP::Response->new( 302, "Moxy(@{[ __PACKAGE__ ]})" );
                 $response->header(Location => $back);
-                return $args->{filter}->proxy->response($response);
+                return $response;
             }
         },
     );

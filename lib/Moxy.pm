@@ -15,6 +15,7 @@ use FindBin;
 use UNIVERSAL::require;
 use Carp;
 use Log::Dispatch;
+use Scalar::Util qw/blessed/;
 my $TERM_ANSICOLOR_ENABLED = eval { use Term::ANSIColor; 1; };
 
 sub new {
@@ -171,6 +172,17 @@ sub run_hook {
     for my $action (@{$self->{hooks}->{$hook}}) {
         $action->($self, @args);
     }
+}
+
+sub run_hook_and_get_response {
+    my ($self, $hook, @args) = @_;
+
+    $self->log(debug => "Run hook and get response: $hook");
+    for my $action (@{$self->{hooks}->{$hook}}) {
+        my $response = $action->($self, @args);
+        return $response if blessed $response && $response->isa('HTTP::Response');
+    }
+    return; # not finished yet
 }
 
 sub get_hooks {

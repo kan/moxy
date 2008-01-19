@@ -34,7 +34,7 @@ sub register {
                 my $response = HTTP::Response->new( 200, 'Moxy QRcode ok' );
                 $response->header('Content-Type' => 'image/png');
                 $response->content($qrcode);
-                return $args->{filter}->proxy->response($response);
+                $response;
             }
         },
     );

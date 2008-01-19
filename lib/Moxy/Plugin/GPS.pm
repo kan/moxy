@@ -31,7 +31,7 @@ sub register {
                 my $response = HTTP::Response->new( 302, 'Redirect by Moxy(GPS)' );
                 $context->log(debug => "Redirect GPS to : $redirect_to");
                 $response->header(Location => $redirect_to);
-                $args->{filter}->proxy->response($response);
+                $response;
             }
         }
     );
@@ -50,7 +50,7 @@ sub register {
 
                 my $response = HTTP::Response->new( 302, 'Redirect by Moxy(GPS willcom)' );
                 $response->header(Location => $redirect_to);
-                return $args->{filter}->proxy->response($response);
+                $response;
             }
         }
     );
@@ -99,7 +99,7 @@ sub register {
 
                 my $response = HTTP::Response->new( 302, 'Redirect by Moxy(GPS willcom)' );
                 $response->header(Location => $redirect_to);
-                return $args->{filter}->proxy->response($response);
+                $response;
             }
         }
     );
@@ -111,13 +111,14 @@ sub register {
             my ( $context, $args ) = @_;
 
             ${ $args->{content_ref} }
-                =~ s{location:(?:cell|gps|auto)\?url=([^'"> ]+)}{"http://gps.moxy/softbank/?redirect_to=" . uri_escape($1)}ge;
+                =~ s{location:(?:cell|gps|auto)\?url=([^'"> ]+)}{"http://gps.moxy/softbank/?redirect_to=" .uri_escape($1)}ge;
         },
         request_filter_V => sub {
             my ( $context, $args ) = @_;
 
             if ( $args->{request}->uri =~ m{^http://gps\.moxy/softbank/\?redirect_to=(.+)} ) {
                 my $redirect_to = uri_unescape($1);
+                warn "GPS.MoXY";
 
                 # XXX this is suck, but vodafone ua works like this. orz.
                 $redirect_to .= '?geo=wgs84&pos=N35.37.29.12E139.43.8.45';
@@ -125,7 +126,7 @@ sub register {
                 my $response = HTTP::Response->new( 302, 'Redirect by Moxy(GPS)' );
                 $context->log(debug => "Redirect GPS to : $redirect_to");
                 $response->header(Location => $redirect_to);
-                $args->{filter}->proxy->response($response);
+                $response;
             }
         }
     );

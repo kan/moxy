@@ -14,7 +14,7 @@ sub register {
         request_filter_process_agent => sub {
             my ($context, $args) = @_;
 
-            my $user_agent = $context->storage->get('user_agent_' . $args->{filter}->proxy->stash('user'));
+            my $user_agent = $context->storage->get('user_agent_' . $args->{user});
 
             # set UA to request.
             $args->{request}->header('User-Agent' => $user_agent) if $user_agent and $user_agent ne 'none';
@@ -47,12 +47,12 @@ sub register {
 
                 # store settings
                 my $r = CGI->new($args->{request}->content);
-                $context->storage->set('user_agent_' . $args->{filter}->proxy->stash('user') => $r->param('moxy_user_agent'));
+                $context->storage->set("user_agent_$args->{user}" => $r->param('moxy_user_agent'));
 
                 # back
                 my $response = HTTP::Response->new( 302, 'Moxy(UserID)' );
                 $response->header(Location => $back);
-                return $args->{filter}->proxy->response($response);
+                $response;
             }
         },
     );

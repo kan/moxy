@@ -1,6 +1,3 @@
-- Moxy::Plugin
- - store UI
-
 - Store::SQLite
 - plugin should be server implementation independent
 
@@ -9,8 +6,6 @@
 - Plugin::* は HTTP::Proxy に依存しないように。
 
 - plugins
- - live http headers
-   - by comet?
  - GPS Support(select point by google map?)
  - support utn
  - check contents size(max pdu)

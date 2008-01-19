@@ -7,6 +7,7 @@ use HTTP::Proxy ':log';
 use HTTP::Proxy::BodyFilter::simple;
 use HTTP::Proxy::HeaderFilter::simple;
 use HTTP::Proxy::BodyFilter::complete;
+use Scalar::Util qw/blessed/;
 
 sub new {
     my ($class, $context, $config) = @_;
@@ -35,14 +36,17 @@ sub new {
             sub {
                 my ($filter, $x, $request) = @_;
 
-                $context->run_hook(
+                my $response = $context->run_hook_and_get_response(
                     'request_filter_before_auth',
-                    {   request => $request, # HTTP::Request object
-                        filter  => $filter, # filter object itself
+                    +{
+                        request => $request,    # HTTP::Request object
                     }
                 );
-                return if $filter->proxy->response;
+                if ($response) {
+                    return $filter->proxy->response($response); # finished
+                }
 
+                # password is ignored by Moxy.
                 my ($user, $pass) = $_[0]->proxy->hop_headers->proxy_authorization_basic();
                 if ($user) {
                     $_[0]->proxy->stash(user => $user);
@@ -55,7 +59,7 @@ sub new {
                 $context->run_hook(
                     'request_filter_process_agent',
                     {   request => $_[2], # HTTP::Request object
-                        filter  => $_[0], # filter object itself
+                        user    => $user,
                     }
                 );
 
@@ -63,28 +67,34 @@ sub new {
                 my $carrier = $agent->{agent} ? HTTP::MobileAgent->new($agent->{agent})->carrier : 'N';
 
                 for my $hook ('request_filter', "request_filter_$carrier") {
-                    $context->run_hook(
+                    my $response = $context->run_hook_and_get_response(
                         $hook,
-                        {   request => $_[2], # HTTP::Request object
-                            filter  => $_[0], # filter object itself
+                        +{
+                            request => $request,    # HTTP::Request object
                             agent   => $agent,
+                            user    => $user,
                         }
                     );
+                    if ($response) {
+                        return $filter->proxy->response($response); # finished
+                    }
                 }
             }
         ),
         response => HTTP::Proxy::BodyFilter::simple->new(
             sub {
-                my $agent = $context->get_ua_info($_[2]->request->header('User-Agent'));
+                my ($filter, $bodyref, $response) = @_;
+
+                my $agent = $context->get_ua_info($response->request->header('User-Agent'));
                 my $carrier = $agent->{agent} ? HTTP::MobileAgent->new($agent->{agent})->carrier : 'N';
 
                 for my $hook ('response_filter', "response_filter_$carrier") {
                     $context->run_hook(
                         $hook,
-                        {   response    => $_[2], # HTTP::Response object
-                            content_ref => $_[1], # response body's scalarref.
-                            filter      => $_[0], # filter object itself.
+                        {   response    => $response, # HTTP::Response object
+                            content_ref => $bodyref, # response body's scalarref.
                             agent       => $agent,
+                            user        => $filter->proxy->stash('user'),
                         }
                     );
                 }
@@ -92,16 +102,18 @@ sub new {
         ),
         response => HTTP::Proxy::HeaderFilter::simple->new(
             sub {
-                my $agent = $context->get_ua_info($_[2]->request->header('User-Agent'));
+                my ($filter, $bodyref, $response) = @_;
+
+                my $agent = $context->get_ua_info($response->request->header('User-Agent'));
                 my $carrier = $agent->{agent} ? HTTP::MobileAgent->new($agent->{agent})->carrier : 'N';
 
                 for my $hook ('response_filter_header', "response_filter_header_$carrier") {
                     $context->run_hook(
                         $hook,
-                        {   response    => $_[2],
-                            content_ref => $_[1],
-                            filter      => $_[0],
+                        {   response    => $response,
+                            content_ref => $bodyref,
                             agent       => $agent,
+                            user        => $filter->proxy->stash('user'),
                         }
                     );
                 }
