@@ -3,14 +3,14 @@
 [%- FOR query IN params.keys %]
 <input type="hidden" name="[% query | html %]" value="[% params.item(query) | html %]" />
 [%- END %]
-Ã¼Ëö¤Î¼ïÎà:
+ç«¯æœ«ã®ç¨®é¡:
 <select name="moxy_user_agent" onchange="if(this.value){this.form.submit()}">
 [% FOR key IN agents.keys %]
 <option value="" style="background-color:gray">[% key %]</option>
 [% FOR ua IN agents.item(key) %]
-<option value="[% ua.agent %]" [% IF moxy_user_agent == ua.agent %]selected="selected"[% END %]>  [% ua.name %][% IF ua.flash %][FlashÂĞ±ş][% END %]</option>
+<option value="[% ua.agent %]" [% IF moxy_user_agent == ua.agent %]selected="selected"[% END %]>  [% ua.name %][% IF ua.flash %][Flashå¯¾å¿œ][% END %]</option>
 [% END %]
 [% END %]
 </select>
-<input type="submit" value="ÀßÄê" />
+<input type="submit" value="è¨­å®š" />
 </form>

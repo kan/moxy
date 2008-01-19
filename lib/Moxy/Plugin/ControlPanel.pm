@@ -37,7 +37,7 @@ sub register {
 
             # convert html charset to response charset.
             my $enc = Encode::find_encoding($charset);
-            Encode::from_to($output, 'euc-jp', $enc ? $enc->name : 'euc-jp');
+            Encode::from_to($output, 'utf-8', $enc ? $enc->name : 'utf-8');
 
             # insert control panel to html response.
             ${ $args->{content_ref} } =~ s!(<body.*?>)!"$1$output"!ie;

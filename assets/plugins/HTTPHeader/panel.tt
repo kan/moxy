@@ -5,5 +5,5 @@
 [%- END %]
 headers:
 <textarea name="moxy_http_header" cols="40">[% headers %]</textarea>
-<input type="submit" value="ÀßÄê" />
+<input type="submit" value="è¨­å®š" />
 </form>
