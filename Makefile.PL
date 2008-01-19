@@ -7,7 +7,6 @@ all_from("lib/Moxy.pm");
 
 requires('HTTP::MobileAgent');
 requires('HTTP::Proxy');
-requires('HTML::Entities::ImodePictogram');
 requires('CGI');
 requires('FindBin');
 requires('Path::Class');
@@ -19,6 +18,8 @@ requires('Pod::Usage');
 requires('Class::Accessor');
 requires('UNIVERSAL::require');
 requires('Log::Dispatch');
+requires('Encode::JP::Mobile' => 0.22);
+requires 'HTML::ReplacePictogramMobileJp' => 0.01;
 
 build_requires('Test::More');
 build_requires('Path::Class');
