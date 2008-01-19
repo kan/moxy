@@ -1,6 +1,8 @@
+.shipit
 assets/common/useragent.yaml
 assets/plugins/ControlPanel/panelcontainer.tt
 assets/plugins/GPS/iarea.tt
+assets/plugins/HTTPHeader/panel.tt
 assets/plugins/Pictogram/ez.sjis.txt
 assets/plugins/Pictogram/ez.uni2number.yaml
 assets/plugins/Pictogram/i2ezpict.yaml
@@ -1413,6 +1415,7 @@ lib/Moxy/Plugin/FlashUseImgTag.pm
 lib/Moxy/Plugin/GPS.pm
 lib/Moxy/Plugin/HTMLWidth.pm
 lib/Moxy/Plugin/HTTPEnv.pm
+lib/Moxy/Plugin/HTTPHeader.pm
 lib/Moxy/Plugin/Pictogram.pm
 lib/Moxy/Plugin/QRCode.pm
 lib/Moxy/Plugin/RefererCutter.pm
