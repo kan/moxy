@@ -43,9 +43,14 @@ sub register {
 1;
 __END__
 
+=encoding utf8
+
+=for stopwords docomo
+
 =head1 NAME
 
 Moxy::Plugin::DisableTableTag - docomo can't use <TABLE>
+
 =head1 SYNOPSIS
 
   - module: DisableTableTag
