@@ -72,11 +72,9 @@ sub _ua {
     my ($class, $proxy_url) = @_;
 
     my $ua = LWP::UserAgent->new(
-        agent         => "Moxy/$Moxy::VERSION",
         timeout       => $TIMEOUT,
         max_redirects => 0,
     );
-    $ua->proxy(['http'] => $proxy_url);
     $ua;
 }
 
@@ -84,42 +82,82 @@ sub _make_response {
     my ($class, $context, $url, $src_req, $base, $auth) = @_;
 
     if ($url) {
-        my $req = $src_req->clone;
-        $req->uri($url);
-        $req->header('Host' => URI->new($url)->host);
-        $req->header('Proxy-Authorization' => "Basic @{[ encode_base64 $auth ]}");
-        my $ua = $class->_ua($base);
-        my $res = $ua->request($req);
+        # do proxy
+        my $res = $class->do_request($context, $src_req, $url, $auth);
         $context->log(debug => '-- response status: ' . $res->code);
+
         if ($res->code == 302) {
-            my $myres = HTTP::Response->new(200, 'Redirect by Moxy');
-            $myres->header('Content-Type' => 'text/html; charset=utf8');
-            $myres->content(
-                sprintf(
-q{<html><head></head><body>Redirect to <a href="%s?q=%s">%s</a></body></html>},
-                    $base, uri_escape($res->header('Location')),
-                    encode_entities($res->header('Location'))
-                )
-            );
-            return $myres;
+            # rewrite redirect
+            $res->header( 'Location' => $base . '?q='
+                  . uri_escape( $res->header('Location') ) );
         } else {
             my $content_type = $res->header('Content-Type');
-            if (!$content_type) {
-                warn "+++++++++++++++++++++++++++++++++++";
-                warn "++ Content-Type missing          ++ " . $res->code;
-                warn "+++++++++++++++++++++++++++++++++++";
-            } elsif ($content_type =~ /html/i) {
+            if ($content_type =~ /html/i) {
                 $res->content( _rewrite($base, $res->content, $url) );
             }
         }
         return $res;
     } else {
+        # please input url.
         my $res = HTTP::Response->new(200, 'about:blank');
         $res->header('Content-Type' => 'text/html; charset=utf8');
         my $panel = $class->_render_control_panel($base, '');
         $res->content(qq{<html><head></head><body>$panel</body></html>});
         return $res;
     }
+}
+
+sub do_request {
+    my ($class, $context, $src_req, $url, $auth) = @_;
+
+    # make request
+    my $req = $src_req->clone;
+    $req->uri($url);
+    $req->header('Host' => URI->new($url)->host);
+
+    $context->run_hook(
+        'request_filter_process_agent',
+        {   request => $req, # HTTP::Request object
+            user    => $auth,
+        }
+    );
+    my $agent = $context->get_ua_info($req->header('User-Agent'));
+    my $carrier = $agent->{agent} ? HTTP::MobileAgent->new($agent->{agent})->carrier : 'N';
+    for my $hook ('request_filter', "request_filter_$carrier") {
+        my $response = $context->run_hook_and_get_response(
+            $hook,
+            +{
+                request => $req,    # HTTP::Request object
+                agent   => $agent,
+                user    => $auth,
+            }
+        );
+        if ($response) {
+            return $response; # finished
+        }
+    }
+
+    # do request
+    my $ua = $class->_ua;
+    my $response = $ua->request($req);
+    my $bodyref = \($response->content);
+    my $response_filter = sub {
+        my $key = shift;
+        for my $hook ($key, "${key}_$carrier") {
+            $context->run_hook(
+                $hook,
+                {   response    => $response, # HTTP::Response object
+                    content_ref => $bodyref, # response body's scalarref.
+                    agent       => $agent,
+                    user        => $auth,
+                }
+            );
+        }
+    };
+    $response_filter->('response_filter');
+    $response_filter->('response_filter_header');
+    $response->content($$bodyref);
+    $response;
 }
 
 sub _rewrite {
@@ -204,7 +242,11 @@ This is web proxy mode plugin.
 
 =head1 DISCLAIMER
 
-THIS MODULE IS STILL ALPHA QUALITY
+THIS MODULE IS EXPERIMENTAL. STILL ALPHA QUALITY.
+
+=head1 KNOWN BUGS
+
+Basic 認証かかってると、うまく見えない。
 
 =head1 AUTHOR
 
