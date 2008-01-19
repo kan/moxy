@@ -1,7 +1,6 @@
 - Store::SQLite
 - plugin should be server implementation independent
 
-- 内部コードが euc-jp なのがきもい
 - 絵文字入力できるようにしたい
 
 - plugins
