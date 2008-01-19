@@ -19,7 +19,7 @@ requires('UNIVERSAL::require');
 requires('Log::Dispatch');
 requires('Encode::JP::Mobile' => 0.22);
 requires 'HTML::ReplacePictogramMobileJp' => 0.01;
-requires 'POE::Component::Server::HTTP' => 0.09;
+requires 'HTTP::Proxy';
 
 build_requires('Test::More');
 build_requires('Path::Class');
