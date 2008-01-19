@@ -18,7 +18,7 @@ requires('Class::Accessor');
 requires('UNIVERSAL::require');
 requires('Log::Dispatch');
 requires('Encode::JP::Mobile' => 0.22);
-requires 'HTML::ReplacePictogramMobileJp' => 0.01;
+requires 'HTML::ReplacePictogramMobileJp' => 0.03;
 requires 'HTTP::Proxy';
 
 build_requires('Test::More');
