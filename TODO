@@ -5,6 +5,8 @@
 - plugin should be server implementation independent
 
 - 内部コードが euc-jp なのがきもい
+- 絵文字入力できるようにしたい
+- Plugin::* は HTTP::Proxy に依存しないように。
 
 - plugins
  - live http headers
