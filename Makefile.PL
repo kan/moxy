@@ -35,6 +35,7 @@ features(
         recommends('Test::Pod::Coverage'),
     ],
     'StickyAny Plugin' => [
+        -default => 0,
         recommends('HTML::StickyQuery'),
     ]
 );
