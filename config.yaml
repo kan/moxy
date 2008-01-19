@@ -1,8 +1,5 @@
 ---
 global:
-  application:
-    host: localhost
-    port: 10000
   storage:
     module: DBM_File
     file: /tmp/moxy.ndbm
@@ -27,7 +24,6 @@ global:
           mode: append
 
 plugins:
-  - module: Application
   - module: Pictogram
   - module: HTMLWidth
   - module: HTTPEnv

@@ -6,7 +6,7 @@ sub register {
     my ($class, $context) = @_;
 
     $context->register_hook(
-        response_filter_header => sub {
+        response_filter => sub {
             my ($context, $args) = @_;
 
             $args->{response}->header( 'Content-Type' => 'text/html' ) if $args->{response}->header( 'Content-Type' ) =~ /xml/;

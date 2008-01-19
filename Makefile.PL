@@ -6,7 +6,6 @@ name("Moxy");
 all_from("lib/Moxy.pm");
 
 requires('HTTP::MobileAgent');
-requires('HTTP::Proxy');
 requires('CGI');
 requires('FindBin');
 requires('Path::Class');
@@ -20,6 +19,7 @@ requires('UNIVERSAL::require');
 requires('Log::Dispatch');
 requires('Encode::JP::Mobile' => 0.22);
 requires 'HTML::ReplacePictogramMobileJp' => 0.01;
+requires 'POE::Component::Server::HTTP' => 0.09;
 
 build_requires('Test::More');
 build_requires('Path::Class');
