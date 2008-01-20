@@ -1,5 +1,12 @@
 Revision history for Moxy
 
+0.20 (BIG CHANGE!!)
+
+    - this release have a BIG CHANGE.
+      config.yaml is INCOMPATIBLE.
+    - Moxy::Plugin::Server is rewrite from scratch.
+    - proxy mode is removed.
+
 0.08
 
     - (INCOMPATIBLE CHANGE) plugin hook point is all changed.
