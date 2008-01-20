@@ -18,6 +18,13 @@ sub register {
     my ($class, $context, $config) = @_;
 
     $context->register_hook(
+        control_panel => sub {
+            my ($context, $args) = @_;
+
+            my $base = URI->new($args->{response}->request->uri);
+            $base->query_form({});
+            return $class->_render_control_panel($base, $args->{response}->request->uri);
+        },
         run_server => sub { $class->run_server($context, $config) },
     );
 }
@@ -40,16 +47,6 @@ sub run_server {
         }
         $proxy->logmask($bitmask);
     }
-
-    $context->register_hook(
-        control_panel => sub {
-            my ($context, $args) = @_;
-
-            my $base = URI->new($args->{response}->request->uri);
-            $base->query_form({});
-            return $class->_render_control_panel($base, $args->{response}->request->uri);
-        },
-    );
 
     $proxy->push_filter(
         mime     => undef,

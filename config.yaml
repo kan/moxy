@@ -19,6 +19,12 @@ global:
           mode: append
 
 plugins:
+  - module: Server::HTTPProxy
+    config:
+      port: 10000
+      host: localhost
+      max_clients: 80
+      timeout: 10
   - module: Filter::Pictogram
   - module: Filter::HTMLWidth
   - module: Filter::HTTPEnv
@@ -33,10 +39,4 @@ plugins:
   - module: Filter::ShowHTTPHeaders
   - module: Filter::HTTPHeader
   - module: Filter::QRCode
-  - module: Server::HTTPProxy
-    config:
-      port: 10000
-      host: localhost
-      max_clients: 80
-      timeout: 10
 
