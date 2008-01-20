@@ -113,9 +113,14 @@ sub handle_request {
         $context->log(debug => "auth: $auth");
         my $url = +{$uri->query_form}->{q};
         $context->log(info => "REQUEST $auth, @{[ $url || '' ]}");
-        my $response =
-        _make_response( $context, $url, $args{request}, $base,
-            $auth, $args{config} );
+        my $response = _make_response(
+            context  => $context,
+            url      => $url,
+            request  => $args{request},
+            base_url => $base,
+            user_id  => $auth,
+            config   => $args{config}
+        );
         return $response;
     } else {
         my $response = HTTP::Response->new(401, 'Moxy needs authentication');
@@ -128,21 +133,40 @@ sub handle_request {
 }
 
 sub _make_response {
-    my ($context, $url, $src_req, $base, $auth, $config) = @_;
+    validate(
+        @_ => +{
+            context  => { isa  => 'Moxy' },
+            url      => qr{^https?://},
+            request  => { isa  => 'HTTP::Request' },
+            base_url => qr{^https?://},
+            user_id  => { type => SCALAR },
+            config   => { type => HASHREF },
+        }
+    );
+    my %args = @_;
+    my $context = $args{context};
+    my $url = $args{url};
+    my $base_url = $args{base_url};
 
     if ($url) {
         # do proxy
-        my $res = _do_request($context, $src_req, $url, $auth, $config);
+        my $res = _do_request(
+            context => $context,
+            url     => $url,
+            request => $args{request},
+            user_id => $args{user_id},
+            config  => $args{config}
+        );
         $context->log(debug => '-- response status: ' . $res->code);
 
         if ($res->code == 302) {
             # rewrite redirect
-            $res->header( 'Location' => $base . '?q='
+            $res->header( 'Location' => $base_url . '?q='
                   . uri_escape( $res->header('Location') ) );
         } else {
             my $content_type = $res->header('Content-Type');
             if ($content_type =~ /html/i) {
-                $res->content( rewrite($base, $res->content, $url) );
+                $res->content( rewrite($base_url, $res->content, $url) );
             }
         }
         return $res;
@@ -150,24 +174,34 @@ sub _make_response {
         # please input url.
         my $res = HTTP::Response->new(200, 'about:blank');
         $res->header('Content-Type' => 'text/html; charset=utf8');
-        my $panel = render_control_panel($base, '');
+        my $panel = render_control_panel($base_url, '');
         $res->content(qq{<html><head></head><body>$panel</body></html>});
         return $res;
     }
 }
 
 sub _do_request {
-    my ($context, $src_req, $url, $auth, $config) = @_;
+    validate(
+        @_ => +{
+            context  => { isa  => 'Moxy' },
+            url      => qr{^https?://},
+            request  => { isa  => 'HTTP::Request' },
+            user_id  => { type => SCALAR },
+            config   => { type => HASHREF },
+        }
+    );
+    my %args = @_;
+    my $context = $args{context};
 
     # make request
-    my $req = $src_req->clone;
-    $req->uri($url);
-    $req->header('Host' => URI->new($url)->host);
+    my $req = $args{request}->clone;
+    $req->uri($args{url});
+    $req->header('Host' => URI->new($args{url})->host);
 
     $context->run_hook(
         'request_filter_process_agent',
         {   request => $req, # HTTP::Request object
-            user    => $auth,
+            user    => $args{user_id},
         }
     );
     my $agent = $context->get_ua_info($req->header('User-Agent'));
@@ -178,7 +212,7 @@ sub _do_request {
             +{
                 request => $req,    # HTTP::Request object
                 agent   => $agent,
-                user    => $auth,
+                user    => $args{user_id},
             }
         );
         if ($response) {
@@ -188,7 +222,7 @@ sub _do_request {
 
     # do request
     my $ua = LWP::UserAgent->new(
-        timeout       => $config->{timeout} || 10,
+        timeout       => $args{config}->{timeout} || 10,
         max_redirects => 0,
     );
     my $response = $ua->request($req);
@@ -199,7 +233,7 @@ sub _do_request {
             {   response    => $response, # HTTP::Response object
                 content_ref => $bodyref, # response body's scalarref.
                 agent       => $agent,
-                user        => $auth,
+                user        => $args{user_id},
             }
         );
     }

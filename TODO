@@ -7,7 +7,9 @@
 - プラグインをもっと testable にしたい。
 - 認証まわりを flexible にしたい
 -- OpenID に対応するとか
-- Moxy::P::Server::HTTPProxy からコードを M::P::Server にひきあげる
+- cookie support
+-- 16:40 kan: でも、Moxy側でユーザを認証できてれば、なんとやれるんじゃない？
+-- 16:40 kan: HTTP clientとしての挙動をエミュレーションすれば
 
 - plugins
  - GPS Support(select point by google map?)
