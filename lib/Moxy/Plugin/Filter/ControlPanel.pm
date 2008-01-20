@@ -1,4 +1,4 @@
-package Moxy::Plugin::ControlPanel;
+package Moxy::Plugin::Filter::ControlPanel;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -50,7 +50,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::ControlPanel - control panel for moxy
+Moxy::Plugin::Filter::ControlPanel - control panel for moxy
 
 =head1 SYNOPSIS
 

@@ -1,4 +1,4 @@
-package Moxy::Plugin::HTTPEnv;
+package Moxy::Plugin::Filter::HTTPEnv;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -43,7 +43,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::HTTPEnv - set the http headers
+Moxy::Plugin::Filter::HTTPEnv - set the http headers
 
 =head1 SYNOPSIS
 

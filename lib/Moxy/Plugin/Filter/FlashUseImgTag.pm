@@ -1,14 +1,15 @@
-package Moxy::Plugin::DisableTableTag;
+package Moxy::Plugin::Filter::FlashUseImgTag;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
+use HTTP::MobileAgent;
 use HTML::Parser;
 
 sub register {
     my ($class, $context) = @_;
 
     $context->register_hook(
-        response_filter_I => sub {
+        response_filter_E => sub {
             my ( $context, $args ) = @_;
 
             # only for html.
@@ -20,8 +21,16 @@ sub register {
                 start_h       => [ sub {
                     my ($tagname, $attr, $orig) = @_;
 
-                    if ($tagname =~ /^(table|thead|tbody|tfoot|tr|th|td)$/i) {
-                        return;
+                    if ($tagname =~ /^img$/i && $attr->{src} =~ /\.swf$/) {
+                        $output .= qq|
+                            <object data="@{[$attr->{src}]}" width="@{[$attr->{width}]}" height="@{[$attr->{height}]}" 
+                                    type="application/x-shockwave-flash">
+                                <param name="bgcolor" value="#ffffff" />
+                                <param name="loop" value="off" />
+                                <param name="quality" value="high" />
+                                <param name="salign" value="t" />
+                            </object>
+                        |;
                     } else {
                         $output .= $orig;
                         return;
@@ -43,24 +52,20 @@ sub register {
 1;
 __END__
 
-=encoding utf8
-
-=for stopwords docomo
-
 =head1 NAME
 
-Moxy::Plugin::DisableTableTag - docomo can't use <TABLE>
+Moxy::Plugin::Filter::FlashUseImgTag - ezweb can use <img src="/boofy.swf">
 
 =head1 SYNOPSIS
 
-  - module: DisableTableTag
+  - module: FlashUseImgTag
 
 =head1 DESCRIPTION
 
-DoCoMo real machine can't use <TABLE><TR><TH><TD> tags.
+EZweb real machine can use <img src="/boofy.swf" /> style.
 This plugin can simulate it.
 
-This plugin cut these tags.
+This plugin replace img tag to object tag.
 
 =head1 AUTHOR
 

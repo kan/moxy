@@ -1,4 +1,4 @@
-package Moxy::Plugin::Pictogram;
+package Moxy::Plugin::Filter::Pictogram;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -25,7 +25,7 @@ sub register {
                 callback => sub {
                     my ( $unicode, $carrier ) = @_;
 
-                    my $pict_html = $class->_load_file( $context, 'pict.tmpl' );
+                    my $pict_html = $class->render_template( $context, 'pict.tmpl' );
                     return sprintf( $pict_html, $carrier, $unicode, $unicode );
                 }
             );
@@ -56,7 +56,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::Pictogram - show pictograms
+Moxy::Plugin::Filter::Pictogram - show pictograms
 
 =head1 SYNOPSIS
 

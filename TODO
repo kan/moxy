@@ -2,6 +2,8 @@
 - plugin should be server implementation independent
 
 - 絵文字入力できるようにしたい
+- Kwalify サポート
+- Class::Component を使うようにするかも
 
 - plugins
  - GPS Support(select point by google map?)

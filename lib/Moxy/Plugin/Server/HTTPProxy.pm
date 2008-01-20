@@ -1,4 +1,4 @@
-package Moxy::Server::HTTPProxy;
+package Moxy::Plugin::Server::HTTPProxy;
 use strict;
 use warnings;
 use utf8;
@@ -14,11 +14,16 @@ use HTML::Entities;
 use URI::Escape;
 use MIME::Base64;
 
-our $TIMEOUT = 10; # TODO: configurable
-
-sub new {
+sub register {
     my ($class, $context, $config) = @_;
-    my $self = bless {config => $config}, $class;
+
+    $context->register_hook(
+        run_server => sub { $class->run_server($context, $config) },
+    );
+}
+
+sub run_server {
+    my ($class, $context, $config) = @_;
 
     $context->log(debug => "setup proxy server");
 
@@ -68,7 +73,7 @@ sub new {
                     $context->log(info => "REQUEST $auth, @{[ $url || '' ]}");
                     my $response =
                     $class->_make_response( $context, $url, $request, $base,
-                        $auth );
+                        $auth, $config );
                     return $filter->proxy->response($response); # finished
                 } else {
                     my $response = HTTP::Response->new(401, 'Moxy needs authentication');
@@ -81,16 +86,6 @@ qq{Basic realm="Moxy needs basic auth.Only for identification.Password is dummy.
             }
         ),
     );
-
-    $self->{proxy} = $proxy;
-
-    return $self;
-}
-
-sub run {
-    my ($self, $context) = @_;
-
-    my $proxy = $self->{proxy};
 
     $context->log(info => sprintf("Moxy running at http://%s:%d/\n", $proxy->host, $proxy->port));
 
@@ -109,21 +104,21 @@ sub _render_control_panel {
 }
 
 sub _ua {
-    my ($class, $proxy_url) = @_;
+    my ($class, $config) = @_;
 
     my $ua = LWP::UserAgent->new(
-        timeout       => $TIMEOUT,
+        timeout       => $config->{timeout} || 10,
         max_redirects => 0,
     );
     $ua;
 }
 
 sub _make_response {
-    my ($class, $context, $url, $src_req, $base, $auth) = @_;
+    my ($class, $context, $url, $src_req, $base, $auth, $config) = @_;
 
     if ($url) {
         # do proxy
-        my $res = $class->_do_request($context, $src_req, $url, $auth);
+        my $res = $class->_do_request($context, $src_req, $url, $auth, $config);
         $context->log(debug => '-- response status: ' . $res->code);
 
         if ($res->code == 302) {
@@ -148,7 +143,7 @@ sub _make_response {
 }
 
 sub _do_request {
-    my ($class, $context, $src_req, $url, $auth) = @_;
+    my ($class, $context, $src_req, $url, $auth, $config) = @_;
 
     # make request
     my $req = $src_req->clone;
@@ -178,7 +173,7 @@ sub _do_request {
     }
 
     # do request
-    my $ua = $class->_ua;
+    my $ua = $class->_ua($config);
     my $response = $ua->request($req);
     my $bodyref = \($response->content);
     for my $hook ('response_filter', "response_filter_$carrier") {

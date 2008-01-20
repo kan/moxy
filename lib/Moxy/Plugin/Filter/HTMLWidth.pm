@@ -1,4 +1,4 @@
-package Moxy::Plugin::HTMLWidth;
+package Moxy::Plugin::Filter::HTMLWidth;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -32,7 +32,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::HTMLWidth - limit the HTML width
+Moxy::Plugin::Filter::HTMLWidth - limit the HTML width
 
 =head1 SYNOPSIS
 

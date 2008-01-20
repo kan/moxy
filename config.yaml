@@ -4,11 +4,6 @@ global:
     module: DBM_File
     file: /tmp/moxy.ndbm
     dbm_class: NDBM_File
-  server:
-    module: HTTPProxy
-    port: 10000
-    host: localhost
-    max_clients: 80
   log:
     targets:
       - module: Log::Dispatch::Screen
@@ -24,19 +19,24 @@ global:
           mode: append
 
 plugins:
-  - module: Pictogram
-  - module: HTMLWidth
-  - module: HTTPEnv
-  - module: ControlPanel
-  - module: GPS
-  - module: UserAgentSwitcher
-  - module: XMLisHTML
-  - module: RefererCutter
-  - module: FlashUseImgTag
-  - module: DisableTableTag
-  - module: UserID
-  - module: ShowHTTPHeaders
-  - module: HTTPHeader
-  - module: QRCode
-
+  - module: Filter::Pictogram
+  - module: Filter::HTMLWidth
+  - module: Filter::HTTPEnv
+  - module: Filter::ControlPanel
+  - module: Filter::GPS
+  - module: Filter::UserAgentSwitcher
+  - module: Filter::XMLisHTML
+  - module: Filter::RefererCutter
+  - module: Filter::FlashUseImgTag
+  - module: Filter::DisableTableTag
+  - module: Filter::UserID
+  - module: Filter::ShowHTTPHeaders
+  - module: Filter::HTTPHeader
+  - module: Filter::QRCode
+  - module: Server::HTTPProxy
+    config:
+      port: 10000
+      host: localhost
+      max_clients: 80
+      timeout: 10
 

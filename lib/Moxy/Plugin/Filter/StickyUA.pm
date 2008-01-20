@@ -1,4 +1,4 @@
-package Moxy::Plugin::StickyUA;
+package Moxy::Plugin::Filter::StickyUA;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -37,7 +37,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::StickyUA - Save User-Agent between cross domain links
+Moxy::Plugin::Filter::StickyUA - Save User-Agent between cross domain links
 
 =head1 TODO
 

@@ -1,4 +1,4 @@
-package Moxy::Plugin::GPS;
+package Moxy::Plugin::Filter::GPS;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -137,7 +137,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::GPS - gps simulation for Moxy
+Moxy::Plugin::Filter::GPS - gps simulation for Moxy
 
 =head1 SYNOPSIS
 

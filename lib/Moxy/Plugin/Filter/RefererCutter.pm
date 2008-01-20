@@ -1,4 +1,4 @@
-package Moxy::Plugin::CookieCutter;
+package Moxy::Plugin::Filter::RefererCutter;
 use strict;
 use warnings;
 
@@ -9,8 +9,7 @@ sub register {
         request_filter => sub {
             my ($context, $args) = @_;
 
-            # Do NOT send cookies got from client to the origin
-            $args->{request}->remove_header('Cookie');
+            $args->{request}->remove_header('Referer');
         }
     );
 }
@@ -20,16 +19,17 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::CookieCutter
-
-=head1 SYNOPSIS
-
-  - module: CookieCutter
+Moxy::Plugin::Filter::RefererCutter - remove referer
 
 =head1 DESCRIPTION
 
-do not send cookie.
+do not send referer.
 
 =head1 AUTHOR
 
 Tokuhiro Matsuno
+
+=head1 SEE ALSO
+
+L<Moxy>
+

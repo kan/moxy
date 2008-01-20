@@ -1,4 +1,4 @@
-package Moxy::Plugin::XMLisHTML;
+package Moxy::Plugin::Filter::XMLisHTML;
 use strict;
 use warnings;
 
@@ -21,7 +21,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::XMLisHTML - XML is HTML
+Moxy::Plugin::Filter::XMLisHTML - XML is HTML
 
 =head1 SYNOPSIS
 

@@ -25,9 +25,7 @@ sub new {
 
     $self->{logger} = Log::Dispatch->new;
 
-    $self->_init_server;
-
-    $self->_load_plugins;
+    $self->load_plugins;
 
     $self->_init_ua_info;
 
@@ -35,25 +33,47 @@ sub new {
 
     $self->_init_logger;
 
+    if (not $self->is_loaded(qr{::Server})) {
+        die "Oops. please load Server Module\n";
+    }
+
     return $self;
 }
 
 sub run {
     my $self = shift;
 
-    $self->{server}->run($self);
+    $self->run_hook('run_server');
 }
 
-sub _load_plugins {
+sub is_loaded {
+    my ($self, $re) = @_;
+
+    for my $plugin (@{$self->{plugins}}) {
+        if ($plugin =~ $re) {
+            return 1; # loaded
+        }
+    }
+    return; # not loaded
+}
+
+sub load_plugins {
     my $self = shift;
 
     for my $plugin (@{$self->config->{plugins}}) {
-        $self->log(debug => "load plugin: $plugin->{module}");
-
-        my $module = "Moxy::Plugin::" . $plugin->{module};
-        $module->require or die $@;
-        $module->register($self);
+        $self->load_plugin($plugin);
     }
+}
+
+sub load_plugin {
+    my ($self, $plugin) = @_;
+
+    $self->log(debug => "load plugin: $plugin->{module}");
+
+    my $module = "Moxy::Plugin::" . $plugin->{module};
+    $module->require or die $@;
+    $module->register($self, $plugin->{config});
+    push @{$self->{plugins}}, $module;
 }
 
 sub assets_path {
@@ -92,22 +112,6 @@ sub get_ua_info {
 
 # -------------------------------------------------------------------------
 
-sub _init_server {
-    my $self = shift;
-
-    my $conf = $self->{config}->{global}->{server};
-
-    my $proto = $conf->{module} ? "Moxy::Server::$conf->{module}" : "Moxy::Server::HTTPProxy";
-
-    $self->log(debug => "SETUP $proto");
-
-    $proto->use or die $@;
-    my $server = $proto->new($self, $conf);
-    $self->{server} = $server;
-}
-
-# -------------------------------------------------------------------------
-
 sub _init_storage {
     my ($self, ) = @_;
 
@@ -138,7 +142,7 @@ sub log {
     unless ($caller) {
         my $i = 0;
         while (my $c = caller($i++)) {
-            last if $c !~ /Plugin|Server/;
+            last if $c !~ /Plugin/;
             $caller = $c;
         }
         $caller ||= caller(0);

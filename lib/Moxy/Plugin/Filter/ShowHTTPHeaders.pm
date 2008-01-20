@@ -1,4 +1,4 @@
-package Moxy::Plugin::ShowHTTPHeaders;
+package Moxy::Plugin::Filter::ShowHTTPHeaders;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -29,7 +29,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::ShowHTTPHeaders - show http headers in control panel.
+Moxy::Plugin::Filter::ShowHTTPHeaders - show http headers in control panel.
 
 =head1 SYNOPSIS
 
