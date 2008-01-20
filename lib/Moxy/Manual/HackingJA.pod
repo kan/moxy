@@ -24,6 +24,16 @@ Moxy を Hack しようと考える人のための文書なのであって一般
 いろいろ register_hook 呼ぶの人。load_plugins の段階で  register メソッドが呼ばれる
 あたりは Plagger をまるぱくりしてるといえる。
 
+=head2 Moxy::Plugin::Filter::*
+
+HTTP::Request または HTTP::Response に対してなんらかの処理をする系のプラグイン。ほとんど
+のものはこれ。
+
+=head2 Moxy::Plugin::Server::*
+
+サーバーとしてうごく部分。HTTP::Proxy のみ現在はサポートされています。他のもののサポートは
+誰かつくってくれると嬉しいな。たとえば POE::Component::Server::HTTP とか。
+
 =head2 Moxy::Storage.pm
 
 ストレージ系のベースクラス。
@@ -53,23 +63,20 @@ Moxy は Plagger や qpsmtpd のようなプラガブルな構成になってい
 というわけで、フックポイントは Moxy のキモである。
 
 現在 Moxy に設けられているフックポイントは大別すると2種類ある。
-Moxy::Server::HTTPProxy の中で設定されているフックポイントと
+Moxy::Plugin::Server::* の中で設定されているフックポイントと
 Moxy::Plugin::ControlPanel で設定されているフックポイントである。
 
-Moxy::Server::HTTPProxy で呼ばれるフックは
+Moxy::Plugin::Server::* で呼ばれるフックは
 
-  リクエスト前
+  リクエスト
     request_filter_process_agent ユーザーエージェントの設定
-    request_filter     リクエストの処理
-    request_filter_E   リクエストに対する処理(特定キャリヤ用)
-  レスポンス前
-    response_filter_header   レスポンスヘッダーに対する処理
-    response_filter_header_E レスポンスヘッダーに対する処理(特定キャリヤ用)
-    response_filter          レスポンスボディに対する処理
-    response_filter_E        レスポンスボディに対する処理(特定キャリヤ用)
+    request_filter               リクエストの処理
+    request_filter_E             リクエストに対する処理(特定キャリヤ用)
+  レスポンス
+    response_filter              レスポンスボディに対する処理
+    response_filter_E            レスポンスボディに対する処理(特定キャリヤ用)
 
-といったところ。基本的には HTTP::Proxy のフックを愚直にラッピングしていると考えれば
-よろしい。
+といったところ。HTTP::Request と HTTP::Response に対して処理を行っている。
 
 Moxy::Plugin::ControlPanel で呼ばれるのは control_panel というフックのみ。
 これはコントロールパネルを生成する人なのでちょっと他のとは赴きが違う。
