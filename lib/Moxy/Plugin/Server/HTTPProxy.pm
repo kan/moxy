@@ -68,9 +68,24 @@ sub run_server {
 1;
 __END__
 
+=encoding utf8
+
 =head1 NAME
 
-Moxy::Server::HTTPProxy - proxy server based on HTTP::Proxy
+Moxy::Plugin::Server::HTTPProxy - proxy server based on HTTP::Proxy
+
+=head1 SYNOPSIS
+
+    - module: Server::HTTPProxy
+      config:
+        port: 10000
+        host: localhost
+        max_clients: 80
+        timeout: 10
+
+=head1 DESCRIPTION
+
+HTTP::Proxy をつかったプロキシサーバ。
 
 =head1 AUTHORS
 

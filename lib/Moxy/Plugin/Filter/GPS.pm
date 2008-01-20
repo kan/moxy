@@ -147,10 +147,13 @@ Moxy::Plugin::Filter::GPS - gps simulation for Moxy
 
 GPS simulation feature for Moxy.
 
+=head1 AUTHOR
+
+Tokuhiro Matsuno
+
 =head1 TODO
 
     support gpsone(au)
-    support posinfo(docomo)
     support select pos
 
 =head1 SEE ALSO
