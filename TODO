@@ -10,7 +10,6 @@
  - support utn
  - check contents size(max pdu)
 
-- plugins: use render_template
 - plugins: $self is not a self... just a $class.
 
 - add tests.

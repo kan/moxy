@@ -35,10 +35,6 @@ features(
         recommends('Test::Pod'),
         recommends('Test::Pod::Coverage'),
     ],
-    'StickyAny Plugin' => [
-        -default => 0,
-        recommends('HTML::StickyQuery'),
-    ]
 );
 
 tests 't/*.t t/*/*.t t/*/*/*.t';
