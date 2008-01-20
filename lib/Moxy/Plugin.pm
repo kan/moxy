@@ -8,12 +8,6 @@ use HTTP::MobileAgent;
 use Carp;
 use Template;
 
-sub _load_yaml {
-    my ($proto, $context, $filename) = @_;
-
-    return YAML::LoadFile( file($proto->assets_path($context), $filename) );
-}
-
 sub assets_path {
     my ($proto, $context) = @_;
     croak "argument \$context missing" unless ref $context;
