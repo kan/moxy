@@ -1420,15 +1420,16 @@ lib/Moxy/Plugin/Server/HTTPProxy.pm
 lib/Moxy/Storage.pm
 lib/Moxy/Storage/DBM_File.pm
 lib/Moxy/Util.pm
+log.txt
 Makefile.PL
 MANIFEST			This list of files
 META.yml
 moxy.pl
 README
 t/00.load.t
-t/perlcritic.t
-t/plugin-application.t
+t/98_perlcritic.t
+t/Plugin-Server-rewrite.t
+t/Plugin-Server-xss.t
 t/pod.t
 t/spelling.t
-t/xss.t
 TODO
