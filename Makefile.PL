@@ -20,6 +20,7 @@ requires('Log::Dispatch');
 requires('Encode::JP::Mobile' => 0.22);
 requires 'HTML::ReplacePictogramMobileJp' => 0.03;
 requires 'HTTP::Proxy';
+requires 'Params::Validate';
 
 build_requires('Test::More');
 build_requires('Path::Class');

@@ -4,6 +4,10 @@
 - 絵文字入力できるようにしたい
 - Kwalify サポート
 - Class::Component を使うようにするかも
+- プラグインをもっと testable にしたい。
+- 認証まわりを flexible にしたい
+-- OpenID に対応するとか
+- Moxy::P::Server::HTTPProxy からコードを M::P::Server にひきあげる
 
 - plugins
  - GPS Support(select point by google map?)
