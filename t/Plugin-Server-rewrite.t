@@ -3,12 +3,12 @@ use warnings;
 use Test::Base;
 use Moxy::Plugin::Server;
 
-sub rewrite {
+sub _rewrite {
     Moxy::Plugin::Server::rewrite('http://localhost:9999/', shift, 'http://relative.example.jp/');
 }
 
 filters {
-    input => ['rewrite'],
+    input => ['_rewrite'],
     expected => ['chomp'],
 };
 
