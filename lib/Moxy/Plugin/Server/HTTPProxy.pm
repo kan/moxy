@@ -2,6 +2,7 @@ package Moxy::Plugin::Server::HTTPProxy;
 use strict;
 use warnings;
 use utf8;
+use Moxy::Plugin::Server;
 use Encode;
 use HTTP::Proxy ':log';
 use HTTP::Proxy::HeaderFilter::simple;
@@ -9,7 +10,6 @@ use HTTP::Proxy::BodyFilter::complete;
 use Scalar::Util qw/blessed/;
 use LWP::UserAgent;
 use URI;
-use HTML::Parser;
 use HTML::Entities;
 use URI::Escape;
 use MIME::Base64;
@@ -23,7 +23,7 @@ sub register {
 
             my $base = URI->new($args->{response}->request->uri);
             $base->query_form({});
-            return $class->_render_control_panel($base, $args->{response}->request->uri);
+            return render_control_panel($base, $args->{response}->request->uri);
         },
         run_server => sub { $class->run_server($context, $config) },
     );
@@ -89,17 +89,6 @@ qq{Basic realm="Moxy needs basic auth.Only for identification.Password is dummy.
     $proxy->start;
 }
 
-sub _render_control_panel {
-    my ($class, $base, $current_url) = @_;
-
-    return sprintf(<<"...", encode_entities($current_url));
-    <form method="get" action="$base">
-        <input type="text" name="q" value="\%s" size="40" />
-        <input type="submit" value="go" />
-    </form>
-...
-}
-
 sub _ua {
     my ($class, $config) = @_;
 
@@ -125,7 +114,7 @@ sub _make_response {
         } else {
             my $content_type = $res->header('Content-Type');
             if ($content_type =~ /html/i) {
-                $res->content( _rewrite($base, $res->content, $url) );
+                $res->content( rewrite($base, $res->content, $url) );
             }
         }
         return $res;
@@ -133,7 +122,7 @@ sub _make_response {
         # please input url.
         my $res = HTTP::Response->new(200, 'about:blank');
         $res->header('Content-Type' => 'text/html; charset=utf8');
-        my $panel = $class->_render_control_panel($base, '');
+        my $panel = render_control_panel($base, '');
         $res->content(qq{<html><head></head><body>$panel</body></html>});
         return $res;
     }
@@ -185,69 +174,6 @@ sub _do_request {
     }
     $response->content($$bodyref);
     $response;
-}
-
-sub _rewrite {
-    my ($base, $html, $url) = @_;
-
-    my $output = '';
-    my $base_url = URI->new($url);
-    my $parser = HTML::Parser->new(
-        api_version   => 3,
-        start_h       => [ sub {
-            my ($tagname, $attr, $orig) = @_;
-
-            if ($tagname eq 'a' || $tagname eq 'A') {
-                $output .= "<$tagname";
-                my @parts;
-                my $href = delete $attr->{href};
-                if ($href) {
-                    $output .= " ";
-                    push @parts,
-                      sprintf( qq{href="$base?q=%s"},
-                        uri_escape(URI->new($href)->abs($base_url)) );
-                }
-                push @parts, map { sprintf qq{%s="%s"}, encode_entities($_), encode_entities($attr->{$_}) } keys %$attr;
-                $output .= join " ", @parts;
-                $output .= ">";
-            } elsif ($tagname =~ /form/i) {
-                $output .= "<$tagname";
-                my @parts;
-                my $action = delete $attr->{action};
-                if ($action) {
-                    $output .= " ";
-                    push @parts, sprintf(qq{action="$base?q=%s"},
-                        uri_escape(URI->new($action)->abs($base_url))
-                    );
-                }
-                push @parts, map { sprintf qq{$_="%s"}, encode_entities($attr->{$_}) } keys %$attr;
-                $output .= join " ", @parts;
-                $output .= ">";
-            } elsif ($tagname =~ /img/i) {
-                $output .= "<$tagname";
-                my @parts;
-                my $src = delete $attr->{src};
-                if ($src) {
-                    $output .= " ";
-                    push @parts, sprintf(qq{src="$base?q=%s"},
-                        uri_escape(URI->new($src)->abs($base_url))
-                    );
-                }
-                push @parts, map { sprintf qq{%s="%s"}, encode_entities($_), encode_entities($attr->{$_}) } grep !/^\/$/, keys %$attr;
-                $output .= join " ", @parts;
-                $output .= ">";
-            } else {
-                $output .= $orig;
-                return;
-            }
-        }, "tagname, attr, text" ],
-        end_h  => [ sub { $output .= shift }, "text"],
-        text_h => [ sub { $output .= shift }, "text"],
-    );
-
-    $parser->boolean_attribute_value('__BOOLEAN__');
-    $parser->parse($html);
-    $output;
 }
 
 1;
