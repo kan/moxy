@@ -1398,7 +1398,6 @@ inc/Test/More.pm
 inc/Web/Scraper.pm
 lib/Moxy.pm
 lib/Moxy/Manual/HackingJA.pod
-lib/Moxy/Manual/PluginGuideJA.pod
 lib/Moxy/Plugin.pm
 lib/Moxy/Plugin/Filter/ControlPanel.pm
 lib/Moxy/Plugin/Filter/CookieCutter.pm
@@ -1417,11 +1416,15 @@ lib/Moxy/Plugin/Filter/UserID.pm
 lib/Moxy/Plugin/Filter/XMLisHTML.pm
 lib/Moxy/Plugin/Server.pm
 lib/Moxy/Plugin/Server/HTTPProxy.pm
+lib/Moxy/Plugin/Server/POE.pm
 lib/Moxy/Storage.pm
 lib/Moxy/Storage/DBM_File.pm
 lib/Moxy/Util.pm
+Makefile
 Makefile.PL
 MANIFEST			This list of files
+MANIFEST.bak
+MANIFEST.skip
 META.yml
 moxy.pl
 README
