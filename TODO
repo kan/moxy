@@ -1,6 +1,4 @@
-- Store::SQLite
-- plugin should be server implementation independent
-
+- Store::SQLite つくる?
 - 絵文字入力できるようにしたい
 - Kwalify サポート
 - Class::Component を使うようにするかも
@@ -10,7 +8,6 @@
 - cookie support
 -- 16:40 kan: でも、Moxy側でユーザを認証できてれば、なんとやれるんじゃない？
 -- 16:40 kan: HTTP clientとしての挙動をエミュレーションすれば
-- Moxy/Plugin/Server/POE つくってみるとか
 
 - plugins
  - GPS Support(select point by google map?)
