@@ -1,6 +1,4 @@
-.DS_Store
 .shipit
-assets/.DS_Store
 assets/common/useragent.yaml
 assets/plugins/Filter-ControlPanel/panelcontainer.tt
 assets/plugins/Filter-GPS/iarea.tt
