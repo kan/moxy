@@ -1,5 +1,13 @@
 Revision history for Moxy
 
+0.22
+
+    - return valid Content-Length.
+
+0.21
+
+    - added Moxy::Plugin::Server::POE
+
 0.20 (BIG CHANGE!!)
 
     - this release have a BIG CHANGE.

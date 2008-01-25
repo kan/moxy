@@ -21,7 +21,7 @@ global:
 plugins:
   - module: Server::HTTPProxy
     config:
-      port: 10000
+      port: 5880
       host: localhost
       max_clients: 80
       timeout: 10

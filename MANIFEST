@@ -1420,11 +1420,9 @@ lib/Moxy/Plugin/Server/POE.pm
 lib/Moxy/Storage.pm
 lib/Moxy/Storage/DBM_File.pm
 lib/Moxy/Util.pm
-Makefile
 Makefile.PL
 MANIFEST			This list of files
-MANIFEST.bak
-MANIFEST.skip
+MANIFEST.SKIP
 META.yml
 moxy.pl
 README
