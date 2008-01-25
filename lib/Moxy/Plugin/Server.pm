@@ -168,6 +168,8 @@ sub _make_response {
             if ($content_type =~ /html/i) {
                 $res->content( rewrite($base_url, $res->content, $url) );
             }
+            use bytes;
+            $res->header('Content-Length' => bytes::length($res->content));
         }
         return $res;
     } else {
