@@ -43,6 +43,8 @@ tests 't/*.t t/*/*.t t/*/*/*.t';
 auto_include;
 auto_install;
 
+use_test_base;
+
 install_script('moxy.pl');
 WriteAll;
 
