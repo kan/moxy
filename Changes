@@ -1,5 +1,9 @@
 Revision history for Moxy
 
+0.23
+
+    - fixed dependnecies. use Test::Base.
+
 0.22
 
     - return valid Content-Length.
