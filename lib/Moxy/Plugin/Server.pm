@@ -162,8 +162,13 @@ sub _make_response {
 
         if ($res->code == 302) {
             # rewrite redirect
+            my $location = URI->new($res->header('Location'));
+            my $uri = URI->new($url);
+            if ($uri->port != 80 && $location->port != $uri->port) {
+                $location->port($uri->port);
+            }
             $res->header( 'Location' => $base_url . '?q='
-                  . uri_escape( $res->header('Location') ) );
+                  . uri_escape( $location ) );
         } else {
             my $content_type = $res->header('Content-Type');
             if ($content_type =~ /html/i) {
