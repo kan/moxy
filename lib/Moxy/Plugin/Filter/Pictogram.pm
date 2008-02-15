@@ -36,6 +36,7 @@ sub register {
     # deliver pictogram
     $context->register_hook(request_filter => sub {
         my ($context, $args) = @_;
+        die "request missing" unless $args->{request};
 
         if ($args->{request}->uri =~ m{http://pictogram\.moxy/([IEV])/([0-9A-F]{4}).gif}) {
             my $content = file($class->assets_path($context), 'image', $1, "$2.gif")->slurp;
