@@ -230,8 +230,9 @@ sub _do_request {
 
     # do request
     my $ua = LWP::UserAgent->new(
-        timeout       => $args{config}->{timeout} || 10,
-        max_redirects => 0,
+        timeout           => $args{config}->{timeout} || 10,
+        max_redirects     => 0,
+        protocols_allowed => [qw/http https/],
     );
     my $response = $ua->request($req);
     my $bodyref = \($response->content);
