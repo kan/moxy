@@ -2,7 +2,7 @@ Revision history for Moxy
 
 0.25
 
-    - (SECURITY FIX) do not allow the file schema.
+    - (SECURITY FIX) do not allow the file schema.(reported by yappo++)
     - added Plugin::Filter::QRCode::Imager by typester++
 
 0.24

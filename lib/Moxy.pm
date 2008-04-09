@@ -213,6 +213,10 @@ Moxy is a mobile web development proxy.
     Kan Fushihara
     Tokuhiro Matsuno
 
+=head1 THANKS TO
+
+Kazuhiro Osawa
+
 =head1 SEE ALSO
 
 L<http://coderepos.org/share/wiki/ssb>
