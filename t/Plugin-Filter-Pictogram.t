@@ -1,10 +1,14 @@
 use strict;
 use warnings;
-use Test::More tests => 5;
+use Test::More;
 use HTTP::Request;
 use Moxy;
 use File::Spec;
 use FindBin;
+
+eval q[use GDBM_File];
+plan(skip_all => "GDBM_File required for testing $0") if $@;
+plan tests => 5;
 
 my $c = Moxy->new(
     {
