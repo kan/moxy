@@ -1,5 +1,4 @@
 .shipit
-assets/.DS_Store
 assets/common/useragent.yaml
 assets/plugins/Filter-ControlPanel/panelcontainer.tt
 assets/plugins/Filter-GPS/iarea.tt
@@ -1414,6 +1413,7 @@ lib/Moxy/Plugin/Filter/HTTPEnv.pm
 lib/Moxy/Plugin/Filter/HTTPHeader.pm
 lib/Moxy/Plugin/Filter/Pictogram.pm
 lib/Moxy/Plugin/Filter/QRCode.pm
+lib/Moxy/Plugin/Filter/QRCode/Imager.pm
 lib/Moxy/Plugin/Filter/RefererCutter.pm
 lib/Moxy/Plugin/Filter/ShowHTTPHeaders.pm
 lib/Moxy/Plugin/Filter/UserAgentSwitcher.pm
@@ -1431,8 +1431,10 @@ META.yml
 moxy.pl
 README
 t/00.load.t
+t/Plugin-Filter-Pictogram.t
 t/Plugin-Server-rewrite.t
 t/Plugin-Server-xss.t
 t/pod.t
 t/spelling.t
+t/Storage-DBM_File.t
 TODO

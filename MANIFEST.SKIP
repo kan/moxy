@@ -16,3 +16,4 @@
 ^tools/
 \.svn/
 MANIFEST.bak
+\.sw[po]$
