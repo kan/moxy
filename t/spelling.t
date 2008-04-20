@@ -66,6 +66,8 @@ WILLCOM
 XMLisHTML
 au
 localsrc
+Daisuke
+Murase
 ...
 
 add_stopwords(@stopwords);
