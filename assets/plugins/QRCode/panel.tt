@@ -1,7 +1,7 @@
 <script type="text/javascript">//<![CDATA[
     function __MOXY_insert_image() {
         var qrdiv = document.getElementById('qrcode_placeholder');
-        var url = "http://" + location.host + "/?q=" + encodeURIComponent("http://qrcode.moxy/[% current | uri %]");
+        var url = "http://" + location.host + "/" + encodeURIComponent("http://qrcode.moxy/[% current | uri %]");
         qrdiv.innerHTML = "<img src='" + url + "' />";
         return false;
     }

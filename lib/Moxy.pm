@@ -119,7 +119,7 @@ sub rewrite {
         for my $node ( $tree->findnodes("//$tag") ) {
             if ( my $attr = $node->attr($attr_name) ) {
                 $node->attr(
-                    $attr_name => sprintf( qq{$base?q=%s},
+                    $attr_name => sprintf( qq{$base/%s},
                         uri_escape( URI->new($attr)->abs($base_url) ) )
                 );
             }
@@ -144,14 +144,14 @@ sub rewrite {
 sub render_control_panel {
     my ($base, $current_url) = @_;
 
-    return sprintf(<<"...", encode_entities($current_url));
+    return sprintf(<<"...");
     <script>
         window.onload = function () {
             document.getElementById('moxy_url').focus();
         };
     </script>
-    <form method="get" action="$base">
-        <input type="text" name="q" value="\%s" size="40" id="moxy_url" />
+    <form method="get" action="$base" onsubmit="location.href=location.href+encodeURIComponent(document.getElementById('moxy_url').value);return false;">
+        <input type="text" size="40" id="moxy_url" />
         <input type="submit" value="go" />
     </form>
 ...
@@ -170,6 +170,7 @@ sub handle_request {
     $self->log(debug => "Request URI: $uri");
 
     my $base = $uri->clone;
+    $base->path('');
     $base->query_form({});
 
     my $auth_header = $args{request}->header('Authorization');
@@ -177,7 +178,8 @@ sub handle_request {
     if ($auth_header =~ /^Basic (.+)$/) {
         my $auth = decode_base64($1);
         $self->log(debug => "auth: $auth");
-        my $url = uf_uristr(+{$uri->query_form}->{q});
+        (my $url = $uri->path_query) =~ s!^/!!;
+        $url = uf_uristr(uri_unescape $url);
         $self->log(info => "REQUEST $auth, @{[ $url || '' ]}");
         my $response = $self->_make_response(
             url      => $url,
@@ -221,12 +223,13 @@ sub _make_response {
         if ($res->code == 302) {
             # rewrite redirect
             my $location = URI->new($res->header('Location'));
+            $self->log(debug => "redirect to $location");
             my $uri = URI->new($url);
             if ($uri->port != 80 && $location->port != $uri->port) {
                 $location->port($uri->port);
             }
-            $res->header( 'Location' => $base_url . '?q='
-                  . uri_escape( $location ) );
+            $res->header( 'Location' => $base_url . '/' . uri_escape( $location ) );
+            $self->log(debug => "redirect to " . $res->header('Location'));
         } else {
             my $content_type = $res->header('Content-Type');
             $self->log("Content-Type: $content_type");
