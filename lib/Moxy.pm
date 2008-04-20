@@ -229,6 +229,7 @@ sub _make_response {
                   . uri_escape( $location ) );
         } else {
             my $content_type = $res->header('Content-Type');
+            $self->log("Content-Type: $content_type");
             if ($content_type =~ /html/i) {
                 $res->content( rewrite($base_url, $res->content, $url) );
             }
