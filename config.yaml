@@ -20,7 +20,6 @@ plugins:
   - module: FlashUseImgTag
   - module: DisableTableTag
   - module: GPS
-# - module: QRCode::Imager
   - module: UserID
   - module: LocationBar
 
