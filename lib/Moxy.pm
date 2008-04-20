@@ -141,13 +141,6 @@ sub rewrite {
     return $result;
 }
 
-sub _xml_escape {
-    warn "CALLED";
-    for my $x (@_) {
-        $x = encode_entities($x, q{<>&"'});
-    }
-}
-
 sub render_control_panel {
     my ($base, $current_url) = @_;
 
