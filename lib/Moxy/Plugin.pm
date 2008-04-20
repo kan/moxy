@@ -1,10 +1,9 @@
 package Moxy::Plugin;
 use strict;
 use warnings;
-
+use base qw/Class::Component::Plugin/;
 use YAML;
 use Path::Class;
-use HTTP::MobileAgent;
 use Carp;
 use Template;
 
@@ -12,20 +11,19 @@ sub assets_path {
     my ($proto, $context) = @_;
     croak "argument \$context missing" unless ref $context;
 
-    my $module = $proto;
+    my $module = ref $proto || $proto;
     $module =~ s/^Moxy::Plugin:://;
     $module =~ s/::/-/g;
 
-    return dir($context->assets_path, 'plugins', $module)->stringify;
+    dir($context->assets_path, 'plugins', $module);
 }
 
 sub render_template {
     my ($self, $context, $fname, $args) = @_;
-    croak "render_template is class method" if ref $self;
 
     my $tt = Template->new(ABSOLUTE => 1);
     $tt->process(
-        file($self->assets_path($context), $fname)->stringify,
+        $self->assets_path($context)->file($fname)->stringify,
         $args,
         \my $output
     ) or die $tt->error;

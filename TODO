@@ -1,3 +1,12 @@
+- ヘッダ追加
+-- my $depth = ( split /,/, $request->get('x-up-devcap-screendepth') )[0];                                                           
+-- my $color = $request->get('x-up-devcap-iscolor');                                                                                 
+
+
+
+
+
+
 - Store::SQLite つくる?
 - 絵文字入力できるようにしたい
 - Kwalify サポート

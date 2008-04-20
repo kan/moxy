@@ -1,10 +1,10 @@
 use strict;
 use warnings;
 use Test::Base;
-use Moxy::Plugin::Server;
+use Moxy;
 
 sub _rewrite {
-    Moxy::Plugin::Server::rewrite('http://localhost:9999/', shift, 'http://relative.example.jp/');
+    Moxy::rewrite('http://localhost:9999/', shift, 'http://relative.example.jp/');
 }
 
 filters {
@@ -46,7 +46,7 @@ __END__
 --- input
 <a>bar</a>
 --- expected
-<a>bar</a>
+<a >bar</a>
 
 ===
 --- input

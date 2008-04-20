@@ -1,17 +1,12 @@
 package Moxy::Plugin::Filter::RefererCutter;
 use strict;
 use warnings;
+use base qw/Moxy::Plugin/;
 
-sub register {
-    my ($class, $context) = @_;
+sub request_filter:Hook('request_filter') {
+    my ($self, $context, $args) = @_;
 
-    $context->register_hook(
-        request_filter => sub {
-            my ($context, $args) = @_;
-
-            $args->{request}->remove_header('Referer');
-        }
-    );
+    $args->{request}->remove_header('Referer');
 }
 
 1;

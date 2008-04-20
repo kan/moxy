@@ -2,47 +2,31 @@ package Moxy::Plugin::Filter::ControlPanel;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
-use Path::Class;
-use B;
 use Moxy::Util;
 
-sub register {
-    my ($class, $context) = @_;
+sub render: Hook('response_filter') {
+    my ($self, $context, $args) = @_;
 
-    $context->register_hook(
-        response_filter => sub {
-            my ($context, $args) = @_;
+    return unless (($args->{response}->header('Content-Type')||'') =~ /html/);
 
-            return unless (($args->{response}->header('Content-Type')||'') =~ /html/);
+    $context->log("debug" => "generate ControlPanel");
 
-            $context->log("debug" => "generate ControlPanel");
-
-            my @parts;
-            for my $action ($context->get_hooks('control_panel')) {
-                push @parts,
-                    {
-                    module => B::svref_2object($action)->GV->STASH->NAME,
-                    html   => $action->( $context, $args )
-                    };
-            }
-
-            my $output = $class->render_template(
-                $context,
-                'panelcontainer.tt' => {
-                    parts => \@parts, 
-                }
-            );
-
-            my $charset = Moxy::Util->detect_charset($args->{response}, ${$args->{content_ref}});
-
-            # convert html charset to response charset.
-            my $enc = Encode::find_encoding($charset);
-            Encode::from_to($output, 'utf-8', $enc ? $enc->name : 'utf-8');
-
-            # insert control panel to html response.
-            ${ $args->{content_ref} } =~ s!(<body.*?>)!"$1$output"!ie;
+    my $output = $self->render_template(
+        $context,
+        'panelcontainer.tt' => {
+            parts => $context->run_hook('control_panel' => $args), 
         }
     );
+
+    # convert html charset to response charset.
+    my $charset = Moxy::Util->detect_charset($args->{response}, $args->{response}->content);
+    my $enc = Encode::find_encoding($charset);
+    Encode::from_to($output, 'utf-8', $enc ? $enc->name : 'utf-8');
+
+    # insert control panel to html response.
+    my $content = $args->{response}->content;
+    $content =~ s!(<body.*?>)!"$1$output"!ie;
+    $args->{response}->content($content);
 }
 
 1;

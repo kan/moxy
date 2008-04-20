@@ -1,42 +1,26 @@
 ---
 global:
+  timeout: 3
   storage:
     module: DBM_File
     file: /tmp/moxy.ndbm
     dbm_class: NDBM_File
-  log:
-    targets:
-      - module: Log::Dispatch::Screen
-        conf:
-          name: screen
-          min_level: debug
-          stderr: 1
-      - module: Log::Dispatch::File
-        conf:
-          name: file
-          min_level: info
-          filename: log.txt
-          mode: append
 
 plugins:
-  - module: Server::HTTPProxy
-    config:
-      port: 5880
-      host: localhost
-      max_clients: 80
-      timeout: 10
-  - module: Filter::Pictogram
-  - module: Filter::HTMLWidth
-  - module: Filter::HTTPEnv
   - module: Filter::ControlPanel
-  - module: Filter::GPS
-  - module: Filter::UserAgentSwitcher
   - module: Filter::XMLisHTML
+  - module: Filter::UserAgentSwitcher
+  - module: Filter::Pictogram
+  - module: Filter::DisplayWidth
+  - module: Filter::QRCode
   - module: Filter::RefererCutter
+  - module: Filter::ShowHTTPHeaders
+  - module: Filter::CookieCutter
+  - module: Filter::HTTPHeader
   - module: Filter::FlashUseImgTag
   - module: Filter::DisableTableTag
+  - module: Filter::GPS
+# - module: Filter::QRCode::Imager
   - module: Filter::UserID
-  - module: Filter::ShowHTTPHeaders
-  - module: Filter::HTTPHeader
-  - module: Filter::QRCode
+  - module: Filter::LocationBar
 

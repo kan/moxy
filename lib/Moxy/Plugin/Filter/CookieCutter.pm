@@ -1,18 +1,13 @@
 package Moxy::Plugin::Filter::CookieCutter;
 use strict;
 use warnings;
+use base qw/Moxy::Plugin/;
 
-sub register {
-    my ($class, $context) = @_;
+sub r: Hook('request_filter') {
+    my ($self, $context, $args) = @_;
 
-    $context->register_hook(
-        request_filter => sub {
-            my ($context, $args) = @_;
-
-            # Do NOT send cookies got from client to the origin
-            $args->{request}->remove_header('Cookie');
-        }
-    );
+    # Do NOT send cookies got from client to the origin
+    $args->{request}->remove_header('Cookie');
 }
 
 1;

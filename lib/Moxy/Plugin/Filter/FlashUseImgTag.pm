@@ -5,48 +5,42 @@ use base qw/Moxy::Plugin/;
 use HTTP::MobileAgent;
 use HTML::Parser;
 
-sub register {
-    my ($class, $context) = @_;
+sub e: Hook('response_filter_E') {
+    my ( $self, $context, $args ) = @_;
 
-    $context->register_hook(
-        response_filter_E => sub {
-            my ( $context, $args ) = @_;
+    # only for html.
+    return unless (($args->{response}->header('Content-Type')||'') =~ /html/);
 
-            # only for html.
-            return unless (($args->{response}->header('Content-Type')||'') =~ /html/);
+    my $output = '';
+    my $parser = HTML::Parser->new(
+        api_version   => 3,
+        start_h       => [ sub {
+            my ($tagname, $attr, $orig) = @_;
 
-            my $output = '';
-            my $parser = HTML::Parser->new(
-                api_version   => 3,
-                start_h       => [ sub {
-                    my ($tagname, $attr, $orig) = @_;
+            if ($tagname =~ /^img$/i && $attr->{src} =~ /\.swf$/) {
+                $output .= qq|
+                    <object data="@{[$attr->{src}]}" width="@{[$attr->{width}]}" height="@{[$attr->{height}]}" 
+                            type="application/x-shockwave-flash">
+                        <param name="bgcolor" value="#ffffff" />
+                        <param name="loop" value="off" />
+                        <param name="quality" value="high" />
+                        <param name="salign" value="t" />
+                    </object>
+                |;
+            } else {
+                $output .= $orig;
+                return;
+            }
 
-                    if ($tagname =~ /^img$/i && $attr->{src} =~ /\.swf$/) {
-                        $output .= qq|
-                            <object data="@{[$attr->{src}]}" width="@{[$attr->{width}]}" height="@{[$attr->{height}]}" 
-                                    type="application/x-shockwave-flash">
-                                <param name="bgcolor" value="#ffffff" />
-                                <param name="loop" value="off" />
-                                <param name="quality" value="high" />
-                                <param name="salign" value="t" />
-                            </object>
-                        |;
-                    } else {
-                        $output .= $orig;
-                        return;
-                    }
-
-                }, "tagname, attr, text" ],
-                end_h  => [ sub { $output .= shift }, "text"],
-                text_h => [ sub { $output .= shift }, "text"],
-            );
-
-            $parser->boolean_attribute_value('__BOOLEAN__');
-            $parser->parse(${ $args->{content_ref} });
-
-            ${ $args->{content_ref} } = $output;
-        }
+        }, "tagname, attr, text" ],
+        end_h  => [ sub { $output .= shift }, "text"],
+        text_h => [ sub { $output .= shift }, "text"],
     );
+
+    $parser->boolean_attribute_value('__BOOLEAN__');
+    $parser->parse( $args->{response}->content );
+
+    $args->{response}->content( $output );
 }
 
 1;

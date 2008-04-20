@@ -4,40 +4,41 @@ use warnings;
 use base qw/Moxy::Plugin/;
 use HTML::Parser;
 
-sub register {
-    my ($class, $context) = @_;
+my $TABLE_TAGS = +{ map { $_ => 1 } qw/table thead tbody tfoot tr th td/ };
 
-    $context->register_hook(
-        response_filter_I => sub {
-            my ( $context, $args ) = @_;
+sub _is_table_tag {
+    my ($tag, ) = @_;
+    $TABLE_TAGS->{ lc $tag } ? 1 : 0;
+}
 
-            # only for html.
-            return unless (($args->{response}->header('Content-Type')||'') =~ /html/);
+sub i:Hook('response_filter_I') {
+    my ( $self, $context, $args ) = @_;
 
-            my $output = '';
-            my $parser = HTML::Parser->new(
-                api_version   => 3,
-                start_h       => [ sub {
-                    my ($tagname, $attr, $orig) = @_;
+    # only for html.
+    return unless (($args->{response}->header('Content-Type')||'') =~ /html/);
 
-                    if ($tagname =~ /^(table|thead|tbody|tfoot|tr|th|td)$/i) {
-                        return;
-                    } else {
-                        $output .= $orig;
-                        return;
-                    }
-
-                }, "tagname, attr, text" ],
-                end_h  => [ sub { $output .= shift }, "text"],
-                text_h => [ sub { $output .= shift }, "text"],
-            );
-
-            $parser->boolean_attribute_value('__BOOLEAN__');
-            $parser->parse(${ $args->{content_ref} });
-
-            ${ $args->{content_ref} } = $output;
-        }
+    my $output = '';
+    my $parser = HTML::Parser->new(
+        api_version   => 3,
+        start_h       => [ sub {
+            my ($tagname, $attr, $orig) = @_;
+            unless (_is_table_tag($tagname)) {
+                $output .= $orig;
+            }
+        }, "tagname, attr, text" ],
+        end_h  => [ sub {
+            my ($tagname, $orig) =  @_;
+            unless (_is_table_tag($tagname)) {
+                $output .= $orig;
+            }
+        }, "tagname, text"],
+        text_h => [ sub { $output .= shift }, "text"],
     );
+
+    $parser->boolean_attribute_value('__BOOLEAN__');
+    $parser->parse( $args->{response}->content );
+
+    $args->{response}->content( $output );
 }
 
 1;

@@ -3,23 +3,17 @@ use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
 
-sub register {
-    my ($class, $context) = @_;
+sub control_panel:Hook('control_panel') {
+    my ($self, $context, $args) = @_;
 
-    $context->register_hook(
-        control_panel => sub {
-            my ($context, $args) = @_;
+    $context->log(debug => 'dump http headers');
 
-            $context->log(debug => 'dump http headers');
-
-            return $class->render_template(
-                $context,
-                'panel.tt' => {
-                    request =>
-                        $args->{response}->request->headers_as_string(),
-                    response => $args->{response}->headers_as_string(),
-                }
-            );
+    return $self->render_template(
+        $context,
+        'panel.tt' => {
+            request =>
+                $args->{response}->request->headers_as_string(),
+            response => $args->{response}->headers_as_string(),
         }
     );
 }

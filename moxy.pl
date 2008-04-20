@@ -21,11 +21,18 @@ sub stdio_close {
 }
 
 my $conf_file = file( $FindBin::RealBin, 'config.yaml' )->stringify;
+my $server = 'HTTPProxy';
+my $port = 5963;
+my $host = 'localhost';
 
 Getopt::Long::GetOptions(
     '--man'           => \my $man,
     '--daemon'        => \my $daemon,
     '--config=s'      => \$conf_file,
+    '--server=s'      => \$server,
+    '--port=i'        => \$port,
+    '--host=i'        => \$host,
+    '--max-clients=i' => \my $max_clients,
 ) or pod2usage(2);
 Getopt::Long::Configure("bundling");
 pod2usage(-verbose => 2) if $man;
@@ -35,7 +42,15 @@ $config->{global}->{log} ||= { level => 'debug' };
 
 sub start {
     my $moxy = Moxy->new($config);
-    $moxy->run;
+    my $server_module = "Moxy::Server::$server";
+    $server_module->use or die $@;
+    $server_module->run(
+        $moxy => {
+            port        => $port,
+            host        => $host,
+            max_clients => $max_clients,
+        }
+    );
 }
 
 if ($daemon) {
@@ -61,6 +76,9 @@ __END__
         --daemon       => run as daemon
         --config=s     => path to config file(default: config.yaml)
         --man          => show this manual
+        --server       => HTTPProxy or POE
+        --port         => default: 5963
+        --host         => default: localhost
 
 =head1 DESCRIPTION
 

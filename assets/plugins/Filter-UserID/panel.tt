@@ -1,6 +1,11 @@
 <div>
     <form method="post" action="http://userid.moxy/[% referer | uri %]">
-        UserID: <input type="text" name="user_id" value="[% user_id %]" />
+        [% IF mobile_attribute.is_ezweb %]
+            X-Up-Subno
+        [% ELSIF mobile_attribute.is_docomo %]
+            guid
+        [% END %]
+        : <input type="text" name="user_id" value="[% user_id %]" />
         <input type="submit" value="send" />
     </form>
 </div>

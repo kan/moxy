@@ -22,15 +22,15 @@ BEGIN {
 }
 
 sub detect_charset {
-    my ($class, $response, $body) = @_;
+    my ($class, $response) = @_;
 
     my $charset;
     if ($response->header('Content-Type') =~ /charset=([\w\-]+)/io) {
         $charset = $1;
     }
-    $charset ||= ( $body =~ /<\?xml version="1.0" encoding="([\w\-]+)"\?>/ )[0]; 
-    $charset ||= ( $body =~ m!<meta http-equiv="Content-Type" content=".*charset=([\w\-]+)"!i )[0]; 
-    $charset ||= $Detector->($body); 
+    $charset ||= ( $response->content() =~ /<\?xml version="1.0" encoding="([\w\-]+)"\?>/ )[0]; 
+    $charset ||= ( $response->content() =~ m!<meta http-equiv="Content-Type" content=".*charset=([\w\-]+)"!i )[0]; 
+    $charset ||= $Detector->($response->content()); 
     $charset ||= 'utf-8'; 
 
     return $charset;

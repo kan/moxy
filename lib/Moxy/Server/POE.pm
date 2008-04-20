@@ -1,27 +1,11 @@
-package Moxy::Plugin::Server::POE;
+package Moxy::Server::POE;
 use strict;
 use warnings;
-use Moxy::Plugin::Server;
 use POE;
 use POE::Filter::HTTPD;
 use POE::Component::Server::TCP;
 
-sub register {
-    my ($class, $context, $config) = @_;
-
-    $context->register_hook(
-        control_panel => sub {
-            my ($context, $args) = @_;
-
-            my $base = URI->new($args->{response}->request->uri);
-            $base->query_form({});
-            return render_control_panel($base, $args->{response}->request->uri);
-        },
-        run_server => sub { $class->run_server($context, $config) },
-    );
-}
-
-sub run_server {
+sub run {
     my ($class, $context, $config) = @_;
 
     $context->log(debug => "setup " . __PACKAGE__);
@@ -31,10 +15,8 @@ sub run_server {
         Port         => $config->{port},
         ClientFilter => 'POE::Filter::HTTPD',
         ClientInput  => sub {
-            my $response = handle_request(
+            my $response = $context->handle_request(
                 request => $_[ARG0],
-                context => $context,
-                config  => $config,
             );
 
             use bytes;
@@ -49,7 +31,7 @@ sub run_server {
         }
     );
 
-    $context->log(info => sprintf("Moxy running at http://localhost:%d/\n", $config->{port}));
+    $context->log(info => sprintf("Moxy running at http://%s:%d/\n", $config->{host}, $config->{port}));
 
     POE::Kernel->run;
 }

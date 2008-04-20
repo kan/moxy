@@ -1,17 +1,11 @@
 package Moxy::Plugin::Filter::XMLisHTML;
 use strict;
 use warnings;
+use base qw/Moxy::Plugin/;
 
-sub register {
-    my ($class, $context) = @_;
-
-    $context->register_hook(
-        response_filter => sub {
-            my ($context, $args) = @_;
-
-            $args->{response}->header( 'Content-Type' => 'text/html' ) if $args->{response}->header( 'Content-Type' ) =~ /xml/;
-        }
-    );
+sub r :Hook('response_filter') {
+    my ($self, $context, $args) = @_;
+    $args->{response}->header( 'Content-Type' => 'text/html' ) if $args->{response}->header( 'Content-Type' ) =~ /xml/;
 }
 
 1;

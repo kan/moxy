@@ -7,61 +7,55 @@ use URI;
 use URI::Escape;
 use CGI;
 
-sub register {
-    my ($class, $context) = @_;
+sub r:Hook('request_filter') {
+    my ($self, $context, $args) = @_;
 
-    $context->register_hook(
-        request_filter => sub {
-            my ($context, $args) = @_;
+    my $http_header = $context->storage->get(__PACKAGE__. $args->{user});
 
-            my $http_header = $context->storage->get(__PACKAGE__. $args->{user});
+    if ($http_header) {
+        for my $header (split /\n/, $http_header) {
+            next unless $header;
 
-            if ($http_header) {
-                for my $header (split /\n/, $http_header) {
-                    next unless $header;
-
-                    if ($header =~ /^([^:]+)\s*:\s*(.+)$/) {
-                        $args->{request}->header($1 => $2);
-                        $context->log(debug => "set header: '$1' => '$2'");
-                    }
-                }
+            if ($header =~ /^([^:]+)\s*:\s*(.+)$/) {
+                $args->{request}->header($1 => $2);
+                $context->log(debug => "set header: '$1' => '$2'");
             }
-        },
-        control_panel => sub {
-            my ($context, $args) = @_;
+        }
+    }
+}
 
-            # generate control panel html.
-            my %params = URI->new($args->{response}->request->uri)->query_form;
+sub c:Hook('control_panel') {
+    my ($self, $context, $args) = @_;
 
-            return $class->render_template(
-                $context,
-                'panel.tt' => {
-                    moxy_user_agent => (
-                        $args->{response}->request->header('User-Agent') || ''
-                    ),
-                    params      => \%params,
-                    current_uri => $args->{response}->request->uri,
-                    headers     => $context->storage->get(__PACKAGE__ . $args->{user}),
-                }
-            );
-        },
-        request_filter => sub {
-            my ($context, $args) = @_;
+    # generate control panel html.
+    my %params = URI->new($args->{response}->request->uri)->query_form;
 
-            if ($args->{request}->uri =~ m{^http://http-header\.moxy/(.+)}) {
-                my $back = uri_unescape($1);
-
-                # store settings
-                my $r = CGI->new($args->{request}->content);
-                $context->storage->set(__PACKAGE__ . $args->{user} => $r->param('moxy_http_header'));
-
-                # back
-                my $response = HTTP::Response->new( 302, "Moxy(@{[ __PACKAGE__ ]})" );
-                $response->header(Location => $back);
-                return $response;
-            }
-        },
+    return $self->render_template(
+        $context,
+        'panel.tt' => {
+            params      => \%params,
+            current_uri => $args->{response}->request->uri,
+            headers     => $context->storage->get(__PACKAGE__ . $args->{user}),
+        }
     );
+}
+
+# set.
+sub x:Hook('request_filter') {
+    my ($self, $context, $args) = @_;
+
+    if ($args->{request}->uri =~ m{^http://http-header\.moxy/(.+)}) {
+        my $back = uri_unescape($1);
+
+        # store settings
+        my $r = CGI->new($args->{request}->content);
+        $context->storage->set(__PACKAGE__ . $args->{user} => $r->param('moxy_http_header'));
+
+        # back
+        my $response = HTTP::Response->new( 302, "Moxy(@{[ __PACKAGE__ ]})" );
+        $response->header(Location => $back);
+        return $response;
+    }
 }
 
 1;

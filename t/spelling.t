@@ -9,6 +9,8 @@ BEGIN {
 my @stopwords = split /\n/, <<'...';
 Tokuhiro
 Matsuno
+Kazuhiro
+Osawa
 IP
 ip
 yaml
