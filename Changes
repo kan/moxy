@@ -1,5 +1,9 @@
 Revision history for Moxy
 
+0.31
+
+    - Server::HTTPProxy: bug fixed... orz
+
 0.30
 
     - MAJOR VERSION UP RELEASE!!
