@@ -5,13 +5,9 @@
 
 
 
-
-
 - Store::SQLite つくる?
 - 絵文字入力できるようにしたい
 - Kwalify サポート
-- Class::Component を使うようにするかも
-- プラグインをもっと testable にしたい。
 - 認証まわりを flexible にしたい
 -- OpenID に対応するとか
 - cookie support
@@ -22,8 +18,6 @@
  - GPS Support(select point by google map?)
  - support utn
  - check contents size(max pdu)
-
-- plugins: $self is not a self... just a $class.
 
 - add tests.
 
