@@ -13,7 +13,7 @@ function Moxy__toggleCP() {
 </script>
 <div id="moxy-control-button" style="background-color:#9999ff; width: 10px; height: 10px; right: 10px; top: 2px; position: fixed;" onclick="Moxy__toggleCP()"></div>
 
-<div id="moxy-control-panel" style="background-color:#ddddff; display:none; right: 10px; top: 15px; position: fixed;">
+<div id="moxy-control-panel" style="background-color:#ddddff; right: 10px; top: 15px; position: fixed;">
     [% FOR part IN parts %]
         <div>[% part %]</div>
     [% END %]

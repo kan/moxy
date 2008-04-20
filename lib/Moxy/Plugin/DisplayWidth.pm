@@ -10,8 +10,6 @@ sub response_filter:Hook('response_filter') {
     if ( $args->{mobile_attribute} && (my $display = $args->{mobile_attribute}->display) ) {
         my $header = sprintf(
             q{<div style="border: 1px black solid; 
-                                            margin-right:auto; 
-                                            margin-left:auto; 
                                             width: %dpx">}, $display->width
         );
 
