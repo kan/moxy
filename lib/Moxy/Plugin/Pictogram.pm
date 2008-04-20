@@ -15,7 +15,7 @@ sub response_filter :Hook('response_filter') {
     my $carrier = $args->{mobile_attribute}->carrier;
 
     my $charset =
-        Moxy::Util->detect_charset( $args->{response}, $args->{content_ref} );
+        Moxy::Util->detect_charset( $args->{response} );
     $charset = ( $charset =~ /utf-?8/i ) ? 'utf8' : 'sjis';
 
     $args->{response}->content(
