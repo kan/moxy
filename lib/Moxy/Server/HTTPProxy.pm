@@ -4,8 +4,8 @@ use warnings;
 use utf8;
 use Encode;
 use HTTP::Proxy ':log';
-use HTTP::Proxy::HeaderFilter::simple;
-use HTTP::Proxy::BodyFilter::complete;
+use HTTP::Proxy::Headersimple;
+use HTTP::Proxy::Bodycomplete;
 use URI;
 use Carp;
 
@@ -22,8 +22,8 @@ sub run {
 
     $proxy->push_filter(
         mime     => undef,
-        response => HTTP::Proxy::BodyFilter::complete->new,
-        request  => HTTP::Proxy::HeaderFilter::simple->new(
+        response => HTTP::Proxy::Bodycomplete->new,
+        request  => HTTP::Proxy::Headersimple->new(
             sub {
                 my ($filter, $x, $request) = @_;
                 # $request is instance of HTTP::Request.

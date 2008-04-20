@@ -1,4 +1,4 @@
-package Moxy::Plugin::Filter::UserID;
+package Moxy::Plugin::UserID;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -62,7 +62,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::Filter::UserID
+Moxy::Plugin::UserID
 
 =head1 SYNOPSIS
 
@@ -82,4 +82,4 @@ Tokuhiro Matsuno
 
 =head1 SEE ALSO
 
-L<Moxy>, L<Moxy::Plugin::Filter::ControlPanel>
+L<Moxy>, L<Moxy::Plugin::ControlPanel>

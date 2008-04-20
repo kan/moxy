@@ -1,4 +1,4 @@
-package Moxy::Plugin::Filter::GPS::EZweb;
+package Moxy::Plugin::GPS::EZweb;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;

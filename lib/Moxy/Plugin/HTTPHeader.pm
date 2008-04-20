@@ -1,4 +1,4 @@
-package Moxy::Plugin::Filter::HTTPHeader;
+package Moxy::Plugin::HTTPHeader;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -65,7 +65,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::Filter::HTTPHeader - HTTP Header を操作する
+Moxy::Plugin::HTTPHeader - HTTP Header を操作する
 
 =head1 SYNOPSIS
 

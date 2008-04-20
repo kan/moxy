@@ -1,11 +1,11 @@
 use strict;
 use warnings;
-use Moxy::Plugin::Filter::RefererCutter;
+use Moxy::Plugin::RefererCutter;
 use Moxy;
 use HTTP::Request;
 use Test::More tests => 2;
 
-Moxy->load_plugins(qw/Filter::RefererCutter/);
+Moxy->load_plugins(qw/RefererCutter/);
 my $m = Moxy->new(
     {
         global => {

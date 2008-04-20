@@ -1,4 +1,4 @@
-package Moxy::Plugin::Filter::Pictogram;
+package Moxy::Plugin::Pictogram;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -56,7 +56,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::Filter::Pictogram - show pictograms
+Moxy::Plugin::Pictogram - show pictograms
 
 =head1 SYNOPSIS
 

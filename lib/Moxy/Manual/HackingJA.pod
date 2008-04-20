@@ -24,7 +24,7 @@ Moxy を Hack しようと考える人のための文書なのであって一般
 いろいろ register_hook 呼ぶの人。load_plugins の段階で  register メソッドが呼ばれる
 あたりは Plagger をまるぱくりしてるといえる。
 
-=head2 Moxy::Plugin::Filter::*
+=head2 Moxy::Plugin::*
 
 HTTP::Request または HTTP::Response に対してなんらかの処理をする系のプラグイン。ほとんど
 のものはこれ。

@@ -1,4 +1,4 @@
-package Moxy::Plugin::Filter::CookieCutter;
+package Moxy::Plugin::CookieCutter;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -15,7 +15,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::Filter::CookieCutter
+Moxy::Plugin::CookieCutter
 
 =head1 SYNOPSIS
 

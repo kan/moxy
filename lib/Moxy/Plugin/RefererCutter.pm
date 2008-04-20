@@ -1,4 +1,4 @@
-package Moxy::Plugin::Filter::RefererCutter;
+package Moxy::Plugin::RefererCutter;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -14,7 +14,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::Filter::RefererCutter - remove referer
+Moxy::Plugin::RefererCutter - remove referer
 
 =head1 DESCRIPTION
 

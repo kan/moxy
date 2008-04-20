@@ -1,4 +1,4 @@
-package Moxy::Plugin::Filter::UserAgentSwitcher;
+package Moxy::Plugin::UserAgentSwitcher;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -84,7 +84,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::Filter::UserAgentSwitcher - change your user agent
+Moxy::Plugin::UserAgentSwitcher - change your user agent
 
 =head1 DESCRIPTION
 

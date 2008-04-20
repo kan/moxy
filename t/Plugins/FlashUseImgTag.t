@@ -23,7 +23,7 @@ my $m = Moxy->new(
             },
         },
         plugins => [
-            { module => 'Filter::FlashUseImgTag' },
+            { module => 'FlashUseImgTag' },
         ],
     }
 );

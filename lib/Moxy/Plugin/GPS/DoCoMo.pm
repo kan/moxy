@@ -1,4 +1,4 @@
-package Moxy::Plugin::Filter::GPS::DoCoMo;
+package Moxy::Plugin::GPS::DoCoMo;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;

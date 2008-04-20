@@ -1,4 +1,4 @@
-package Moxy::Plugin::Filter::QRCode::Imager;
+package Moxy::Plugin::QRCode::Imager;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -48,7 +48,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::Filter::QRCode - QRCode generator for Moxy
+Moxy::Plugin::QRCode - QRCode generator for Moxy
 
 =head1 SYNOPSIS
 

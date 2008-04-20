@@ -1,4 +1,4 @@
-package Moxy::Plugin::Filter::LocationBar;
+package Moxy::Plugin::LocationBar;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;

@@ -1,4 +1,4 @@
-package Moxy::Plugin::Filter::GPS::ThirdForce;
+package Moxy::Plugin::GPS::ThirdForce;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;

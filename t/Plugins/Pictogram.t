@@ -22,7 +22,7 @@ my $c = Moxy->new(
             },
         },
         plugins => [
-            { module => 'Filter::Pictogram' },
+            { module => 'Pictogram' },
         ]
     }
 );

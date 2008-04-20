@@ -1,4 +1,4 @@
-package Moxy::Plugin::Filter::FlashUseImgTag;
+package Moxy::Plugin::FlashUseImgTag;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -48,7 +48,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::Filter::FlashUseImgTag - ezweb can use <img src="/boofy.swf">
+Moxy::Plugin::FlashUseImgTag - ezweb can use <img src="/boofy.swf">
 
 =head1 SYNOPSIS
 

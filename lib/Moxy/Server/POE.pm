@@ -61,5 +61,5 @@ Tokuhiro Matsuno
 
 =head1 SEE ALSO
 
-L<Moxy>, L<POE>, L<POE::Filter::HTTPD>, L<POE::Component::Server::TCP>
+L<Moxy>, L<POE>, L<POE::HTTPD>, L<POE::Component::Server::TCP>
 

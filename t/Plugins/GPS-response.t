@@ -24,7 +24,7 @@ my $m = Moxy->new(
             },
         },
         plugins => [
-            { module => 'Filter::GPS' },
+            { module => 'GPS' },
         ],
     }
 );

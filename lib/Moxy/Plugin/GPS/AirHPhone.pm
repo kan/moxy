@@ -1,4 +1,4 @@
-package Moxy::Plugin::Filter::GPS::AirHPhone;
+package Moxy::Plugin::GPS::AirHPhone;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;

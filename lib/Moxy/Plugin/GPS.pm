@@ -1,12 +1,12 @@
-package Moxy::Plugin::Filter::GPS;
+package Moxy::Plugin::GPS;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
-use Moxy::Plugin::Filter::GPS::EZweb;
+use Moxy::Plugin::GPS::EZweb;
 
 sub register {
     my ($class, $c) = @_;
-    $c->load_plugins(map { "Filter::GPS::$_"} qw/EZweb AirHPhone DoCoMo ThirdForce/);
+    $c->load_plugins(map { "GPS::$_"} qw/EZweb AirHPhone DoCoMo ThirdForce/);
 }
 
 1;
@@ -14,7 +14,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::Filter::GPS - gps simulation for Moxy
+Moxy::Plugin::GPS - gps simulation for Moxy
 
 =head1 SYNOPSIS
 

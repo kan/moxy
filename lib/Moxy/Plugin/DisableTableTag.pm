@@ -1,4 +1,4 @@
-package Moxy::Plugin::Filter::DisableTableTag;
+package Moxy::Plugin::DisableTableTag;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
@@ -50,7 +50,7 @@ __END__
 
 =head1 NAME
 
-Moxy::Plugin::Filter::DisableTableTag - docomo can't use <TABLE>
+Moxy::Plugin::DisableTableTag - docomo can't use <TABLE>
 
 =head1 SYNOPSIS
 

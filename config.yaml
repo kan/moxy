@@ -7,20 +7,20 @@ global:
     dbm_class: NDBM_File
 
 plugins:
-  - module: Filter::ControlPanel
-  - module: Filter::XMLisHTML
-  - module: Filter::UserAgentSwitcher
-  - module: Filter::Pictogram
-  - module: Filter::DisplayWidth
-  - module: Filter::QRCode
-  - module: Filter::RefererCutter
-  - module: Filter::ShowHTTPHeaders
-  - module: Filter::CookieCutter
-  - module: Filter::HTTPHeader
-  - module: Filter::FlashUseImgTag
-  - module: Filter::DisableTableTag
-  - module: Filter::GPS
-# - module: Filter::QRCode::Imager
-  - module: Filter::UserID
-  - module: Filter::LocationBar
+  - module: ControlPanel
+  - module: XMLisHTML
+  - module: UserAgentSwitcher
+  - module: Pictogram
+  - module: DisplayWidth
+  - module: QRCode
+  - module: RefererCutter
+  - module: ShowHTTPHeaders
+  - module: CookieCutter
+  - module: HTTPHeader
+  - module: FlashUseImgTag
+  - module: DisableTableTag
+  - module: GPS
+# - module: QRCode::Imager
+  - module: UserID
+  - module: LocationBar
 
