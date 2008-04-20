@@ -1,19 +1,4 @@
-<script type="text/javascript">
-var Moxy__flgCP = 0;
-function Moxy__toggleCP() {
-    var cp = document.getElementById('moxy-control-panel');
-    if ( Moxy__flgCP ) {
-        cp.style.display = 'none';
-        Moxy__flgCP = 0;
-    } else {
-        cp.style.display = 'block';
-        Moxy__flgCP = 1;
-    }
-}
-</script>
-<div id="moxy-control-button" style="background-color:#9999ff; width: 10px; height: 10px; right: 10px; top: 2px; position: fixed;" onclick="Moxy__toggleCP()"></div>
-
-<div id="moxy-control-panel" style="background-color:#ddddff; right: 10px; top: 15px; position: fixed;">
+<div id="moxy-control-panel" style="background-color:#ddddff; right: 0px; top: 5px; position: fixed;">
     [% FOR part IN parts %]
         <div>[% part %]</div>
     [% END %]
