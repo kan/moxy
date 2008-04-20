@@ -1,5 +1,23 @@
 Revision history for Moxy
 
+0.30
+
+    - MAJOR VERSION UP RELEASE!!
+    - THIS RELEASE HAVE MANY INCOMPATIBLE CHANGES
+    
+    - based on Class::Component(tokuhirom)
+    - Plugin::Filter::* renamed to Plugin::*(tokuhirom)
+    - Plugin::Server::* renamed to Server::*(tokuhirom)
+    - added many tests!(tokuhirom)
+
+    - new features!
+    -- guid=ON support(tokuhirom).
+    -- focus to location bar(requested by nekokak++)
+    -- controll panel is moved to 右上.(precuredaisuki++)
+
+    - bug fixed
+    -- DisableTableTag: bug fixed...
+
 0.25
 
     - (SECURITY FIX) do not allow the file schema.(reported by yappo++)

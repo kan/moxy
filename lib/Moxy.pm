@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Class::Component;
 
-our $VERSION = '0.25';
+our $VERSION = '0.30';
 
 use Path::Class;
 use YAML;
