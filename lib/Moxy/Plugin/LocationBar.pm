@@ -9,17 +9,18 @@ sub control_panel: Hook('control_panel') {
     my ($self, $context, $args) = @_;
     croak "invalid args" if ref $args ne 'HASH';
 
-    my $base = URI->new($args->{response}->request->uri);
-    $base->query_form({});
-    return render_control_panel($base, $args->{response}->request->uri);
+    return render_control_panel($args->{response}->request->uri);
 }
 
 sub render_control_panel {
-    my ($base, $current_url) = @_;
+    my $current_url = shift;
 
     return sprintf(<<"...", encode_entities($current_url));
-    <form method="get" action="$base">
-        <input type="text" name="q" value="\%s" size="40" />
+    <script>
+        var moxy_base = location.protocol + '://' + location.host;
+    </script>
+    <form method="get" onsubmit="location.href=moxy_base +'/'+encodeURIComponent(document.getElementById('moxy_url').value);return false;">
+        <input type="text" value="\%s" size="40" id="moxy_url" />
         <input type="submit" value="go" />
     </form>
 ...
