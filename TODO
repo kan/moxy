@@ -1,8 +1,8 @@
 - ヘッダ追加
 -- my $depth = ( split /,/, $request->get('x-up-devcap-screendepth') )[0];                                                           
 -- my $color = $request->get('x-up-devcap-iscolor');                                                                                 
-
-
+- Plugin::UserID で serial を自由に設定できるようにしたい
+- POST のときに、uri の方のパラメータしかこない疑惑
 
 
 - Store::SQLite つくる?
