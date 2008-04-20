@@ -19,7 +19,7 @@ sub render: Hook('response_filter') {
     );
 
     # convert html charset to response charset.
-    my $charset = Moxy::Util->detect_charset($args->{response});
+    my $charset = $args->{response}->charset;
     my $enc = Encode::find_encoding($charset);
     Encode::from_to($output, 'utf-8', $enc ? $enc->name : 'utf-8');
 

@@ -21,19 +21,20 @@ BEGIN {
     }
 }
 
-sub detect_charset {
-    my ($class, $response) = @_;
+sub HTTP::Response::charset {
+    my ($self, ) = @_;
 
-    my $charset;
-    if ($response->header('Content-Type') =~ /charset=([\w\-]+)/io) {
-        $charset = $1;
-    }
-    $charset ||= ( $response->content() =~ /<\?xml version="1.0" encoding="([\w\-]+)"\?>/ )[0]; 
-    $charset ||= ( $response->content() =~ m!<meta http-equiv="Content-Type" content=".*charset=([\w\-]+)"!i )[0]; 
-    $charset ||= $Detector->($response->content()); 
-    $charset ||= 'utf-8'; 
-
-    return $charset;
+    return $self->{__charset} ||= do {
+        my $charset;
+        if ( $self->header('Content-Type') =~ /charset=([\w\-]+)/io ) {
+            $charset = $1;
+        }
+        $charset ||= ( $self->content() =~ /<\?xml version="1.0" encoding="([\w\-]+)"\?>/ )[0];
+        $charset ||= ( $self->content() =~ m!<meta http-equiv="Content-Type" content=".*charset=([\w\-]+)"!i)[0];
+        $charset ||= $Detector->( $self->content() );
+        $charset ||= 'cp932';
+        $charset;
+    };
 }
 
 1;

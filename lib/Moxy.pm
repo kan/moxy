@@ -26,6 +26,7 @@ use URI::Heuristic qw(uf_uristr);
 use File::Spec::Functions;
 use YAML;
 use HTML::TreeBuilder;
+use Moxy::Util;
 use HTML::TreeBuilder::XPath;
 use HTTP::MobileAttribute plugins => [
     qw/CarrierLetter IS/,
@@ -234,7 +235,7 @@ sub _make_response {
             my $content_type = $res->header('Content-Type');
             $self->log("Content-Type: $content_type");
             if ($content_type =~ /html/i) {
-                $res->content( rewrite($base_url, $res->content, $url) );
+                $res->content( encode($res->charset, rewrite($base_url, decode($res->charset, $res->content), $url)) );
             }
             use bytes;
             $res->header('Content-Length' => bytes::length($res->content));
