@@ -25,6 +25,8 @@ use Params::Validate ':all';
 use URI::Heuristic qw(uf_uristr);
 use File::Spec::Functions;
 use YAML;
+use HTML::TreeBuilder;
+use HTML::TreeBuilder::XPath;
 use HTTP::MobileAttribute plugins => [
     qw/CarrierLetter IS/,
     {
@@ -98,61 +100,52 @@ sub run_hook_and_get_response {
 sub rewrite {
     my ($base, $html, $url) = @_;
 
-    my $output = '';
     my $base_url = URI->new($url);
-    my $parser = HTML::Parser->new(
-        api_version   => 3,
-        start_h       => [ sub {
-            my ($tagname, $attr, $orig) = @_;
 
-            if ($tagname eq 'a' || $tagname eq 'A' || $tagname =~ /link/i) {
-                $output .= "<$tagname";
-                my @parts;
-                my $href = delete $attr->{href};
-                if ($href) {
-                    push @parts,
-                      sprintf( qq{href="$base?q=%s"},
-                        uri_escape(URI->new($href)->abs($base_url)) );
-                }
-                push @parts, map { sprintf qq{%s="%s"}, encode_entities($_), encode_entities($attr->{$_}) } keys %$attr;
-                $output .= " " . join " ", @parts;
-                $output .= ">";
-            } elsif ($tagname =~ /form/i) {
-                $output .= "<$tagname";
-                my @parts;
-                my $action = delete $attr->{action};
-                if ($action) {
-                    push @parts, sprintf(qq{action="$base?q=%s"},
-                        uri_escape(URI->new($action)->abs($base_url))
-                    );
-                }
-                push @parts, map { sprintf qq{$_="%s"}, encode_entities($attr->{$_}) } keys %$attr;
-                $output .= " " . join " ", @parts;
-                $output .= ">";
-            } elsif ($tagname =~ /(img|script)/i) {
-                $output .= "<$tagname";
-                my @parts;
-                my $src = delete $attr->{src};
-                if ($src) {
-                    push @parts, sprintf(qq{src="$base?q=%s"},
-                        uri_escape(URI->new($src)->abs($base_url))
-                    );
-                }
-                push @parts, map { sprintf qq{%s="%s"}, encode_entities($_), encode_entities($attr->{$_}) } grep !/^\/$/, keys %$attr;
-                $output .= " " . join " ", @parts;
-                $output .= ">";
-            } else {
-                $output .= $orig;
-                return;
+    # parse.
+    my $tree = HTML::TreeBuilder::XPath->new;
+    $tree->implicit_tags(0);
+    $tree->no_space_compacting(1);
+    $tree->ignore_ignorable_whitespace(0);
+    $tree->store_comments(1);
+    $tree->ignore_unknown(0);
+    $tree->parse($html);
+    $tree->eof;
+
+    # define replacer.
+    my $replace = sub {
+        my ( $tag, $attr_name ) = @_;
+
+        for my $node ( $tree->findnodes("//$tag") ) {
+            if ( my $attr = $node->attr($attr_name) ) {
+                $node->attr(
+                    $attr_name => sprintf( qq{$base?q=%s},
+                        uri_escape( URI->new($attr)->abs($base_url) ) )
+                );
             }
-        }, "tagname, attr, text" ],
-        end_h  => [ sub { $output .= shift }, "text"],
-        text_h => [ sub { $output .= shift }, "text"],
-    );
+        }
+    };
 
-    $parser->boolean_attribute_value('__BOOLEAN__');
-    $parser->parse($html);
-    $output;
+    # replace.
+    $replace->( 'img'    => 'src' );
+    $replace->( 'script' => 'src' );
+    $replace->( 'form'   => 'action' );
+    $replace->( 'a'      => 'href' );
+    $replace->( 'link'   => 'href' );
+
+    # dump.
+    my $result = $tree->as_HTML(q{<>"&'});
+    $tree = $tree->delete; # cleanup :-) HTML::TreeBuilder needs this.
+
+    # return result.
+    return $result;
+}
+
+sub _xml_escape {
+    warn "CALLED";
+    for my $x (@_) {
+        $x = encode_entities($x, q{<>&"'});
+    }
 }
 
 sub render_control_panel {
