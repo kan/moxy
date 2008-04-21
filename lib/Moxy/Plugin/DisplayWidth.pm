@@ -6,18 +6,18 @@ use base qw/Moxy::Plugin/;
 # HTML全体の横幅をUAの画面サイズに合わせる
 sub response_filter:Hook('response_filter') {
     my ($class, $context, $args) = @_;
+    return if $args->{mobile_attribute}->is_non_mobile;
+    return if $args->{mobile_attribute}->is_airh_phone;
 
-    if ( $args->{mobile_attribute} && (my $display = $args->{mobile_attribute}->display) ) {
-        my $header = sprintf(
-            q{<div style="border: 1px black solid; 
-                                            width: %dpx">}, $display->width
-        );
+    my $display = $args->{mobile_attribute}->display;
+    my $header = sprintf(
+        q{<div style="border: 1px black solid; width: %dpx">}, $display->width
+    );
 
-        my $content = $args->{response}->content;
-        $content =~ s!(<body[^>]*>)!$1$header!i;
-        $content =~ s!(</body>)!"</div>$1"!ie;
-        $args->{response}->content($content);
-    }
+    my $content = $args->{response}->content;
+    $content =~ s!(<body[^>]*>)!$1$header!i;
+    $content =~ s!(</body>)!"</div>$1"!ie;
+    $args->{response}->content($content);
 }
 
 1;
