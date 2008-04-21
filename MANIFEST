@@ -1438,6 +1438,7 @@ t/00.load.t
 t/Plugin-Server-rewrite.t
 t/Plugin-Server-xss.t
 t/Plugins/DisableTableTag.t
+t/Plugins/DisplayWidth.pm
 t/Plugins/FlashUseImgTag.t
 t/Plugins/GPS-request.t
 t/Plugins/GPS-response.t

@@ -1,5 +1,11 @@
 Revision history for Moxy
 
+0.32
+
+    - depend to HTML::ReplacePictogramMobileJp 0.04
+    -- sjis dec cref support for docomo.
+    - bug fixed in Plugin::DisplayWidth.
+
 0.31
 
     - Server::HTTPProxy: bug fixed... orz
