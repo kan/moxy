@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Class::Component;
 
-our $VERSION = '0.31';
+our $VERSION = '0.32';
 
 use Path::Class;
 use YAML;
@@ -120,7 +120,7 @@ sub rewrite {
         for my $node ( $tree->findnodes("//$tag") ) {
             if ( my $attr = $node->attr($attr_name) ) {
                 $node->attr(
-                    $attr_name => sprintf( qq{$base/%s},
+                    $attr_name => sprintf( qq{$base%s},
                         uri_escape( URI->new($attr)->abs($base_url) ) )
                 );
             }
