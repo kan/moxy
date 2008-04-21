@@ -27,10 +27,19 @@ sub run {
             sub {
                 my ($filter, $x, $request) = @_;
                 # $request is instance of HTTP::Request.
-                my $response = $context->handle_request(
-                    request => $request,
-                );
-                return $filter->proxy->response($response);
+
+                eval {
+                    my $response = $context->handle_request(
+                        request => $request,
+                    );
+                    return $filter->proxy->response($response);
+                };
+                if ($@) {
+                    warn "ERROR: $@";
+                    my $response = HTTP::Response->new( 500, "Moxy Bukkoware Error: $@" );
+                    $response->content( "Moxy Bukkoware Error: $@" );
+                    return $filter->proxy->response($response);
+                }
             }
         ),
     );
