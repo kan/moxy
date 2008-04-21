@@ -120,7 +120,9 @@ sub rewrite {
         for my $node ( $tree->findnodes("//$tag") ) {
             if ( my $attr = $node->attr($attr_name) ) {
                 $node->attr(
-                    $attr_name => sprintf( qq{$base%s},
+                    $attr_name => sprintf( qq{%s%s%s},
+                        $base,
+                        ($base =~ m{/$} ? '' : '/'),
                         uri_escape( URI->new($attr)->abs($base_url) ) )
                 );
             }
