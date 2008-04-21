@@ -146,15 +146,24 @@ sub render_control_panel {
     my ($base, $current_url) = @_;
 
     return sprintf(<<"...");
-    <script>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-script-type" content="text/javascript" />
+    <script type="text/javascript">
         window.onload = function () {
             document.getElementById('moxy_url').focus();
         };
     </script>
+</head>
+<body>
     <form method="get" action="$base" onsubmit="location.href=location.href+encodeURIComponent(document.getElementById('moxy_url').value);return false;">
         <input type="text" size="40" id="moxy_url" />
         <input type="submit" value="go" />
     </form>
+</body>
+</html>
 ...
 }
 
