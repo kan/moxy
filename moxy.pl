@@ -31,7 +31,7 @@ Getopt::Long::GetOptions(
     '--config=s'      => \$conf_file,
     '--server=s'      => \$server,
     '--port=i'        => \$port,
-    '--host=i'        => \$host,
+    '--host=s'        => \$host,
     '--max-clients=i' => \my $max_clients,
 ) or pod2usage(2);
 Getopt::Long::Configure("bundling");
