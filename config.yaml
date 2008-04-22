@@ -1,6 +1,8 @@
 ---
 global:
   timeout: 3
+  log:
+    level: error
   storage:
     module: DBM_File
     file: /tmp/moxy.ndbm
