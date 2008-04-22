@@ -2,7 +2,7 @@ package Moxy::Catalyst;
 use strict;
 use warnings;
 use Catalyst::Runtime '5.70';
-use Catalyst qw/-Debug ConfigLoader Static::Simple/;
+use Catalyst qw/-Debug ConfigLoader/;
 
 __PACKAGE__->config( name => 'Moxy::Catalyst' );
 
