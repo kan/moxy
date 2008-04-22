@@ -9,7 +9,7 @@ use YAML;
 
 sub Catalyst::Request::as_http_request {
     my $self = shift;
-    HTTP::Request->new( $self->method, $self->uri, $self->headers, $self->body);
+    HTTP::Request->new( $self->method, $self->uri, $self->headers, $self->read());
 }
 
 sub Catalyst::Response::set_http_response {
@@ -20,7 +20,7 @@ sub Catalyst::Response::set_http_response {
     $self;
 }
 
-sub default : Regex('^.*$') {
+sub default : Private {
     my ( $self, $c ) = @_;
 
     my $config = YAML::LoadFile($c->path_to('config.yaml'));

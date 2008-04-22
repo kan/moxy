@@ -4,7 +4,7 @@ use warnings;
 use Catalyst::Runtime '5.70';
 use Catalyst qw/-Debug ConfigLoader/;
 
-__PACKAGE__->config( name => 'Moxy::Catalyst' );
+__PACKAGE__->config( name => 'Moxy::Catalyst', parse_on_demand => 1 );
 
 __PACKAGE__->setup;
 
