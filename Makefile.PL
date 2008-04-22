@@ -6,28 +6,25 @@ name("Moxy");
 all_from("lib/Moxy.pm");
 
 requires 'Class::Component' => 0.14;
-requires('HTTP::MobileAgent');
-requires('HTTP::MobileAttribute');
-requires('CGI');
-requires('FindBin');
-requires('Path::Class');
-requires('YAML');
-requires('Template');
-requires('Carp');
-requires('Getopt::Long');
-requires('Pod::Usage');
-requires('Class::Accessor');
+requires 'HTTP::MobileAgent';
+requires 'HTTP::MobileAttribute';
+requires 'CGI';
+requires 'FindBin';
+requires 'Path::Class';
+requires 'Template';
+requires 'Carp';
+requires 'Getopt::Long';
+requires 'Pod::Usage';
+requires 'Class::Accessor';
 requires 'UNIVERSAL::require' => '0.11';
-requires('Log::Dispatch');
-requires('Encode::JP::Mobile' => 0.22);
+requires 'Log::Dispatch';
+requires 'Encode::JP::Mobile' => 0.22;
 requires 'HTML::ReplacePictogramMobileJp' => 0.04;
 requires 'HTTP::Proxy';
 requires 'Params::Validate';
 requires 'HTML::Tree' => 3.23;
-
 requires 'Catalyst::Runtime' => '5.7012';
 requires 'Catalyst::Plugin::ConfigLoader';
-requires 'Catalyst::Plugin::Static::Simple';
 requires 'Catalyst::Action::RenderView';
 requires 'YAML'; # This should reflect the config file format you've chosen
                  # See Catalyst::Plugin::ConfigLoader for supported formats
