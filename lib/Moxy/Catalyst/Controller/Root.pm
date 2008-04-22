@@ -20,7 +20,7 @@ sub Catalyst::Response::set_http_response {
     $self;
 }
 
-sub default : Private {
+sub default : Regex('^.*$') {
     my ( $self, $c ) = @_;
 
     my $config = YAML::LoadFile($c->path_to('config.yaml'));
