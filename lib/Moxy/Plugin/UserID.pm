@@ -2,7 +2,6 @@ package Moxy::Plugin::UserID;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
-use HTTP::MobileAgent;
 use URI::Escape qw/uri_unescape/;
 use CGI;
 

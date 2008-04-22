@@ -2,7 +2,6 @@ package Moxy::Plugin::FlashUseImgTag;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
-use HTTP::MobileAgent;
 use HTML::Parser;
 
 sub e: Hook('response_filter_E') {

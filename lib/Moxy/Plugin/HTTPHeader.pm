@@ -2,7 +2,6 @@ package Moxy::Plugin::HTTPHeader;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
-use HTTP::MobileAgent;
 use URI;
 use URI::Escape;
 use CGI;
