@@ -35,7 +35,6 @@ catalyst;
 
 build_requires('Test::More');
 build_requires('Path::Class');
-build_requires('Web::Scraper' => 0.24);
 
 features(
     'Better Encoding detection' => [
