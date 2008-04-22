@@ -52,16 +52,6 @@ sub new {
     return $self;
 }
 
-sub run {
-    my $self = shift;
-
-    unless ($self->can('run_server')) {
-        die "Oops. please load Server Module\n";
-    }
-
-    $self->run_server();
-}
-
 sub assets_path {
     my $self = shift;
 
