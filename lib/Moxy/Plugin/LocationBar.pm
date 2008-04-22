@@ -16,11 +16,8 @@ sub render_control_panel {
     my $current_url = shift;
 
     return sprintf(<<"...", encode_entities($current_url));
-    <script>
-        var moxy_base = location.protocol.replace(':', '') + '://' + location.host;
-    </script>
-    <form method="get" onsubmit="location.href=moxy_base +'/'+encodeURIComponent(document.getElementById('moxy_url').value);return false;">
-        <input type="text" value="\%s" size="40" id="moxy_url" />
+    <form method="get">
+        <input type="text" value="\%s" size="40" name="moxy_q" />
         <input type="submit" value="go" />
     </form>
 ...

@@ -109,11 +109,24 @@ sub rewrite {
 
         for my $node ( $tree->findnodes("//$tag") ) {
             if ( my $attr = $node->attr($attr_name) ) {
+                my $uri = URI->new($attr)->abs($base_url);
+                if ($tag eq 'form') {
+                    my $query = +{ $uri->query_form };
+                    while (my ($key, $val) = each %$query) {
+                        my $element = HTML::Element->new(
+                            'input',
+                            type  => 'hidden',
+                            name  => $key,
+                            value => $val
+                        );
+                        $node->push_content($element);
+                    }
+                    $uri->query_form({}); # strip query.
+                }
                 $node->attr(
-                    $attr_name => sprintf( qq{%s%s%s},
+                    $attr_name => sprintf( qq{%s?moxy_q=%s},
                         $base,
-                        ($base =~ m{/$} ? '' : '/'),
-                        uri_escape( URI->new($attr)->abs($base_url) ) )
+                        uri_escape( $uri ) )
                 );
             }
         }
@@ -150,8 +163,8 @@ sub render_control_panel {
     </script>
 </head>
 <body>
-    <form method="get" action="$base" onsubmit="location.href=location.href+encodeURIComponent(document.getElementById('moxy_url').value);return false;">
-        <input type="text" size="40" id="moxy_url" />
+    <form method="get" action="$base">
+        <input type="text" size="40" name="moxy_q" id="moxy_url" />
         <input type="submit" value="go" />
     </form>
 </body>
@@ -180,8 +193,7 @@ sub handle_request {
     if ($auth_header =~ /^Basic (.+)$/) {
         my $auth = decode_base64($1);
         $self->log(debug => "auth: $auth");
-        (my $url = $uri->path_query) =~ s!^/!!;
-        $url = uf_uristr(uri_unescape $url);
+        my $url = uf_uristr(+{$uri->query_form()}->{moxy_q});
         $self->log(info => "REQUEST $auth, @{[ $url || '' ]}");
         my $response = $self->_make_response(
             url      => $url,
@@ -230,7 +242,7 @@ sub _make_response {
             if ($uri->port != 80 && $location->port != $uri->port) {
                 $location->port($uri->port);
             }
-            $res->header( 'Location' => $base_url . '/' . uri_escape( $location ) );
+            $res->header( 'Location' => $base_url . '/?moxy_q=' . uri_escape( $location ) );
             $self->log(debug => "redirect to " . $res->header('Location'));
         } else {
             my $content_type = $res->header('Content-Type');
