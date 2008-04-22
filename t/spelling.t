@@ -68,6 +68,10 @@ au
 localsrc
 Daisuke
 Murase
+Riedel
+CGI
+FastCGI
+uri cgi
 ...
 
 add_stopwords(@stopwords);

@@ -1,5 +1,6 @@
 #!/usr/bin/perl -w
 
+## no critic.
 BEGIN { 
     $ENV{CATALYST_ENGINE} ||= 'HTTP';
     $ENV{CATALYST_SCRIPT_GEN} = 30;
@@ -63,6 +64,8 @@ Moxy::Catalyst->run( $port, $host, {
 } );
 
 1;
+
+=for stopwords Testserver
 
 =head1 NAME
 

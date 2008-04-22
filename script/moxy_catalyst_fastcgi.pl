@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-BEGIN { $ENV{CATALYST_ENGINE} ||= 'FastCGI' }
+BEGIN { $ENV{CATALYST_ENGINE} ||= 'FastCGI' } ## no critic.
 
 use strict;
 use warnings;
@@ -36,6 +36,8 @@ Moxy::Catalyst->run(
 );
 
 1;
+
+=for stopwords fastcgi
 
 =head1 NAME
 

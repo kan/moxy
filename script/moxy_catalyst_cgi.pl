@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-BEGIN { $ENV{CATALYST_ENGINE} ||= 'CGI' }
+BEGIN { $ENV{CATALYST_ENGINE} ||= 'CGI' } ## no critic.
 
 use strict;
 use warnings;
@@ -11,6 +11,8 @@ use Moxy::Catalyst;
 Moxy::Catalyst->run;
 
 1;
+
+=for stopwords cgi
 
 =head1 NAME
 

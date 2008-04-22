@@ -18,6 +18,8 @@ print request($ARGV[0])->content . "\n";
 
 1;
 
+=for stopwords uri
+
 =head1 NAME
 
 moxy_catalyst_test.pl - Catalyst Test
