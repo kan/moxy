@@ -15,8 +15,18 @@ sub request_filter :Hook('request_filter') {
         $args->{request}->uri($uri);
 
         $args->{request}->header( Host => $host );
+        $self->{original_host} = $host;
     }
 }
+
+sub response_filter :Hook('response_filter') {
+    my ($self, $context, $args) = @_;
+
+    my $uri = $args->{response}->request->uri;
+    $uri->host($self->{original_host});
+    $args->{response}->request->uri($uri);
+}
+
 
 1;
 __END__
