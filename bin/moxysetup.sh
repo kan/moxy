@@ -32,19 +32,15 @@ global:
 #    dbm_class: DBM_File
 
 plugins:
-  - module: DisplayWidth
-  - module: ControlPanel
   - module: UserID
   - module: XMLisHTML
   - module: UserAgentSwitcher
-  - module: Pictogram
   - module: RefererCutter
   - module: CookieCutter
   - module: FlashUseImgTag
   - module: DisableTableTag
   - module: GPS
   - module: HTTPHeader
-  - module: LocationBar
   - module: QRCode
   - module: ShowHTTPHeaders
 " > config.yaml

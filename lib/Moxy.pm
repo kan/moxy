@@ -42,6 +42,8 @@ use HTTP::MobileAttribute plugins => [
 
 __PACKAGE__->load_components(qw/Plaggerize Autocall::InjectMethod Context/);
 
+__PACKAGE__->load_plugins(qw/DisplayWidth ControlPanel LocationBar Pictogram/);
+
 sub new {
     my ($class, $config) = @_;
 
