@@ -10,11 +10,11 @@ use CGI;
 sub process_agent :Hook('request_filter_process_agent') {
     my ($self, $context, $args) = @_;
 
-    my $user_agent = $context->storage->get('user_agent_' . $args->{user});
+    my $user_agent = $context->storage->get('user_agent_' . $args->{user}) || 'KDDI-TS3G UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0';
     my $ua_info = $self->get_ua_info($context, $user_agent);
 
     # set UA to request.
-    $args->{request}->header('User-Agent' => $user_agent) if $user_agent and $user_agent ne 'none';
+    $args->{request}->header('User-Agent' => $user_agent);
     while (my ($key, $val) = each %{$ua_info->{header}}) {
         $args->{request}->header($key => $val);
     }
