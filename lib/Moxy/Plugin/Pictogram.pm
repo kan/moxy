@@ -17,6 +17,8 @@ sub response_filter :Hook {
     my $charset = $args->{response}->charset;
     $charset = ( $charset =~ /utf-?8/i ) ? 'utf8' : 'sjis';
 
+    my $pict_html = $self->render_template( $context, 'pict.tmpl' );
+
     $args->{response}->content(
         HTML::ReplacePictogramMobileJp->replace(
             html     => $args->{response}->content,
@@ -25,8 +27,6 @@ sub response_filter :Hook {
             callback => sub {
                 my ( $unicode, $carrier ) = @_;
 
-                my $pict_html =
-                    $self->render_template( $context, 'pict.tmpl' );
                 return sprintf( $pict_html, $carrier, $unicode, $unicode );
             }
         )
