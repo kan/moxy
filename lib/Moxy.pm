@@ -311,6 +311,8 @@ sub _do_request {
 1;
 __END__
 
+=for stopwords nyarla-net
+
 =head1 NAME
 
 Moxy - Mobile web development proxy

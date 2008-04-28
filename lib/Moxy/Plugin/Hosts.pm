@@ -31,6 +31,8 @@ sub response_filter :Hook {
 1;
 __END__
 
+=for stopwords coderepos.org
+
 =head1 NAME
 
 Moxy::Plugin::Hosts - /etc/hosts file emulator
