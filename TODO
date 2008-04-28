@@ -4,8 +4,6 @@
 - とかとか。
 - Plugin::UserID で serial を自由に設定できるようにしたい
 
-- ShowHTTPHeaders の Title: とかの謎ヘッダださないよにしたい
-
 - Store::SQLite つくる?
 - 絵文字入力できるようにしたい
 - Kwalify サポート

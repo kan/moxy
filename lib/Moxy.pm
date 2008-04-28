@@ -294,6 +294,7 @@ sub _do_request {
         timeout           => $self->conf->{global}->{timeout} || 10,
         max_redirects     => 0,
         protocols_allowed => [qw/http https/],
+        parse_head        => 0,
     );
     my $response = $ua->request($req);
     for my $hook ( 'response_filter', "response_filter_$carrier", 'render_location_bar' ) {
