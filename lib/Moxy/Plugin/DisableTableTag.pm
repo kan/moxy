@@ -11,7 +11,7 @@ sub _is_table_tag {
     $TABLE_TAGS->{ lc $tag } ? 1 : 0;
 }
 
-sub response_filter_I :Hook {
+sub response_filter :CarrierHook('I') {
     my ( $self, $context, $args ) = @_;
 
     # only for html.

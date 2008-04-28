@@ -5,7 +5,7 @@ use base qw/Moxy::Plugin/;
 use URI::Escape qw/uri_escape uri_unescape/;
 
 #   TODO: support vodafone(z attribute)
-sub response_filter_V :Hook {
+sub response_filter :CarrierHook('V') {
     my ( $self, $context, $args ) = @_;
 
     my $content = $args->{response}->content;
@@ -13,7 +13,7 @@ sub response_filter_V :Hook {
     $args->{response}->content($content);
 }
 
-sub request_filter_V :Hook {
+sub request_filter :CarrierHook('V') {
     my ( $self, $context, $args ) = @_;
 
     if ( $args->{request}->uri =~ m{^http://gps\.moxy/softbank/\?redirect_to=(.+)} ) {
