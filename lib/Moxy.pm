@@ -5,29 +5,25 @@ use Class::Component;
 
 our $VERSION = '0.32';
 
-use Path::Class;
-use YAML;
-use Encode;
-use FindBin;
-use UNIVERSAL::require;
 use Carp;
-use Scalar::Util qw/blessed/;
-use URI;
-use HTML::Parser;
-use URI::Escape;
-use HTML::Entities;
-use Scalar::Util qw/blessed/;
-use LWP::UserAgent;
-use HTML::Entities;
-use URI::Escape;
-use MIME::Base64;
-use Params::Validate ':all';
-use URI::Heuristic qw(uf_uristr);
+use Encode;
 use File::Spec::Functions;
-use YAML;
-use HTML::TreeBuilder;
-use Moxy::Util;
+use FindBin;
+use HTML::Entities;
+use HTML::Parser;
 use HTML::TreeBuilder::XPath;
+use HTML::TreeBuilder;
+use LWP::UserAgent;
+use MIME::Base64;
+use Moxy::Util;
+use Params::Validate ':all';
+use Path::Class;
+use Scalar::Util qw/blessed/;
+use UNIVERSAL::require;
+use URI::Escape;
+use URI::Heuristic qw(uf_uristr);
+use URI;
+use YAML;
 use HTTP::MobileAttribute plugins => [
     qw/CarrierLetter IS/,
     {
@@ -331,6 +327,7 @@ Moxy is a mobile web development proxy.
 =head1 THANKS TO
 
 Kazuhiro Osawa
+nyarla-net
 
 =head1 LICENSE
 
