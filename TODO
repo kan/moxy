@@ -1,6 +1,7 @@
 - ヘッダ追加
 -- my $depth = ( split /,/, $request->get('x-up-devcap-screendepth') )[0];                                                           
 -- my $color = $request->get('x-up-devcap-iscolor');                                                                                 
+- とかとか。
 - Plugin::UserID で serial を自由に設定できるようにしたい
 
 - http://wassr.jp/ を willcom でみると絵文字がばける。たぶん ReplacePictogram のバグ(または仕様)。

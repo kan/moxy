@@ -6,6 +6,7 @@ name("Moxy");
 all_from("lib/Moxy.pm");
 
 requires 'Class::Component' => 0.16;
+requires 'HTTP::Engine';
 requires 'HTTP::MobileAttribute';
 requires 'CGI';
 requires 'FindBin';
@@ -19,7 +20,6 @@ requires 'HTML::ReplacePictogramMobileJp' => 0.05;
 requires 'HTTP::Proxy';
 requires 'Params::Validate';
 requires 'HTML::Tree' => 3.23;
-requires 'HTTP::Engine' => 0.01;
 
 build_requires('Test::More');
 build_requires('Path::Class');
