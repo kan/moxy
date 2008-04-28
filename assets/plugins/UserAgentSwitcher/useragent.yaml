@@ -148,8 +148,21 @@
     - agent: KDDI-MA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
       cookie: 1
       header:
-        Accept: application/x-shockwave-flash
-        X-UP-DEVCAP-SCREENPIXELS: '232,323'
+        X-UP-DEVCAP-SCREENPIXELS: '240,348'
+        Accept: 'text/x-vcalendar, text/x-vcard, text/vcard, application/x-tar, application/x-kddi-ezmusic, application/x-kddi-playlist, image/bci, application/x-kmcs-form-data, application/x-www-form-urlencoded, text/vnd.sun.j2me.app-descriptor, application/x-kddi-htmlmail, application/x-kddi-drm, text/x-vmessage, application/vnd.syncml+wbxml, application/vnd.syncml+xml, application/vnd.KDDI-vpimlist, application/vnd.KDDI-setsynctime, application/vnd.KDDI-verror, application/x-kddi-auc, application/x-kddi-auk, application/x-kddi-karrange, application/x-atokdic, application/x-up-download, application/octet-stream,application/vnd.phonecom.mmc-xml,application/vnd.uplanet.bearer-choice-wbxml,application/vnd.wap.wmlc;type=4365,application/vnd.wap.xhtml+xml,application/xhtml+xml;profile="http://www.wapforum.org/xhtml",image/bmp,image/gif,image/jpeg,image/png,image/vnd.wap.wbmp,image/x-up-wpng,multipart/mixed,multipart/related,text/css,text/html,text/plain,text/vnd.wap.wml;type=4365,application/x-shockwave-flash,audio/vnd.qcelp,application/x-smaf,application/vnd.yamaha.hv-script,application/x-mpeg,video/3gpp2,audio/3gpp2,video/3gpp,audio/3gpp,text/x-hdml,*/*'
+        ACCEPT-CHARSET: 'shift_jis,*'
+        ACCEPT-LANGUAGE: ja-jp
+        X-UP-DEVCAP-CC: 1
+        X-UP-DEVCAP-ISCOLOR: 1
+        X-UP-DEVCAP-MAX-PDU: 131072
+        X-UP-DEVCAP-MULTIMEDIA: A300951123302120
+        X-UP-DEVCAP-NUMSOFTKEYS: 2
+        X-UP-DEVCAP-QVGA: 1
+        X-UP-DEVCAP-SCREENCHARS: '23,15'
+        X-UP-DEVCAP-SCREENDEPTH: '16,RGB565'
+        X-UP-DEVCAP-SCREENPIXELS: '240,348'
+        X-UP-DEVCAP-SOFTKEYSIZE: 6
+        X-UP-DEVCAP-TITLEBAR: 0
       name: W51P
     - agent: KDDI-KC39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
       cookie: 1
