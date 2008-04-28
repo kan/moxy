@@ -1,4 +1,4 @@
-<div id="moxy-control-panel" style="background-color:#ddddff; right: 0px; top: 5px; position: fixed;">
+<div id="moxy-control-panel" style="margin-left: 10px;float: left; width: 500px;">
     [% FOR part IN parts %]
         <div>[% part %]</div>
     [% END %]

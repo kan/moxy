@@ -19,12 +19,7 @@ requires 'HTML::ReplacePictogramMobileJp' => 0.04;
 requires 'HTTP::Proxy';
 requires 'Params::Validate';
 requires 'HTML::Tree' => 3.23;
-requires 'Catalyst::Runtime' => '5.7012';
-requires 'Catalyst::Plugin::ConfigLoader';
-requires 'Catalyst::Action::RenderView';
-requires 'YAML'; # This should reflect the config file format you've chosen
-                 # See Catalyst::Plugin::ConfigLoader for supported formats
-catalyst;
+requires 'HTTP::Engine' => 0.01;
 
 build_requires('Test::More');
 build_requires('Path::Class');

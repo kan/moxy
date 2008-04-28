@@ -11,7 +11,7 @@ sub response_filter:Hook('response_filter') {
 
     my $display = $args->{mobile_attribute}->display;
     my $header = sprintf(
-        q{<div style="border: 1px black solid; width: %dpx">}, $display->width
+        q{<div style="border: 1px black solid; width: %dpx; margin: 0 auto;float: left;">}, $display->width
     );
 
     my $content = $args->{response}->content;

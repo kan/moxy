@@ -25,7 +25,7 @@ sub render: Hook('response_filter') {
 
     # insert control panel to html response.
     my $content = $args->{response}->content;
-    $content =~ s!(<body.*?>)!"$1$output"!ie;
+    $content =~ s!(</body>)!$output$1!i;
     $args->{response}->content($content);
 }
 

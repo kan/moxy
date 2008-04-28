@@ -1,6 +1,10 @@
 ---
 global:
-  timeout: 3
+  server:
+    module: Interface::Standalone
+    conf:
+      port: 3128
+  timeout: 23
   log:
     level: error
   storage:
@@ -9,19 +13,19 @@ global:
     dbm_class: NDBM_File
 
 plugins:
+  - module: DisplayWidth
   - module: ControlPanel
+  - module: UserID
   - module: XMLisHTML
   - module: UserAgentSwitcher
   - module: Pictogram
-  - module: DisplayWidth
-  - module: QRCode
   - module: RefererCutter
-  - module: ShowHTTPHeaders
   - module: CookieCutter
-  - module: HTTPHeader
   - module: FlashUseImgTag
   - module: DisableTableTag
   - module: GPS
-  - module: UserID
+  - module: HTTPHeader
   - module: LocationBar
+  - module: QRCode
+  - module: ShowHTTPHeaders
 
