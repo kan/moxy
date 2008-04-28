@@ -43,6 +43,7 @@ plugins:
   - module: HTTPHeader
   - module: QRCode
   - module: ShowHTTPHeaders
+  - module: RelativeLocation
 " > config.yaml
 
 echo "#!/bin/sh
