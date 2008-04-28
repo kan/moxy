@@ -76,5 +76,16 @@ html: |+
     <body></body>
   </html>
 --- expected
-<html><head></head><body><div style="border: 1px black solid; width: 240px"></div></body></html>
+<html><head></head><body><div style="border: 1px black solid; width: 240px; margin: 0 auto;float: left;"></div></body></html>
+
+=== wx310k(willcom)
+--- input
+ua: 'Mozilla/3.0(WILLCOM;KYOCERA/WX310K/2;1.1.5.15.000000/0.1/C100) Opera 7.0'
+html: |+
+  <html>
+    <head></head>
+    <body></body>
+  </html>
+--- expected
+<html><head></head><body><div style="border: 1px black solid; width: 320px; margin: 0 auto;float: left;"></div></body></html>
 
