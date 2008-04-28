@@ -1,7 +1,7 @@
 package Moxy;
 use strict;
 use warnings;
-use Class::Component;
+use Class::Component 0.16;
 
 our $VERSION = '0.32';
 

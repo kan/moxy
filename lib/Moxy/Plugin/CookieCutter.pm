@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
 
-sub r: Hook('request_filter') {
+sub request_filter: Hook {
     my ($self, $context, $args) = @_;
 
     # Do NOT send cookies got from client to the origin

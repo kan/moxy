@@ -5,7 +5,7 @@ use base qw/Moxy::Plugin/;
 use URI::Escape qw/uri_unescape/;
 
 # TODO: gpsone
-sub r:Hook('response_filter_E') {
+sub response_filter_E :Hook {
     my ( $self, $context, $args ) = @_;
 
     my $content = $args->{response}->content;
@@ -13,7 +13,7 @@ sub r:Hook('response_filter_E') {
     $args->{response}->content($content);
 }
 
-sub q:Hook('request_filter_E') {
+sub request_filter_E :Hook {
     my ( $self, $context, $args ) = @_;
 
     if ( $args->{request}->uri =~ m{^http://gps\.moxy/au/\?redirect_to=(.+)} ) {

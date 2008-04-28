@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
 
-sub control_panel:Hook('control_panel') {
+sub control_panel :Hook {
     my ($self, $context, $args) = @_;
 
     $context->log(debug => 'dump http headers');

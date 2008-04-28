@@ -4,7 +4,7 @@ use warnings;
 use base qw/Moxy::Plugin/;
 use Moxy::Util;
 
-sub render: Hook('response_filter') {
+sub response_filter: Hook {
     my ($self, $context, $args) = @_;
 
     return unless (($args->{response}->header('Content-Type')||'') =~ /html/);

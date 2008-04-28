@@ -4,7 +4,7 @@ use warnings;
 use base qw/Moxy::Plugin/;
 use URI::Escape;
 
-sub control_panel:Hook('control_panel') {
+sub control_panel :Hook {
     my ($self, $context, $args) = @_;
 
     return $self->render_template(
@@ -15,7 +15,7 @@ sub control_panel:Hook('control_panel') {
     );
 }
 
-sub request_filter:Hook('request_filter') {
+sub request_filter :Hook {
     my ($self, $context, $args) = @_;
 
     if ($args->{request}->uri =~ m{^http://qrcode\.moxy/(.+)}) {

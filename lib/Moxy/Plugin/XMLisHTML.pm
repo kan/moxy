@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
 
-sub r :Hook('response_filter') {
+sub response_filter :Hook {
     my ($self, $context, $args) = @_;
     $args->{response}->header( 'Content-Type' => 'text/html' ) if $args->{response}->header( 'Content-Type' ) =~ /xml/;
 }

@@ -7,7 +7,7 @@ use URI;
 use URI::Escape;
 use CGI;
 
-sub process_agent :Hook('request_filter_process_agent') {
+sub request_filter_process_agent :Hook {
     my ($self, $context, $args) = @_;
 
     my $user_agent = $context->storage->get('user_agent_' . $args->{user}) || 'KDDI-TS3G UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0';
@@ -22,7 +22,7 @@ sub process_agent :Hook('request_filter_process_agent') {
     $context->log(debug => "UserAgent is $user_agent");
 }
 
-sub control_panel :Hook('control_panel') {
+sub control_panel :Hook {
     my ($self, $context, $args) = @_;
 
     # generate control panel html.
@@ -41,7 +41,7 @@ sub control_panel :Hook('control_panel') {
     );
 }
 
-sub request_filter :Hook('request_filter') {
+sub request_filter :Hook {
     my ($self, $context, $args) = @_;
 
     if ($args->{request}->uri =~ m{^http://uaswitcher\.moxy/(.+)}) {

@@ -11,7 +11,7 @@ sub _is_table_tag {
     $TABLE_TAGS->{ lc $tag } ? 1 : 0;
 }
 
-sub i:Hook('response_filter_I') {
+sub response_filter_I :Hook {
     my ( $self, $context, $args ) = @_;
 
     # only for html.

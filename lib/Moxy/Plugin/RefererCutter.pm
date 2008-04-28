@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
 
-sub request_filter:Hook('request_filter') {
+sub request_filter :Hook {
     my ($self, $context, $args) = @_;
 
     $args->{request}->remove_header('Referer');

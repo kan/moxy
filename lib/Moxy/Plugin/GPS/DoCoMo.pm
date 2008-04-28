@@ -5,7 +5,7 @@ use base qw/Moxy::Plugin/;
 
 #  TODO: support navi_pos
 #  TODO: support lcs
-sub r:Hook('request_filter_I') {
+sub request_filter_I :Hook {
     my ( $self, $context, $args ) = @_;
 
     if ($args->{request}->uri =~ m{^http://w1m\.docomo\.ne\.jp/cp/iarea}) {

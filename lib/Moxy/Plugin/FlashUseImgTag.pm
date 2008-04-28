@@ -4,7 +4,7 @@ use warnings;
 use base qw/Moxy::Plugin/;
 use HTML::Parser;
 
-sub e: Hook('response_filter_E') {
+sub response_filter_E: Hook {
     my ( $self, $context, $args ) = @_;
 
     # only for html.

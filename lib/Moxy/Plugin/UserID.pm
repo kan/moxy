@@ -5,7 +5,7 @@ use base qw/Moxy::Plugin/;
 use URI::Escape qw/uri_unescape/;
 use CGI;
 
-sub q:Hook('request_filter') {
+sub get_user_id :Hook('request_filter') {
     my ($self, $context, $args) = @_;
 
     my $key = join(',', __PACKAGE__, $args->{user}, $args->{mobile_attribute}->user_agent);
@@ -21,7 +21,7 @@ sub q:Hook('request_filter') {
 }
 
 # save user id
-sub qq:Hook('request_filter') {
+sub save_user_id :Hook('request_filter') {
     my ($self, $context, $args) = @_;
 
     if ($args->{request}->uri =~ m{^http://userid\.moxy/(.+)}) {
@@ -39,7 +39,7 @@ sub qq:Hook('request_filter') {
     }
 }
 
-sub c:Hook('control_panel') {
+sub control_panel :Hook {
     my ($self, $context, $args) = @_;
     return '' unless $args->{mobile_attribute}->is_ezweb || $args->{mobile_attribute}->is_docomo;
 

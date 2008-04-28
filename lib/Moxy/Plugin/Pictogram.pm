@@ -7,7 +7,7 @@ use Path::Class;
 use HTML::ReplacePictogramMobileJp;
 use HTTP::MobileAttribute;
 
-sub response_filter :Hook('response_filter') {
+sub response_filter :Hook {
     my ( $self, $context, $args, ) = @_;
     return unless ( ( $args->{response}->header('Content-Type') || '' ) =~ /html/ );
     return if $args->{mobile_attribute}->is_non_mobile;
@@ -33,7 +33,7 @@ sub response_filter :Hook('response_filter') {
     );
 }
 
-sub deliver_pictogram :Hook('request_filter') {
+sub request_filter :Hook {
     my ($self, $context, $args) = @_;
     die "request missing" unless $args->{request};
 

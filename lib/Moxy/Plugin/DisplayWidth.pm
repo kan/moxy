@@ -4,7 +4,7 @@ use warnings;
 use base qw/Moxy::Plugin/;
 
 # HTML全体の横幅をUAの画面サイズに合わせる
-sub response_filter:Hook('response_filter') {
+sub response_filter :Hook {
     my ($class, $context, $args) = @_;
     my $attr = $args->{mobile_attribute};
     return if $attr->is_non_mobile;
