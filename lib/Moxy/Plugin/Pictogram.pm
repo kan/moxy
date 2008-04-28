@@ -4,7 +4,7 @@ use warnings;
 use base qw/Moxy::Plugin/;
 use Moxy::Util;
 use Path::Class;
-use HTML::ReplacePictogramMobileJp;
+use HTML::ReplacePictogramMobileJp 0.04;
 use HTTP::MobileAttribute;
 
 sub response_filter :Hook {
