@@ -1,1149 +1,1154 @@
 ---
-ez:
-  - agent: KDDI-TS3G UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,245'
-    name: W55T
-  - agent: KDDI-HI3B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,323'
-    name: W53H
-  - agent: KDDI-KC3B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '240,325'
-    name: W53K
-  - agent: KDDI-ST33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,323'
-    name: INFOBAR 2
-  - agent: KDDI-KC3E UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,245'
-    name: W44K IIカメラなしモデル
-  - agent: KDDI-SN3B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,345'
-    name: W53S
-  - agent: KDDI-CA39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,323'
-    name: W53CA
-  - agent: KDDI-ST32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,323'
-    name: W53SA
-  - agent: KDDI-TS3E UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,325'
-    name: W54T
-  - agent: KDDI-SH33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,323'
-    name: W52SH
-  - agent: KDDI-CA38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,323'
-    name: W52CA
-  - agent: KDDI-MA32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,323'
-    name: W52P
-  - agent: KDDI-SN3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,345'
-    name: W52S
-  - agent: KDDI-TS3D UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,325'
-    name: W53T
-  - agent: KDDI-SA3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,323'
-    name: W52SA
-  - agent: KDDI-HI3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,323'
-    name: W52H
-  - agent: KDDI-KC3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,245'
-    name: MEDIA SKIN
-  - agent: KDDI-SH32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,323'
-    name: W51SH
-  - agent: KDDI-SN39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,345'
-    name: W51S
-  - agent: KDDI-TS3C UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,325'
-    name: W52T
-  - agent: KDDI-TS3B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,245'
-    name: W51T
-  - agent: KDDI-SA39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,243'
-    name: W51SA
-  - agent: KDDI-HI39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,323'
-    name: W51H
-  - agent: KDDI-CA37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,323'
-    name: W51CA
-  - agent: KDDI-MA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,323'
-    name: W51P
-  - agent: KDDI-KC39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '240,325'
-    name: W51K
-  - agent: KDDI-TS39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,225'
-    name: DRAPE
-  - agent: KDDI-TS3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,225'
-    name: W47T
-  - agent: KDDI-SN38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,345'
-    name: W44S
-  - agent: KDDI-KC38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,237'
-    name: W44K/K II
-  - agent: KDDI-SA38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,243'
-    name: W43SA
-  - agent: KDDI-TS38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,268'
-    name: W45T
-  - agent: KDDI-CA35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,315'
-    name: W43CA
-  - agent: KDDI-HI38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,315'
-    name: W43H/H II
-  - agent: KDDI-SN37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,368'
-    name: W43S
-  - agent: KDDI-KC37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,237'
-    name: W43K
-  - agent: KDDI-ST31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '235,234'
-    name: W42SA
-  - agent: KDDI-SH31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,315'
-    name: W41SH
-  - agent: KDDI-CA34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,243'
-    name: W42CA
-  - agent: KDDI-HI37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,243'
-    name: W42H
-  - agent: KDDI-TS37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,268'
-    name: W44T/T II/T III
-  - agent: KDDI-TS35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,244'
-    name: neon
-  - agent: KDDI-TS36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,244'
-    name: W43T
-  - agent: KDDI-SN36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,250'
-    name: W42S
-  - agent: KDDI-KC36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,245'
-    name: W42K
-  - agent: KDDI-KC35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,245'
-    name: W41K
-  - agent: KDDI-SA36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,243'
-    name: W41SA
-  - agent: KDDI-TS34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,244'
-    name: W41T
-  - agent: KDDI-HI36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '230,323'
-    name: W41H
-  - agent: KDDI-CA33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '230,323'
-    name: W41CA
-  - agent: KDDI-SN34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,250'
-    name: W41S
-  - agent: KDDI-HI34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '230,266'
-    name: PENCK
-  - agent: KDDI-SA35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,243'
-    name: W33SA/SA II
-  - agent: KDDI-TS33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,244'
-    name: W32T
-  - agent: KDDI-SA34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,243'
-    name: W32SA
-  - agent: KDDI-KC34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '234,266'
-    name: W32K
-  - agent: KDDI-HI35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '230,235'
-    name: W32H
-  - agent: KDDI-ARRAY(0x8e7be10) UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,242'
-    name: W32S
-  - agent: KDDI-CA32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '230,323'
-    name: W31CA
-  - agent: KDDI-TS32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,244'
-    name: W31T
-  - agent: KDDI-SN32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,238'
-    name: W31S
-  - agent: KDDI-KC33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '234,268'
-    name: W31K/K II
-  - agent: KDDI-SA33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '230,268'
-    name: W31SA/SA II
-  - agent: KDDI-SA32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '230,266'
-    name: W22SA
-  - agent: KDDI-HI33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '230,266'
-    name: W22H
-  - agent: KDDI-CA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '230,346'
-    name: W21CA/CA II
-  - agent: KDDI-TS31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,270'
-    name: W21T
-  - agent: KDDI-SA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '225,266'
-    name: W21SA
-  - agent: KDDI-SN31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,266'
-    name: W21S
-  - agent: KDDI-KC32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '234,266'
-    name: W21K
-  - agent: KDDI-HI32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '123,147'
-    name: W21H
-  - agent: KDDI-KC31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '233,268'
-    name: W11K
-  - agent: KDDI-HI31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '233,268'
-    name: W11H
-  - agent: KDDI-ST2C UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '235,242'
-    name: Sweets cute
-  - agent: KDDI-ST29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '235,242'
-    name: Sweets pure
-  - agent: KDDI-CA28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '230,243'
-    name: G'zOne TYPE-R
-  - agent: KDDI-ST26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '235,270'
-    name: Sweets
-  - agent: KDDI-ST25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '235,270'
-    name: talby
-  - agent: KDDI-ST22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '125,145'
-    name: INFOBAR
-  - agent: KDDI-TS2E UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,245'
-    name: A5529T
-  - agent: KDDI-KC2A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,245'
-    name: A5528K
-  - agent: KDDI-SA2A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '235,242'
-    name: A5527SA
-  - agent: KDDI-KC29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,245'
-    name: A5526K
-  - agent: KDDI-ST2D UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '235,242'
-    name: A5525SA
-  - agent: KDDI-TS2D UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,245'
-    name: A5523T
-  - agent: KDDI-SA29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '235,234'
-    name: A5522SA
-  - agent: KDDI-KC28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '234,248'
-    name: A5521K
-  - agent: KDDI-ST2A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '235,242'
-    name: A5520SA/SA II
-  - agent: KDDI-ST28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '235,242'
-    name: A5518SA
-  - agent: KDDI-TS2C UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,246'
-    name: A5517T
-  - agent: KDDI-TS2B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,246'
-    name: A5516T
-  - agent: KDDI-KC27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '234,248'
-    name: A5515K
-  - agent: KDDI-ST27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '235,242'
-    name: A5514SA
-  - agent: KDDI-CA27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '230,243'
-    name: A5512CA
-  - agent: KDDI-TS2A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '229,246'
-    name: A5511T
-  - agent: KDDI-TS29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '229,270'
-    name: A5509T
-  - agent: KDDI-ST24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '235,270'
-    name: A5507SA
-  - agent: KDDI-TS28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '229,270'
-    name: A5506T
-  - agent: KDDI-SA27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '225,263'
-    name: A5505SA
-  - agent: KDDI-TS27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '229,270'
-    name: A5504T
-  - agent: KDDI-SA26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '225,263'
-    name: A5503SA
-  - agent: KDDI-ARRAY(0x8db9404) UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '234,262'
-    name: A5502K
-  - agent: KDDI-TS26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '240,270'
-    name: A5501T
-  - agent: KDDI-CA26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '230,266'
-    name: A5407CA
-  - agent: KDDI-CA25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '230,266'
-    name: A5406CA
-  - agent: KDDI-ST23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '127,145'
-    name: A5405SA
-  - agent: KDDI-SN25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '240,256'
-    name: A5404S
-  - agent: KDDI-CA24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '230,266'
-    name: A5403CA
-  - agent: KDDI-SN24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,160'
-    name: A5402S
-  - agent: KDDI-CA23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '123,147'
-    name: A5401CA II
-  - agent: KDDI-CA23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '123,147'
-    name: A5401CA
-  - agent: KDDI-ST21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '125,145'
-    name: A5306ST
-  - agent: KDDI-KC22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '125,144'
-    name: A5305K
-  - agent: KDDI-TS24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '144,140'
-    name: A5304T
-  - agent: KDDI-HI24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '125,144'
-    name: A5303H II
-  - agent: KDDI-HI23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '125,144'
-    name: A5303H
-  - agent: KDDI-CA22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '125,147'
-    name: A5302CA
-  - agent: KDDI-TS23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '144,140'
-    name: A5301T
-  - agent: KDDI-TS21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '144,135'
-    name: C5001T
-  - agent: KDDI-SA22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '126,144'
-    name: A3015SA
-  - agent: KDDI-SN21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,120'
-    name: A3014S
-  - agent: KDDI-TS22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '144,135'
-    name: A3013T
-  - agent: KDDI-CA21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '125,147'
-    name: A3012CA
-  - agent: KDDI-SA21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '126,144'
-    name: A3011SA
-  - agent: KDDI-MA21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '132,144'
-    name: C3003P
-  - agent: KDDI-KC21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '128,132'
-    name: C3002K
-  - agent: KDDI-HI21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,130'
-    name: C3001H
-  - agent: KDDI-PT23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '240,240'
-    name: A1407PT
-  - agent: KDDI-PT22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '240,236'
-    name: A1406PT
-  - agent: KDDI-PT21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '240,236'
-    name: A1405PT
-  - agent: KDDI-SN29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '228,230'
-    name: A1404S/S II
-  - agent: KDDI-KC26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '234,266'
-    name: A1403K
-  - agent: KDDI-SN27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '228,244'
-    name: A1402S II
-  - agent: KDDI-SN28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '228,244'
-    name: A1402S IIカメラ無し
-  - agent: KDDI-SN26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '228,244'
-    name: A1402S
-  - agent: KDDI-KC23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '126,136'
-    name: A1401K
-  - agent: KDDI-SA28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '124,144'
-    name: A1305SA
-  - agent: KDDI-TS25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '144,140'
-    name: A1304T II
-  - agent: KDDI-TS25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '144,140'
-    name: A1304T
-  - agent: KDDI-TS25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '144,140'
-    name: A1304Tカメラ無し
-  - agent: KDDI-SA25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '124,144'
-    name: A1303SA
-  - agent: KDDI-SA24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '124,144'
-    name: A1302SA
-  - agent: KDDI-SN23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,123'
-    name: A1301S
-  - agent: KDDI-SN22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,120'
-    name: A1101S
-  - agent: UP.Browser/3.04-ST14 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,108'
-    name: A1014ST
-  - agent: UP.Browser/3.04-KC15 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,126'
-    name: A1013K
-  - agent: UP.Browser/3.04-KC14 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,126'
-    name: A1012K II
-  - agent: UP.Browser/3.04-KC14 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,126'
-    name: A1012K
-  - agent: UP.Browser/3.04-ST13 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,126'
-    name: A1011ST
-  - agent: UP.Browser/3.04-SN17 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,120'
-    name: C1002S
-  - agent: UP.Browser/3.04-SY15 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,128'
-    name: C1001SA
-  - agent: UP.Browser/3.04-CA14 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,109'
-    name: C452CA
-  - agent: UP.Browser/3.04-HI14 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,113'
-    name: C451H
-  - agent: UP.Browser/3.04-TS14 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '96,98'
-    name: C415T
-  - agent: UP.Browser/3.04-KC13 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,128'
-    name: C414K II
-  - agent: UP.Browser/3.04-KC13 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,128'
-    name: C414K
-  - agent: UP.Browser/3.04-ARRAY(0x8edad8c) UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,120'
-    name: C413S
-  - agent: UP.Browser/3.04-SY14 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,128'
-    name: C412SA
-  - agent: UP.Browser/3.04-ST12 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,126'
-    name: C411ST
-  - agent: UP.Browser/3.04-TS13 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '96,98'
-    name: C410T
-  - agent: UP.Browser/3.04-CA13 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,96'
-    name: C409CA
-  - agent: UP.Browser/3.04-MA13 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '115,129'
-    name: C408P
-  - agent: UP.Browser/3.04-HI13 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,113'
-    name: C407H
-  - agent: UP.Browser/3.04-SN13 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,120'
-    name: C406S
-  - agent: UP.Browser/3.04-SY13 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,96'
-    name: C405SA
-  - agent: UP.Browser/3.04-ARRAY(0x8e7175c) UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,120'
-    name: C404S
-  - agent: UP.Browser/3.04-ST11 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,126'
-    name: C403ST
-  - agent: UP.Browser/3.04-DN11 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,112'
-    name: C402DE
-  - agent: UP.Browser/3.04-SY12 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,128'
-    name: C401SA
-  - agent: KDDI-CA36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '232,243'
-    name: E03CA
-  - agent: KDDI-SA37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      Accept: application/x-shockwave-flash
-      X-UP-DEVCAP-SCREENPIXELS: '228,243'
-    name: E02SA
-  - agent: KDDI-KC26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '234,266'
-    name: B01K
-  - agent: UP.Browser/3.04-KCTE UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,137'
-    name: TK51
-  - agent: UP.Browser/3.04-TST9 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,112'
-    name: TT51
-  - agent: KDDI-KCU1 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '114,137'
-    name: TK41
-  - agent: UP.Browser/3.04-SYT5 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '132,144'
-    name: TS41
-  - agent: UP.Browser/3.04-KCTD UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,137'
-    name: TK40
-  - agent: UP.Browser/3.04-TST8 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '140,120'
-    name: TT32
-  - agent: UP.Browser/3.04-TST7 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '140,120'
-    name: TT31
-  - agent: UP.Browser/3.04-KCTC UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,137'
-    name: TK31
-  - agent: UP.Browser/3.04-KCTB UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,137'
-    name: TK23
-  - agent: UP.Browser/3.04-KCTA UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,137'
-    name: TK22
-  - agent: UP.Browser/3.04-TST6 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '140,120'
-    name: TT22
-  - agent: UP.Browser/3.04-KCT9 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,137'
-    name: TK21
-  - agent: UP.Browser/3.04-TST5 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '140,133'
-    name: TT21
-  - agent: UP.Browser/3.04-SYT4 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,108'
-    name: TS31
-  - agent: UP.Browser/3.04-TST4 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,129'
-    name: TT11
-  - agent: UP.Browser/3.04-KCT8 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,137'
-    name: TK12
-  - agent: UP.Browser/3.04-SYT3 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,128'
-    name: TS11
-  - agent: UP.Browser/3.04-KCT7 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '96,104'
-    name: TK11
-  - agent: UP.Browser/3.04-MIT1 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,117'
-    name: TD11
-  - agent: UP.Browser/3.04-MAT3 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '96,94'
-    name: TP11
-  - agent: UP.Browser/3.04-KCT6 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '96,104'
-    name: TK05
-  - agent: UP.Browser/3.04-TST3 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,117'
-    name: TT03
-  - agent: UP.Browser/3.04-KCT5 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '96,104'
-    name: TK04
-  - agent: UP.Browser/3.04-KCT4 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '96,104'
-    name: TK03
-  - agent: UP.Browser/3.04-SYT2 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '96,72'
-    name: TS02
-  - agent: UP.Browser/3.04-ARRAY(0x8ee5594) UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '122,78'
-    name: TP01
-  - agent: UP.Browser/3.04-TST2 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,84'
-    name: TT02
-  - agent: UP.Browser/3.04-KCT3 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '121,94'
-    name: TK0K
-  - agent: UP.Browser/3.04-KCT2 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '121,94'
-    name: TK02
-  - agent: UP.Browser/3.04-KCT1 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '121,94'
-    name: TK01
-  - agent: UP.Browser/3.04-TST1 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '120,84'
-    name: TT01
-  - agent: UP.Browser/3.04-SYT1 UP.Link/3.4.5.9
-    cookie: 1
-    header:
-      X-UP-DEVCAP-SCREENPIXELS: '128,96'
-    name: TS01
-googlebot:
-  - agent: KDDI-SA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0 (compatible;
-    name: KDDI-Googlebot
-  - agent: DoCoMo/1.0/N505i/c20/TB/W20H10 (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)
-    name: Googlebot-Mobile(DoCoMo)
-  - agent: Nokia6820/2.0 (4.83) Profile/MIDP-1.0 Configuration/CLDC-1.0 (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)
-    name: Googlebot-Mobile(Nokia)
-i-mode:
-  - agent: DoCoMo/2.0 SH901iC(c100;TB;W24H12;serTESTI7890ABCDEF;icc12345678901234567890)
-    name: SH901iC(端末IDあり)
-    size: ~
-  - agent: DoCoMo/2.0 SH901iC(c100;TB;W24H12)
-    name: SH901iC(端末ID無し)
-    size: ~
-softbank:
-  - agent: Vodafone/1.0/V902SH/SHJ001 Browser/UP.Browser/7.0.2.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-J-Profile/JSCL-1.2.2 Ext-V-Profile/VSCL-2.0.0
-    header:
-      X-JPHONE-DISPLAY: 240*320
-    name: V902SH
-    size: ~
-  - agent: Vodafone/1.0/V702NK/NKJ001 Series60/2.6 Nokia6630/2.39.148 Profile/MIDP-2.0 Configuration/CLDC-1.1
-    header:
-      X-JPHONE-DISPLAY: 208*176
-    name: V702NK(Nokia端末)
-    size: ~
-  - agent: J-PHONE/3.0/J-SH07
-    header:
-      X-JPHONE-DISPLAY: 120*117
-    name: J-SH07(type C3)
-    size: ~
-willcom:
-  - agent: Mozilla/3.0(WILLCOM;KYOCERA/WX310K/2;1.1.5.15.000000/0.1/C100) Opera 7.0
-    name: WX310K
+- carrier: ez
+  agents:
+    - agent: KDDI-TS3G UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,245'
+      name: W55T
+    - agent: KDDI-HI3B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,323'
+      name: W53H
+    - agent: KDDI-KC3B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '240,325'
+      name: W53K
+    - agent: KDDI-ST33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,323'
+      name: INFOBAR 2
+    - agent: KDDI-KC3E UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,245'
+      name: W44K IIカメラなしモデル
+    - agent: KDDI-SN3B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,345'
+      name: W53S
+    - agent: KDDI-CA39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,323'
+      name: W53CA
+    - agent: KDDI-ST32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,323'
+      name: W53SA
+    - agent: KDDI-TS3E UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,325'
+      name: W54T
+    - agent: KDDI-SH33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,323'
+      name: W52SH
+    - agent: KDDI-CA38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,323'
+      name: W52CA
+    - agent: KDDI-MA32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,323'
+      name: W52P
+    - agent: KDDI-SN3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,345'
+      name: W52S
+    - agent: KDDI-TS3D UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,325'
+      name: W53T
+    - agent: KDDI-SA3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,323'
+      name: W52SA
+    - agent: KDDI-HI3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,323'
+      name: W52H
+    - agent: KDDI-KC3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,245'
+      name: MEDIA SKIN
+    - agent: KDDI-SH32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,323'
+      name: W51SH
+    - agent: KDDI-SN39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,345'
+      name: W51S
+    - agent: KDDI-TS3C UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,325'
+      name: W52T
+    - agent: KDDI-TS3B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,245'
+      name: W51T
+    - agent: KDDI-SA39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,243'
+      name: W51SA
+    - agent: KDDI-HI39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,323'
+      name: W51H
+    - agent: KDDI-CA37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,323'
+      name: W51CA
+    - agent: KDDI-MA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,323'
+      name: W51P
+    - agent: KDDI-KC39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '240,325'
+      name: W51K
+    - agent: KDDI-TS39 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,225'
+      name: DRAPE
+    - agent: KDDI-TS3A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,225'
+      name: W47T
+    - agent: KDDI-SN38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,345'
+      name: W44S
+    - agent: KDDI-KC38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,237'
+      name: W44K/K II
+    - agent: KDDI-SA38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,243'
+      name: W43SA
+    - agent: KDDI-TS38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,268'
+      name: W45T
+    - agent: KDDI-CA35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,315'
+      name: W43CA
+    - agent: KDDI-HI38 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,315'
+      name: W43H/H II
+    - agent: KDDI-SN37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,368'
+      name: W43S
+    - agent: KDDI-KC37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,237'
+      name: W43K
+    - agent: KDDI-ST31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '235,234'
+      name: W42SA
+    - agent: KDDI-SH31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,315'
+      name: W41SH
+    - agent: KDDI-CA34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,243'
+      name: W42CA
+    - agent: KDDI-HI37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,243'
+      name: W42H
+    - agent: KDDI-TS37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,268'
+      name: W44T/T II/T III
+    - agent: KDDI-TS35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,244'
+      name: neon
+    - agent: KDDI-TS36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,244'
+      name: W43T
+    - agent: KDDI-SN36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,250'
+      name: W42S
+    - agent: KDDI-KC36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,245'
+      name: W42K
+    - agent: KDDI-KC35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,245'
+      name: W41K
+    - agent: KDDI-SA36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,243'
+      name: W41SA
+    - agent: KDDI-TS34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,244'
+      name: W41T
+    - agent: KDDI-HI36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '230,323'
+      name: W41H
+    - agent: KDDI-CA33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '230,323'
+      name: W41CA
+    - agent: KDDI-SN34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,250'
+      name: W41S
+    - agent: KDDI-HI34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '230,266'
+      name: PENCK
+    - agent: KDDI-SA35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,243'
+      name: W33SA/SA II
+    - agent: KDDI-TS33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,244'
+      name: W32T
+    - agent: KDDI-SA34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,243'
+      name: W32SA
+    - agent: KDDI-KC34 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '234,266'
+      name: W32K
+    - agent: KDDI-HI35 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '230,235'
+      name: W32H
+    - agent: KDDI-ARRAY(0x8e7be10) UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,242'
+      name: W32S
+    - agent: KDDI-CA32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '230,323'
+      name: W31CA
+    - agent: KDDI-TS32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,244'
+      name: W31T
+    - agent: KDDI-SN32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,238'
+      name: W31S
+    - agent: KDDI-KC33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '234,268'
+      name: W31K/K II
+    - agent: KDDI-SA33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '230,268'
+      name: W31SA/SA II
+    - agent: KDDI-SA32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '230,266'
+      name: W22SA
+    - agent: KDDI-HI33 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '230,266'
+      name: W22H
+    - agent: KDDI-CA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '230,346'
+      name: W21CA/CA II
+    - agent: KDDI-TS31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,270'
+      name: W21T
+    - agent: KDDI-SA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '225,266'
+      name: W21SA
+    - agent: KDDI-SN31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,266'
+      name: W21S
+    - agent: KDDI-KC32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '234,266'
+      name: W21K
+    - agent: KDDI-HI32 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '123,147'
+      name: W21H
+    - agent: KDDI-KC31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '233,268'
+      name: W11K
+    - agent: KDDI-HI31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '233,268'
+      name: W11H
+    - agent: KDDI-ST2C UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '235,242'
+      name: Sweets cute
+    - agent: KDDI-ST29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '235,242'
+      name: Sweets pure
+    - agent: KDDI-CA28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '230,243'
+      name: G'zOne TYPE-R
+    - agent: KDDI-ST26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '235,270'
+      name: Sweets
+    - agent: KDDI-ST25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '235,270'
+      name: talby
+    - agent: KDDI-ST22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '125,145'
+      name: INFOBAR
+    - agent: KDDI-TS2E UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,245'
+      name: A5529T
+    - agent: KDDI-KC2A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,245'
+      name: A5528K
+    - agent: KDDI-SA2A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '235,242'
+      name: A5527SA
+    - agent: KDDI-KC29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,245'
+      name: A5526K
+    - agent: KDDI-ST2D UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '235,242'
+      name: A5525SA
+    - agent: KDDI-TS2D UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,245'
+      name: A5523T
+    - agent: KDDI-SA29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '235,234'
+      name: A5522SA
+    - agent: KDDI-KC28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '234,248'
+      name: A5521K
+    - agent: KDDI-ST2A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '235,242'
+      name: A5520SA/SA II
+    - agent: KDDI-ST28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '235,242'
+      name: A5518SA
+    - agent: KDDI-TS2C UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,246'
+      name: A5517T
+    - agent: KDDI-TS2B UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,246'
+      name: A5516T
+    - agent: KDDI-KC27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '234,248'
+      name: A5515K
+    - agent: KDDI-ST27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '235,242'
+      name: A5514SA
+    - agent: KDDI-CA27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '230,243'
+      name: A5512CA
+    - agent: KDDI-TS2A UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '229,246'
+      name: A5511T
+    - agent: KDDI-TS29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '229,270'
+      name: A5509T
+    - agent: KDDI-ST24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '235,270'
+      name: A5507SA
+    - agent: KDDI-TS28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '229,270'
+      name: A5506T
+    - agent: KDDI-SA27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '225,263'
+      name: A5505SA
+    - agent: KDDI-TS27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '229,270'
+      name: A5504T
+    - agent: KDDI-SA26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '225,263'
+      name: A5503SA
+    - agent: KDDI-ARRAY(0x8db9404) UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '234,262'
+      name: A5502K
+    - agent: KDDI-TS26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '240,270'
+      name: A5501T
+    - agent: KDDI-CA26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '230,266'
+      name: A5407CA
+    - agent: KDDI-CA25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '230,266'
+      name: A5406CA
+    - agent: KDDI-ST23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '127,145'
+      name: A5405SA
+    - agent: KDDI-SN25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '240,256'
+      name: A5404S
+    - agent: KDDI-CA24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '230,266'
+      name: A5403CA
+    - agent: KDDI-SN24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,160'
+      name: A5402S
+    - agent: KDDI-CA23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '123,147'
+      name: A5401CA II
+    - agent: KDDI-CA23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '123,147'
+      name: A5401CA
+    - agent: KDDI-ST21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '125,145'
+      name: A5306ST
+    - agent: KDDI-KC22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '125,144'
+      name: A5305K
+    - agent: KDDI-TS24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '144,140'
+      name: A5304T
+    - agent: KDDI-HI24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '125,144'
+      name: A5303H II
+    - agent: KDDI-HI23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '125,144'
+      name: A5303H
+    - agent: KDDI-CA22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '125,147'
+      name: A5302CA
+    - agent: KDDI-TS23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '144,140'
+      name: A5301T
+    - agent: KDDI-TS21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '144,135'
+      name: C5001T
+    - agent: KDDI-SA22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '126,144'
+      name: A3015SA
+    - agent: KDDI-SN21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,120'
+      name: A3014S
+    - agent: KDDI-TS22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '144,135'
+      name: A3013T
+    - agent: KDDI-CA21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '125,147'
+      name: A3012CA
+    - agent: KDDI-SA21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '126,144'
+      name: A3011SA
+    - agent: KDDI-MA21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '132,144'
+      name: C3003P
+    - agent: KDDI-KC21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '128,132'
+      name: C3002K
+    - agent: KDDI-HI21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,130'
+      name: C3001H
+    - agent: KDDI-PT23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '240,240'
+      name: A1407PT
+    - agent: KDDI-PT22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '240,236'
+      name: A1406PT
+    - agent: KDDI-PT21 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '240,236'
+      name: A1405PT
+    - agent: KDDI-SN29 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '228,230'
+      name: A1404S/S II
+    - agent: KDDI-KC26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '234,266'
+      name: A1403K
+    - agent: KDDI-SN27 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '228,244'
+      name: A1402S II
+    - agent: KDDI-SN28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '228,244'
+      name: A1402S IIカメラ無し
+    - agent: KDDI-SN26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '228,244'
+      name: A1402S
+    - agent: KDDI-KC23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '126,136'
+      name: A1401K
+    - agent: KDDI-SA28 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '124,144'
+      name: A1305SA
+    - agent: KDDI-TS25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '144,140'
+      name: A1304T II
+    - agent: KDDI-TS25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '144,140'
+      name: A1304T
+    - agent: KDDI-TS25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '144,140'
+      name: A1304Tカメラ無し
+    - agent: KDDI-SA25 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '124,144'
+      name: A1303SA
+    - agent: KDDI-SA24 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '124,144'
+      name: A1302SA
+    - agent: KDDI-SN23 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,123'
+      name: A1301S
+    - agent: KDDI-SN22 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,120'
+      name: A1101S
+    - agent: UP.Browser/3.04-ST14 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,108'
+      name: A1014ST
+    - agent: UP.Browser/3.04-KC15 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,126'
+      name: A1013K
+    - agent: UP.Browser/3.04-KC14 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,126'
+      name: A1012K II
+    - agent: UP.Browser/3.04-KC14 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,126'
+      name: A1012K
+    - agent: UP.Browser/3.04-ST13 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,126'
+      name: A1011ST
+    - agent: UP.Browser/3.04-SN17 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,120'
+      name: C1002S
+    - agent: UP.Browser/3.04-SY15 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,128'
+      name: C1001SA
+    - agent: UP.Browser/3.04-CA14 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,109'
+      name: C452CA
+    - agent: UP.Browser/3.04-HI14 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,113'
+      name: C451H
+    - agent: UP.Browser/3.04-TS14 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '96,98'
+      name: C415T
+    - agent: UP.Browser/3.04-KC13 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,128'
+      name: C414K II
+    - agent: UP.Browser/3.04-KC13 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,128'
+      name: C414K
+    - agent: UP.Browser/3.04-ARRAY(0x8edad8c) UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,120'
+      name: C413S
+    - agent: UP.Browser/3.04-SY14 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,128'
+      name: C412SA
+    - agent: UP.Browser/3.04-ST12 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,126'
+      name: C411ST
+    - agent: UP.Browser/3.04-TS13 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '96,98'
+      name: C410T
+    - agent: UP.Browser/3.04-CA13 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,96'
+      name: C409CA
+    - agent: UP.Browser/3.04-MA13 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '115,129'
+      name: C408P
+    - agent: UP.Browser/3.04-HI13 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,113'
+      name: C407H
+    - agent: UP.Browser/3.04-SN13 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,120'
+      name: C406S
+    - agent: UP.Browser/3.04-SY13 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,96'
+      name: C405SA
+    - agent: UP.Browser/3.04-ARRAY(0x8e7175c) UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,120'
+      name: C404S
+    - agent: UP.Browser/3.04-ST11 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,126'
+      name: C403ST
+    - agent: UP.Browser/3.04-DN11 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,112'
+      name: C402DE
+    - agent: UP.Browser/3.04-SY12 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,128'
+      name: C401SA
+    - agent: KDDI-CA36 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '232,243'
+      name: E03CA
+    - agent: KDDI-SA37 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        Accept: application/x-shockwave-flash
+        X-UP-DEVCAP-SCREENPIXELS: '228,243'
+      name: E02SA
+    - agent: KDDI-KC26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '234,266'
+      name: B01K
+    - agent: UP.Browser/3.04-KCTE UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,137'
+      name: TK51
+    - agent: UP.Browser/3.04-TST9 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,112'
+      name: TT51
+    - agent: KDDI-KCU1 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '114,137'
+      name: TK41
+    - agent: UP.Browser/3.04-SYT5 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '132,144'
+      name: TS41
+    - agent: UP.Browser/3.04-KCTD UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,137'
+      name: TK40
+    - agent: UP.Browser/3.04-TST8 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '140,120'
+      name: TT32
+    - agent: UP.Browser/3.04-TST7 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '140,120'
+      name: TT31
+    - agent: UP.Browser/3.04-KCTC UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,137'
+      name: TK31
+    - agent: UP.Browser/3.04-KCTB UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,137'
+      name: TK23
+    - agent: UP.Browser/3.04-KCTA UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,137'
+      name: TK22
+    - agent: UP.Browser/3.04-TST6 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '140,120'
+      name: TT22
+    - agent: UP.Browser/3.04-KCT9 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,137'
+      name: TK21
+    - agent: UP.Browser/3.04-TST5 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '140,133'
+      name: TT21
+    - agent: UP.Browser/3.04-SYT4 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,108'
+      name: TS31
+    - agent: UP.Browser/3.04-TST4 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,129'
+      name: TT11
+    - agent: UP.Browser/3.04-KCT8 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,137'
+      name: TK12
+    - agent: UP.Browser/3.04-SYT3 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,128'
+      name: TS11
+    - agent: UP.Browser/3.04-KCT7 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '96,104'
+      name: TK11
+    - agent: UP.Browser/3.04-MIT1 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,117'
+      name: TD11
+    - agent: UP.Browser/3.04-MAT3 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '96,94'
+      name: TP11
+    - agent: UP.Browser/3.04-KCT6 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '96,104'
+      name: TK05
+    - agent: UP.Browser/3.04-TST3 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,117'
+      name: TT03
+    - agent: UP.Browser/3.04-KCT5 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '96,104'
+      name: TK04
+    - agent: UP.Browser/3.04-KCT4 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '96,104'
+      name: TK03
+    - agent: UP.Browser/3.04-SYT2 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '96,72'
+      name: TS02
+    - agent: UP.Browser/3.04-ARRAY(0x8ee5594) UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '122,78'
+      name: TP01
+    - agent: UP.Browser/3.04-TST2 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,84'
+      name: TT02
+    - agent: UP.Browser/3.04-KCT3 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '121,94'
+      name: TK0K
+    - agent: UP.Browser/3.04-KCT2 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '121,94'
+      name: TK02
+    - agent: UP.Browser/3.04-KCT1 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '121,94'
+      name: TK01
+    - agent: UP.Browser/3.04-TST1 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '120,84'
+      name: TT01
+    - agent: UP.Browser/3.04-SYT1 UP.Link/3.4.5.9
+      cookie: 1
+      header:
+        X-UP-DEVCAP-SCREENPIXELS: '128,96'
+      name: TS01
+- carrier: googlebot
+  agents:
+    - agent: KDDI-SA31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0 (compatible;
+      name: KDDI-Googlebot
+    - agent: DoCoMo/1.0/N505i/c20/TB/W20H10 (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)
+      name: Googlebot-Mobile(DoCoMo)
+    - agent: Nokia6820/2.0 (4.83) Profile/MIDP-1.0 Configuration/CLDC-1.0 (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)
+      name: Googlebot-Mobile(Nokia)
+- carrier: i-mode
+  agents:
+    - agent: DoCoMo/2.0 SH901iC(c100;TB;W24H12;serTESTI7890ABCDEF;icc12345678901234567890)
+      name: SH901iC(端末IDあり)
+      size: ~
+    - agent: DoCoMo/2.0 SH901iC(c100;TB;W24H12)
+      name: SH901iC(端末ID無し)
+      size: ~
+- carrier: softbank
+  agents:
+    - agent: Vodafone/1.0/V902SH/SHJ001 Browser/UP.Browser/7.0.2.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-J-Profile/JSCL-1.2.2 Ext-V-Profile/VSCL-2.0.0
+      header:
+        X-JPHONE-DISPLAY: 240*320
+      name: V902SH
+      size: ~
+    - agent: Vodafone/1.0/V702NK/NKJ001 Series60/2.6 Nokia6630/2.39.148 Profile/MIDP-2.0 Configuration/CLDC-1.1
+      header:
+        X-JPHONE-DISPLAY: 208*176
+      name: V702NK(Nokia端末)
+      size: ~
+    - agent: J-PHONE/3.0/J-SH07
+      header:
+        X-JPHONE-DISPLAY: 120*117
+      name: J-SH07(type C3)
+      size: ~
+- carrier: willcom
+  agents:
+    - agent: Mozilla/3.0(WILLCOM;KYOCERA/WX310K/2;1.1.5.15.000000/0.1/C100) Opera 7.0
+      name: WX310K

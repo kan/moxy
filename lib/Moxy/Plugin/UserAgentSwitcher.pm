@@ -31,7 +31,7 @@ sub control_panel :Hook('control_panel') {
     return $self->render_template(
         $context,
         'panel.tt' => {
-            agents          => $self->ua_list($context),
+            ua_list         => $self->ua_list($context),
             moxy_user_agent => (
                 $args->{response}->request->header('User-Agent') || ''
             ),
@@ -68,9 +68,9 @@ sub get_ua_info {
 
     $self->{__ua_hash} ||= do {
         my $ua_hash;
-        for my $agents (values %{$self->ua_list($context)}) {
-            for my $ua (@{$agents}) {
-                $ua_hash->{$ua->{agent}} = $ua;
+        for my $carrier_info ( @{ $self->ua_list($context) }) {
+            for my $agent ( @{ $carrier_info->{agents} } ) {
+                $ua_hash->{$agent->{agent}} = $agent;
             }
         }
         $ua_hash;

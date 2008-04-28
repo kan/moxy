@@ -2,15 +2,15 @@
 -- my $depth = ( split /,/, $request->get('x-up-devcap-screendepth') )[0];                                                           
 -- my $color = $request->get('x-up-devcap-iscolor');                                                                                 
 - Plugin::UserID で serial を自由に設定できるようにしたい
-- POST のときに、uri の方のパラメータしかこない疑惑(reported by yappo)
 
-
+- http://wassr.jp/ を willcom でみるとばける
 - Store::SQLite つくる?
 - 絵文字入力できるようにしたい
 - Kwalify サポート
 - 認証まわりを flexible にしたい
 -- OpenID に対応するとか
 - cookie support
+-- willcom サポート的に必要だな
 -- 16:40 kan: でも、Moxy側でユーザを認証できてれば、なんとやれるんじゃない？
 -- 16:40 kan: HTTP clientとしての挙動をエミュレーションすれば
 
