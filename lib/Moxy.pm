@@ -298,7 +298,7 @@ sub _do_request {
         protocols_allowed => [qw/http https/],
     );
     my $response = $ua->request($req);
-    for my $hook ( 'response_filter', "response_filter_$carrier" ) {
+    for my $hook ( 'response_filter', "response_filter_$carrier", 'render_location_bar' ) {
         $self->run_hook(
             $hook,
             {

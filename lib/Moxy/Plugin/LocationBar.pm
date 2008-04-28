@@ -5,7 +5,7 @@ use base qw/Moxy::Plugin/;
 use Carp;
 use HTML::Entities;
 
-sub response_filter: Hook('response_filter') {
+sub render_location_bar : Hook {
     my ($self, $context, $args) = @_;
     croak "invalid args" if ref $args ne 'HASH';
     return unless (($args->{response}->header('Content-Type')||'') =~ /html/);
