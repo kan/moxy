@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
 
-sub request_filter :Hook('request_filter') {
+sub request_filter :Hook {
     my ($self, $context, $args) = @_;
 
     my $hosts = $self->config->{config}->{hosts};
@@ -19,7 +19,7 @@ sub request_filter :Hook('request_filter') {
     }
 }
 
-sub response_filter :Hook('response_filter') {
+sub response_filter :Hook {
     my ($self, $context, $args) = @_;
 
     my $uri = $args->{response}->request->uri;
