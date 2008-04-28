@@ -6,9 +6,9 @@ User-Agent:
 <select name="moxy_user_agent" onchange="if(this.value){this.form.submit()}">
 [% FOR carrier_info IN ua_list %]
 <option value="" style="background-color:gray">[% carrier_info.carrier %]</option>
-    [% FOR agent IN carrier_info.agents %]
+    [%- FOR agent IN carrier_info.agents %]
         <option value="[% agent.agent %]" [% IF moxy_user_agent == agent.agent %]selected="selected"[% END %]>  [% agent.name %][% IF agent.flash %][Flash対応][% END %]</option>
-    [% END %]
+    [%- END -%]
 [% END %]
 </select>
 <input type="submit" value="設定" />
