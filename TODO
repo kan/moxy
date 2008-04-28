@@ -3,7 +3,7 @@
 -- my $color = $request->get('x-up-devcap-iscolor');                                                                                 
 - Plugin::UserID で serial を自由に設定できるようにしたい
 
-- http://wassr.jp/ を willcom でみるとばける
+- http://wassr.jp/ を willcom でみると絵文字がばける。たぶん ReplacePictogram のバグ(または仕様)。
 - Store::SQLite つくる?
 - 絵文字入力できるようにしたい
 - Kwalify サポート
@@ -13,6 +13,7 @@
 -- willcom サポート的に必要だな
 -- 16:40 kan: でも、Moxy側でユーザを認証できてれば、なんとやれるんじゃない？
 -- 16:40 kan: HTTP clientとしての挙動をエミュレーションすれば
+- ezweb の DisplaySize が現在ブラウジング中画像表示サイズになっているが、これは壁紙画像表示サイズであるべき
 
 - plugins
  - GPS Support(select point by google map?)
