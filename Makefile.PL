@@ -15,7 +15,7 @@ requires 'Carp';
 requires 'Class::Accessor';
 requires 'UNIVERSAL::require' => '0.11';
 requires 'Encode::JP::Mobile' => 0.22;
-requires 'HTML::ReplacePictogramMobileJp' => 0.04;
+requires 'HTML::ReplacePictogramMobileJp' => 0.05;
 requires 'HTTP::Proxy';
 requires 'Params::Validate';
 requires 'HTML::Tree' => 3.23;
