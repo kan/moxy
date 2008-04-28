@@ -9,6 +9,7 @@ sub response_filter :Hook {
     my ($self, $context, $args) = @_;
 
     my $location = $args->{response}->header('Location');
+    return unless $location;
 
     unless ($location =~ m!^https?://!) {
         my $base = $args->{response}->request->uri;
