@@ -6,7 +6,7 @@ use Moxy;
 use File::Spec;
 use FindBin;
 
-plan tests => 5;
+plan tests => 3;
 
 my $c = Moxy->new(
     {
@@ -32,9 +32,6 @@ my $c = Moxy->new(
 # -------------------------------------------------------------------------
 
 sub check_request {
-    my @hooks = @{$c->class_component_hooks->{'request_filter'}};
-    is scalar(@hooks), 1;
-
     my $response = $c->run_hook_and_get_response(
         'request_filter' => {
             request => HTTP::Request->new( 'GET', 'http://pictogram.moxy/E/EC69.gif' )
@@ -47,9 +44,6 @@ sub check_request {
 # -------------------------------------------------------------------------
 
 sub check_response {
-    my @hooks = @{$c->class_component_hooks->{'response_filter'}};
-    is scalar(@hooks), 1;
-
     my $response= HTTP::Response->new(200);
     $response->header('Content-Type' => 'text/html');
     $response->content('&#xE001;');
