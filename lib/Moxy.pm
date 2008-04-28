@@ -45,6 +45,8 @@ sub new {
 
     my $self = $class->NEXT( 'new' => { config => $config } );
 
+    $self->conf->{global}->{log}->{fh} ||= \*STDERR;
+
     $self->_init_storage;
 
     return $self;
@@ -132,7 +134,7 @@ sub rewrite {
     return $result;
 }
 
-sub render_control_panel {
+sub render_start_page {
     my ($base, $current_url) = @_;
 
     return sprintf(<<"...");
@@ -244,8 +246,8 @@ sub _make_response {
         # please input url.
         my $res = HTTP::Response->new(200, 'about:blank');
         $res->header('Content-Type' => 'text/html; charset=utf8');
-        my $panel = render_control_panel($base_url, '');
-        $res->content(qq{<html><head></head><body>$panel</body></html>});
+        my $panel = render_start_page($base_url, '');
+        $res->content($panel);
         return $res;
     }
 }
