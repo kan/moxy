@@ -135,7 +135,7 @@ sub rewrite {
 }
 
 sub render_start_page {
-    my ($base, $current_url) = @_;
+    my $base = shift;
 
     return sprintf(<<"...");
 <?xml version="1.0" encoding="utf-8"?>
@@ -165,22 +165,10 @@ sub handle_request {
     my $session_id = join ',', $c->req->headers->authorization_basic;
     $self->log(debug => "Authorization header: $session_id");
     if ($session_id) {
-        my $uri = URI->new($c->req->uri);
-        $self->log(debug => "Request URI: $uri");
-
-        my $base = $uri->clone;
-        $base->path('');
-        $base->query_form({});
-
-        (my $url = $uri->path_query) =~ s!^/!!;
-        $url = uf_uristr(uri_unescape $url);
-        my $response = $self->_make_response(
-            url      => $url,
-            request  => $c->req->as_http_request,
-            base_url => $base,
+        $self->_make_response(
+            c => $c,
             user_id  => $session_id,
         );
-        $c->res->set_http_response($response);
     } else {
         $c->res->status(401);
         $c->res->headers->www_authenticate(qq{Basic realm="Moxy needs basic auth.Only for identification.Password is dummy."});
@@ -192,20 +180,24 @@ sub _make_response {
     my $self = shift;
     my %args = validate(
         @_ => +{
-            url      => qr{^https?://},
-            request  => { isa  => 'HTTP::Request' },
-            base_url => qr{^https?://},
-            user_id  => { type => SCALAR },
+            c       => { isa  => 'HTTP::Engine::Context', },
+            user_id => { type => SCALAR },
         }
     );
-    my $url = $args{url};
-    my $base_url = $args{base_url};
+    my $c = $args{c};
+
+    my $base = $c->req->uri->clone;
+    $base->path('');
+    $base->query_form({});
+
+    (my $url = $c->req->uri->path_query) =~ s!^/!!;
+    $url = uf_uristr(uri_unescape $url);
 
     if ($url) {
         # do proxy
         my $res = $self->_do_request(
             url     => $url,
-            request => $args{request},
+            request => $c->req->as_http_request,
             user_id => $args{user_id},
         );
         $self->log(debug => '-- response status: ' . $res->code);
@@ -218,25 +210,23 @@ sub _make_response {
             if ($uri->port != 80 && $location->port != $uri->port) {
                 $location->port($uri->port);
             }
-            $res->header( 'Location' => $base_url . '/' . uri_escape( $location ) );
+            $res->header( 'Location' => $base . '/' . uri_escape( $location ) );
             $self->log(debug => "redirect to " . $res->header('Location'));
         } else {
             my $content_type = $res->header('Content-Type');
             $self->log("Content-Type: $content_type");
             if ($content_type =~ /html/i) {
-                $res->content( encode($res->charset, rewrite($base_url, decode($res->charset, $res->content), $url)) );
+                $res->content( encode($res->charset, rewrite($base, decode($res->charset, $res->content), $url)) );
             }
             use bytes;
             $res->header('Content-Length' => bytes::length($res->content));
         }
-        return $res;
+        $c->res->set_http_response($res);
     } else {
         # please input url.
-        my $res = HTTP::Response->new(200, 'about:blank');
-        $res->header('Content-Type' => 'text/html; charset=utf8');
-        my $panel = render_start_page($base_url, '');
-        $res->content($panel);
-        return $res;
+        $c->res->status(200);
+        $c->res->content_type('text/html; charset=utf8');
+        $c->res->body( render_start_page($base) );
     }
 }
 
