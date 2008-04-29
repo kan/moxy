@@ -160,43 +160,31 @@ sub render_start_page {
 }
 
 sub handle_request {
-    my $self = shift;
-    my %args = validate(
-        @_,
-        +{
-            request => { isa => 'HTTP::Request' },
-        }
-    );
+    my ($self, $c) = @_;
 
-    my $uri = URI->new($args{request}->uri);
-    $self->log(debug => "Request URI: $uri");
+    my $session_id = join ',', $c->req->headers->authorization_basic;
+    $self->log(debug => "Authorization header: $session_id");
+    if ($session_id) {
+        my $uri = URI->new($c->req->uri);
+        $self->log(debug => "Request URI: $uri");
 
-    my $base = $uri->clone;
-    $base->path('');
-    $base->query_form({});
+        my $base = $uri->clone;
+        $base->path('');
+        $base->query_form({});
 
-    my $auth_header = $args{request}->header('Authorization');
-    $self->log(debug => "Authorization header: $auth_header");
-    if ($auth_header =~ /^Basic (.+)$/) {
-        my $auth = decode_base64($1);
-        $self->log(debug => "auth: $auth");
         (my $url = $uri->path_query) =~ s!^/!!;
         $url = uf_uristr(uri_unescape $url);
-        $self->log(info => "REQUEST $auth, @{[ $url || '' ]}");
         my $response = $self->_make_response(
             url      => $url,
-            request  => $args{request},
+            request  => $c->req->as_http_request,
             base_url => $base,
-            user_id  => $auth,
+            user_id  => $session_id,
         );
-        return $response;
+        $c->res->set_http_response($response);
     } else {
-        my $response = HTTP::Response->new(401, 'Moxy needs authentication');
-        $response->header( 'WWW-Authenticate' =>
-            qq{Basic realm="Moxy needs basic auth.Only for identification.Password is dummy."}
-        );
-        $response->content('authentication required');
-        return $response;
+        $c->res->status(401);
+        $c->res->headers->www_authenticate(qq{Basic realm="Moxy needs basic auth.Only for identification.Password is dummy."});
+        $c->res->body('authentication required');
     }
 }
 

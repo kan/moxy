@@ -47,8 +47,7 @@ sub start {
         config         => $server_conf,
         handle_request => sub {
             my $c = shift;
-            my $response = $moxy->handle_request( request => $c->req->as_http_request, );
-            $c->res->set_http_response($response);
+            $moxy->handle_request( $c );
         },
     )->run;
 }
