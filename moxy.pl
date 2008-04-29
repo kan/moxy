@@ -39,23 +39,16 @@ sub start {
     my $server_conf = {
         global => $config->{global},
         plugins => [
-            $config->{global}->{server}
+            $config->{global}->{server},
+            {module => 'DebugScreen', }
         ]
     };
     HTTP::Engine->new(
         config         => $server_conf,
         handle_request => sub {
             my $c = shift;
-            eval {
-                my $response =
-                  $moxy->handle_request( request => $c->req->as_http_request, );
-                $c->res->set_http_response($response);
-            };
-            if ($@) {
-                warn $@;
-                $c->res->status(500);
-                $c->res->body($@);
-            }
+            my $response = $moxy->handle_request( request => $c->req->as_http_request, );
+            $c->res->set_http_response($response);
         },
     )->run;
 }
