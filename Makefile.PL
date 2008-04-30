@@ -20,6 +20,7 @@ requires 'HTML::ReplacePictogramMobileJp' => 0.05;
 requires 'HTTP::Proxy';
 requires 'Params::Validate';
 requires 'HTML::Tree' => 3.23;
+requires 'App::Cmd' => 0.013;
 
 build_requires('Test::More');
 build_requires('Path::Class');
