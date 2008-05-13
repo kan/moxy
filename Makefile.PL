@@ -6,7 +6,7 @@ name("Moxy");
 all_from("lib/Moxy.pm");
 
 requires 'Class::Component' => 0.16;
-requires 'HTTP::Engine';
+requires 'HTTP::Engine' => 0.05;
 requires 'HTTP::MobileAttribute';
 requires 'CGI';
 requires 'FindBin';

@@ -5,7 +5,7 @@ use base qw/App::Cmd::Simple/;
 
 use File::Spec::Functions;
 use FindBin;
-use HTTP::Engine;
+use HTTP::Engine 0.05;
 use Moxy;
 use YAML;
 
@@ -49,19 +49,15 @@ sub _start {
     my ($self, $config) = @_;
 
     my $moxy = Moxy->new($config);
-    my $server_conf = {
-        global => $config->{global},
-        plugins => [
-            $config->{global}->{server},
-            {module => 'DebugScreen', }
-        ]
-    };
     HTTP::Engine->new(
-        config         => $server_conf,
-        handle_request => sub {
-            my $c = shift;
-            $moxy->handle_request( $c );
-        },
+        interface => {
+            module => $config->{global}->{server}->{module},
+            args =>   $config->{global}->{server}->{args},
+            request_handler => sub {
+                my $c = shift;
+                $moxy->handle_request( $c );
+            },
+        }
     )->run;
 }
 
