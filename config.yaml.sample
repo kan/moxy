@@ -1,12 +1,12 @@
 ---
 global:
   server:
-    module: Interface::Standalone
-    conf:
+    module: ServerSimple
+    args:
       port: 3128
   timeout: 23
   log:
-    level: error
+    level: debug
   storage:
     module: DBM_File
     file: /tmp/moxy.ndbm
@@ -24,4 +24,5 @@ plugins:
   - module: HTTPHeader
   - module: QRCode
   - module: ShowHTTPHeaders
+
 
