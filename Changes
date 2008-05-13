@@ -1,5 +1,16 @@
 Revision history for Moxy
 
+0.40
+
+    - use HTTP::Engine! yappo++
+    - based on App::Cmd.
+    - set parse_head => 0(thanks lestrrat++)
+    - performance tuning
+    - added Plugin::Hosts by yappo++
+    - do not depend to
+      - HTTP::MobileAgent
+      - Web::Scraper
+
 0.32
 
     - depend to HTML::ReplacePictogramMobileJp 0.04
