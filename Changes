@@ -1,7 +1,14 @@
 Revision history for Moxy
 
+0.41
+
+    (NO FEATURE CHANGES)
+    - HTTP::Engine 0.05 is broken. Moxy depend to 0.06.
+    - oops. fixed deps to HTML::TreeBuilder::XPath
+
 0.40
 
+    - MAJOR VERSION UP RELEASE - HTTP::Engine based
     - use HTTP::Engine! yappo++
     - based on App::Cmd.
     - set parse_head => 0(thanks lestrrat++)
