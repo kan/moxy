@@ -13,7 +13,7 @@ all_from("lib/Moxy.pm");
 }
 
 requires 'Class::Component' => 0.16;
-requires 'HTTP::Engine' => '0.0.5';
+requires 'HTTP::Engine' => '0.0.6';
 requires 'HTTP::MobileAttribute';
 requires 'CGI';
 requires 'FindBin';
