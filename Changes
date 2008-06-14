@@ -1,5 +1,11 @@
 Revision history for Moxy
 
+0.42
+
+    (NO FEATURE CHANGES)
+    - depend to HTTP::Engine 0.0.11
+    - some tests moved to xt/
+
 0.41
 
     (NO FEATURE CHANGES)

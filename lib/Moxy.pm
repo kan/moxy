@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Class::Component 0.16;
 
-our $VERSION = '0.41';
+our $VERSION = '0.42';
 
 use Carp;
 use Encode;

@@ -25,7 +25,6 @@ requires 'Class::Accessor';
 requires 'UNIVERSAL::require' => '0.11';
 requires 'Encode::JP::Mobile' => 0.22;
 requires 'HTML::ReplacePictogramMobileJp' => 0.05;
-requires 'HTTP::Proxy';
 requires 'Params::Validate';
 requires 'HTML::Tree' => 3.23;
 requires 'App::Cmd' => 0.013;
@@ -48,6 +47,7 @@ features(
 
 tests 't/*.t t/*/*.t t/*/*/*.t';
 
+author_tests 'xt';
 auto_include;
 auto_install;
 

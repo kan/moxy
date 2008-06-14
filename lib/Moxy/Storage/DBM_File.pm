@@ -58,5 +58,5 @@ Tokuhiro Matsuno
 
 =head1 SEE ALSO
 
-L<Moxy>, L<HTTP::Proxy>
+L<Moxy>
 
