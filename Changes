@@ -1,5 +1,9 @@
 Revision history for Moxy
 
+0.44
+
+    - use HTTP::Engine::Compat
+
 0.43
 
     (NO FEATURE CHANGES)

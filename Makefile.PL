@@ -48,7 +48,7 @@ features(
 
 tests 't/*.t t/*/*.t t/*/*/*.t';
 
-author_tests 'xt';
+# author_tests 'xt';
 auto_include;
 auto_install;
 

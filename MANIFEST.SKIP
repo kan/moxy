@@ -17,3 +17,4 @@
 \.svn/
 MANIFEST.bak
 \.sw[po]$
+^config.yaml$
