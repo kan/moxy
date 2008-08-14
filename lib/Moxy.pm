@@ -180,7 +180,7 @@ sub _make_response {
     my $self = shift;
     my %args = validate(
         @_ => +{
-            c       => { isa  => 'HTTP::Engine::Context', },
+            c       => { isa  => 'HTTP::Engine::Compat::Context', },
             user_id => { type => SCALAR },
         }
     );

@@ -5,7 +5,7 @@ use base qw/App::Cmd::Simple/;
 
 use File::Spec::Functions;
 use FindBin;
-use HTTP::Engine;
+use HTTP::Engine::Compat;
 use Moxy;
 use YAML;
 
