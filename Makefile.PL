@@ -14,7 +14,6 @@ all_from("lib/Moxy.pm");
 
 requires 'Class::Component' => 0.17;
 requires 'HTTP::Engine' => '0.0.13';
-requires 'HTTP::Engine::Compat' => '0.0.1';
 requires 'HTTP::MobileAttribute';
 requires 'CGI';
 requires 'FindBin';
@@ -26,7 +25,7 @@ requires 'Class::Accessor';
 requires 'UNIVERSAL::require' => '0.11';
 requires 'Encode::JP::Mobile' => 0.22;
 requires 'HTML::ReplacePictogramMobileJp' => 0.05;
-requires 'Params::Validate';
+requires 'Params::Validate' => 0.91;
 requires 'HTML::Tree' => 3.23;
 requires 'App::Cmd' => 0.013;
 requires 'HTML::TreeBuilder::XPath' => 0.09;

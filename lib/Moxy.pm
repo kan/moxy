@@ -160,19 +160,23 @@ sub render_start_page {
 }
 
 sub handle_request {
-    my ($self, $c) = @_;
+    my ($self, $req) = @_;
 
-    my $session_id = join ',', $c->req->headers->authorization_basic;
+    my $session_id = join ',', $req->headers->authorization_basic;
     $self->log(debug => "Authorization header: $session_id");
     if ($session_id) {
-        $self->_make_response(
-            c => $c,
+        return $self->_make_response(
+            req => $req,
             user_id  => $session_id,
         );
     } else {
-        $c->res->status(401);
-        $c->res->headers->www_authenticate(qq{Basic realm="Moxy needs basic auth.Only for identification.Password is dummy."});
-        $c->res->body('authentication required');
+        return HTTP::Engine::Response->new(
+            status => 401,
+            headers => {
+                WWW_Authenticate => qq{Basic realm="Moxy needs basic auth.Only for identification.Password is dummy."},
+            },
+            body => 'authentication required',
+        );
     }
 }
 
@@ -180,24 +184,24 @@ sub _make_response {
     my $self = shift;
     my %args = validate(
         @_ => +{
-            c       => { isa  => 'HTTP::Engine::Compat::Context', },
+            req     => { isa  => 'HTTP::Engine::Request', },
             user_id => { type => SCALAR },
         }
     );
-    my $c = $args{c};
+    my $req = $args{req};
 
-    my $base = $c->req->uri->clone;
+    my $base = $req->uri->clone;
     $base->path('');
     $base->query_form({});
 
-    (my $url = $c->req->uri->path_query) =~ s!^/!!;
+    (my $url = $req->uri->path_query) =~ s!^/!!;
     $url = uf_uristr(uri_unescape $url);
 
     if ($url) {
         # do proxy
         my $res = $self->_do_request(
             url     => $url,
-            request => $c->req->as_http_request,
+            request => $req->as_http_request,
             user_id => $args{user_id},
         );
         $self->log(debug => '-- response status: ' . $res->code);
@@ -210,23 +214,32 @@ sub _make_response {
             if ($uri->port != 80 && $location->port != $uri->port) {
                 $location->port($uri->port);
             }
-            $res->header( 'Location' => $base . '/' . uri_escape( $location ) );
-            $self->log(debug => "redirect to " . $res->header('Location'));
+            my $redirect = $base . '/' . uri_escape($location);
+            $self->log(debug => "redirect to $redirect");
+            return HTTP::Engine::Response->new(
+                status  => 302,
+                headers => {
+                    Location => $redirect,
+                },
+            );
         } else {
             my $content_type = $res->header('Content-Type');
             $self->log("Content-Type: $content_type");
             if ($content_type =~ /html/i) {
                 $res->content( encode($res->charset, rewrite($base, decode($res->charset, $res->content), $url)) );
             }
-            use bytes;
-            $res->header('Content-Length' => bytes::length($res->content));
+
+            my $response = HTTP::Engine::Response->new();
+            $response->set_http_response($res);
+            return $response;
         }
-        $c->res->set_http_response($res);
     } else {
         # please input url.
-        $c->res->status(200);
-        $c->res->content_type('text/html; charset=utf8');
-        $c->res->body( render_start_page($base) );
+        return HTTP::Engine::Response->new(
+            status       => 200,
+            content_type => 'text/html; charset=utf8',
+            body         => render_start_page($base),
+        );
     }
 }
 

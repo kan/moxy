@@ -5,7 +5,7 @@ use base qw/App::Cmd::Simple/;
 
 use File::Spec::Functions;
 use FindBin;
-use HTTP::Engine::Compat;
+use HTTP::Engine;
 use Moxy;
 use YAML;
 
@@ -54,8 +54,8 @@ sub _start {
             module => $config->{global}->{server}->{module},
             args =>   $config->{global}->{server}->{args},
             request_handler => sub {
-                my $c = shift;
-                $moxy->handle_request( $c );
+                my $req = shift;
+                $moxy->handle_request( $req );
             },
         }
     )->run;
