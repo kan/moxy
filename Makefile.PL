@@ -43,6 +43,10 @@ features(
         recommends_hack('HTML::StripScripts::Parser', 1.02),
         -default => 0,
     ],
+    'Plugin::Scrubber' => [
+        recommends_hack('HTML::Scrubber', 1.04),
+        -default => 0,
+    ],
 );
 
 tests 't/*.t t/*/*.t t/*/*/*.t';
