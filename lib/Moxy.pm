@@ -288,7 +288,7 @@ sub _do_request {
         parse_head        => 0,
     );
     my $response = $ua->request($req);
-    for my $hook ( 'response_filter', "response_filter_$carrier", 'render_location_bar' ) {
+    for my $hook ( 'security_filter', 'response_filter', "response_filter_$carrier", 'render_location_bar' ) {
         $self->run_hook(
             $hook,
             {

@@ -38,9 +38,9 @@ features(
         recommends_hack('Encode::Detect', 1.0),
         -default => 0,
     ],
-    'POD Testing' => [
-        recommends_hack('Test::Pod'),
-        recommends_hack('Test::Pod::Coverage'),
+    'Plugin::StripScripts' => [
+        recommends_hack('HTML::StripScripts', 1.04),
+        recommends_hack('HTML::StripScripts::Parser', 1.02),
         -default => 0,
     ],
 );
