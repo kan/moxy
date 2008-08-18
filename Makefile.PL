@@ -12,7 +12,7 @@ all_from("lib/Moxy.pm");
         \&recommends;
 }
 
-requires 'Class::Component' => 0.16;
+requires 'Class::Component' => 0.17;
 requires 'HTTP::Engine' => '0.0.13';
 requires 'HTTP::Engine::Compat' => '0.0.1';
 requires 'HTTP::MobileAttribute';
