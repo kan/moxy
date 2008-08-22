@@ -24,7 +24,7 @@ requires 'App::Cmd' => '0.013';
 requires 'Class::Accessor';
 requires 'UNIVERSAL::require' => '0.11';
 requires 'Encode::JP::Mobile' => 0.22;
-requires 'HTML::ReplacePictogramMobileJp' => 0.05;
+requires 'HTML::ReplacePictogramMobileJp' => 0.06;
 requires 'Params::Validate' => 0.91;
 requires 'HTML::Tree' => 3.23;
 requires 'App::Cmd' => 0.013;
