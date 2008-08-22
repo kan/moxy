@@ -1,5 +1,12 @@
 Revision history for Moxy
 
+0.45
+
+    - use HTTP::Engine 0.14
+    - no HTTP::Engine::Compat
+    - added Plugin::StripScripts.
+    - added Plugin::Scrubber.
+
 0.44
 
     - use HTTP::Engine::Compat
