@@ -13,12 +13,12 @@ all_from("lib/Moxy.pm");
 }
 
 requires 'Class::Component' => 0.17;
-requires 'HTTP::Engine' => '0.0.13';
+requires 'HTTP::Engine' => '0.0.14';
 requires 'HTTP::MobileAttribute';
 requires 'CGI';
 requires 'FindBin';
 requires 'Path::Class';
-requires 'Template';
+requires 'Template' => 2.19;
 requires 'Carp';
 requires 'App::Cmd' => '0.013';
 requires 'Class::Accessor';
@@ -30,8 +30,8 @@ requires 'HTML::Tree' => 3.23;
 requires 'App::Cmd' => 0.013;
 requires 'HTML::TreeBuilder::XPath' => 0.09;
 
-build_requires('Test::More');
-build_requires('Path::Class');
+test_requires('Test::More');
+test_requires('Path::Class');
 
 features(
     'Better Encoding detection' => [
