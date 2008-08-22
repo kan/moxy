@@ -71,7 +71,12 @@ Murase
 Riedel
 CGI
 FastCGI
-uri cgi
+uri
+cgi
+HTML
+TOOOOO
+XXX
+javascript
 ...
 
 add_stopwords(@stopwords);
