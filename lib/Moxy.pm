@@ -1,4 +1,5 @@
 package Moxy;
+use 5.00800;
 use strict;
 use warnings;
 use Class::Component 0.16;
