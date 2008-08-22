@@ -38,6 +38,7 @@ __END__
 Moxy::Plugin::Hosts - /etc/hosts file emulator
 
 =head1 SYNOPSIS
+
     - module: Hosts
       config:
         hosts:
