@@ -225,7 +225,7 @@ sub _make_response {
             );
         } else {
             my $content_type = $res->header('Content-Type');
-            $self->log("Content-Type: $content_type");
+            $self->log(debug => "Content-Type: $content_type");
             if ($content_type =~ /html/i) {
                 $res->content( encode($res->charset, rewrite($base, decode($res->charset, $res->content), $url)) );
             }
@@ -288,6 +288,7 @@ sub _do_request {
         protocols_allowed => [qw/http https/],
         parse_head        => 0,
     );
+    $req->remove_header('Accept-Encoding'); # I HATE gziped CONTENT
     my $response = $ua->request($req);
     for my $hook ( 'security_filter', 'response_filter', "response_filter_$carrier", 'render_location_bar' ) {
         $self->run_hook(
