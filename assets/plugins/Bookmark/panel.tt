@@ -1,0 +1,7 @@
+<div>
+    <ul id="bookmark_list">
+        [% FOR b IN bookmark %]
+            <li><a href="[% b.value | html %]">[% b.key | html %]</a></li>
+        [% END %]
+    </ul>
+</div>
