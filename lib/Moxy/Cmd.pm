@@ -1,6 +1,7 @@
 package Moxy::Cmd;
 use strict;
 use warnings;
+require App::Cmd::Simple;
 use base qw/App::Cmd::Simple/;
 
 use File::Spec::Functions;
