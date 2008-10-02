@@ -1,5 +1,13 @@
 Revision history for Moxy
 
+0.46
+
+    - use HTTP::Engine 0.17
+    - depend to latest version of Encode::JP::Mobile
+    - depend to latest version of App::Cmd
+    - remove Accept-Encoding header.
+    - added Plugin::Bookmark(by acotie++)
+
 0.45
 
     - use HTTP::Engine 0.14

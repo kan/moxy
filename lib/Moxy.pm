@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Class::Component 0.16;
 
-our $VERSION = '0.45';
+our $VERSION = '0.46';
 
 use Carp;
 use Encode;
