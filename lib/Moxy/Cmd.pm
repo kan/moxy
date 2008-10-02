@@ -14,7 +14,7 @@ sub opt_spec {
     return (
         [ 'daemonize|d' => "daemonize" ],
         [
-            'config|c' => "path to configuration file",
+            'config|c=s' => "path to configuration file",
             { default => catfile( $FindBin::Bin, 'config.yaml' ) }
         ],
         [ 'help|h' => "display manual" ]
