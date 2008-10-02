@@ -77,6 +77,8 @@ HTML
 TOOOOO
 XXX
 javascript
+Akiko
+Yokoyama
 ...
 
 add_stopwords(@stopwords);
