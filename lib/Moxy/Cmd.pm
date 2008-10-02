@@ -29,6 +29,7 @@ sub validate_args {
 sub run {
     my ($self, $opt, $args) = @_;
 
+    die "missing configuration file path" unless $opt->{config};
     my $config = YAML::LoadFile( $opt->{config} );
     $config->{global}->{log} ||= { level => 'debug' };
 
