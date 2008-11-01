@@ -79,6 +79,7 @@ XXX
 javascript
 Akiko
 Yokoyama
+Bookmark
 ...
 
 add_stopwords(@stopwords);
