@@ -227,7 +227,7 @@ sub _make_response {
             my $content_type = $res->header('Content-Type');
             $self->log(debug => "Content-Type: $content_type");
             if ($content_type =~ /html/i) {
-                $res->content( encode($res->charset, rewrite($base, decode($res->charset, $res->content), $url)) );
+                $res->content( encode($res->charset, rewrite($base, decode($res->charset, $res->content), $url), Encode::FB_HTMLCREF) );
             }
 
             my $response = HTTP::Engine::Response->new();
