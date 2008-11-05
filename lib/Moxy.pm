@@ -2,6 +2,7 @@ package Moxy;
 use 5.00800;
 use strict;
 use warnings;
+use base qw/Class::Accessor::Fast/;
 use Class::Component 0.16;
 
 our $VERSION = '0.46';
@@ -25,6 +26,7 @@ use URI::Escape;
 use URI::Heuristic qw(uf_uristr);
 use URI;
 use YAML;
+use Time::HiRes ();
 use HTTP::MobileAttribute plugins => [
     qw/CarrierLetter IS/,
     {
@@ -40,6 +42,7 @@ use HTTP::MobileAttribute plugins => [
 __PACKAGE__->load_components(qw/Plaggerize Autocall::InjectMethod Context/);
 
 __PACKAGE__->load_plugins(qw/DisplayWidth ControlPanel LocationBar Pictogram/);
+__PACKAGE__->mk_accessors(qw/response_time/);
 
 sub new {
     my ($class, $config) = @_;
@@ -280,6 +283,7 @@ sub _do_request {
             return $response; # finished
         }
     }
+    $req->remove_header('Accept-Encoding'); # I HATE gziped CONTENT
 
     # do request
     my $ua = LWP::UserAgent->new(
@@ -288,8 +292,12 @@ sub _do_request {
         protocols_allowed => [qw/http https/],
         parse_head        => 0,
     );
-    $req->remove_header('Accept-Encoding'); # I HATE gziped CONTENT
+
+    my $t1 = Time::HiRes::gettimeofday();
     my $response = $ua->request($req);
+    my $t2 = Time::HiRes::gettimeofday();
+    $self->response_time( $t2-$t1 );
+
     for my $hook ( 'security_filter', 'response_filter', "response_filter_$carrier", 'render_location_bar' ) {
         $self->run_hook(
             $hook,
@@ -300,6 +308,8 @@ sub _do_request {
             }
         );
     }
+    $self->response_time( -1 ); # clear response time
+
     $response;
 }
 
