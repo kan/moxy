@@ -30,6 +30,7 @@ sub run {
     my ($self, $opt, $args) = @_;
 
     die "missing configuration file path" unless $opt->{config};
+    die "configuration file does not exists: $opt->{config}" unless -f $opt->{config};
     print "open configuration file: $opt->{config}\n";
     my $config = YAML::LoadFile( $opt->{config} );
     $config->{global}->{log} ||= { level => 'debug' };
