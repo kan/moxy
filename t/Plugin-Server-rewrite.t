@@ -4,7 +4,7 @@ use Test::Base;
 use Moxy;
 
 sub _rewrite {
-    Moxy::rewrite('http://localhost:9999/', shift, 'http://relative.example.jp/');
+    Moxy::rewrite_html('http://localhost:9999/', shift, 'http://relative.example.jp/');
 }
 
 sub remove_crlf {
