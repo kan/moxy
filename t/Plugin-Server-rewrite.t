@@ -78,3 +78,9 @@ __END__
 --- expected
 <html><img src="http://localhost:9999/http%3A%2F%2Fexample.com%2Fbar.jpg" /></html>
 
+=== p img
+--- input
+<p>foo</p>
+--- expected
+<html><p>foo</p></html>
+

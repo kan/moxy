@@ -104,7 +104,6 @@ sub rewrite {
     $tree->ignore_ignorable_whitespace(0);
     $tree->store_comments(1);
     $tree->ignore_unknown(0);
-    $tree->p_strict(1);
     $tree->parse($html);
     $tree->eof;
 
@@ -132,7 +131,7 @@ sub rewrite {
     $replace->( 'link'   => 'href' );
 
     # dump.
-    my $result = $tree->as_HTML(q{<>"&'});
+    my $result = $tree->as_HTML(q{<>"&'}, '', {});
     $tree = $tree->delete; # cleanup :-) HTML::TreeBuilder needs this.
 
     # return result.
