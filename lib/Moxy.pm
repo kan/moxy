@@ -92,7 +92,21 @@ sub run_hook_and_get_response {
     return; # not finished yet
 }
 
-sub rewrite {
+sub rewrite_css {
+    my ($base, $css, $url) = @_;
+    my $base_url = URI->new($url);
+
+    $css =~ s{url\(([^\)]+)\)}{
+        sprintf "url(%s%s%s)",
+            $base,
+            ($base =~ m{/$} ? '' : '/'),
+            uri_escape( URI->new($1)->abs($base_url) )
+    }ge;
+
+    $css;
+}
+
+sub rewrite_html {
     my ($base, $html, $url) = @_;
 
     my $base_url = URI->new($url);
@@ -230,7 +244,9 @@ sub _make_response {
             my $content_type = $res->header('Content-Type');
             $self->log(debug => "Content-Type: $content_type");
             if ($content_type =~ /html/i) {
-                $res->content( encode($res->charset, rewrite($base, decode($res->charset, $res->content), $url), Encode::FB_HTMLCREF) );
+                $res->content( encode($res->charset, rewrite_html($base, decode($res->charset, $res->content), $url), Encode::FB_HTMLCREF) );
+            } elsif ($content_type =~ m{text/css}) {
+                $res->content( encode($res->charset, rewrite_css($base, decode($res->charset, $res->content), $url), Encode::FB_HTMLCREF) );
             }
 
             my $response = HTTP::Engine::Response->new();
