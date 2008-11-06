@@ -1,0 +1,7 @@
+<a href="#" onclick="var x=document.getElementById('moxy_show_html_source');x.style.display = (x.style.display=='none' ? '' : 'none');return false;">show html source</a>
+<div id="moxy_show_html_source" style="display:none">
+    <div>
+        <h2 id="moxy_html_source">HTML</h2>
+        <pre>[% html | html %] [% response.body | html %]</pre>
+    </div>
+</div>
