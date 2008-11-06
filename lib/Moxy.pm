@@ -104,6 +104,7 @@ sub rewrite {
     $tree->ignore_ignorable_whitespace(0);
     $tree->store_comments(1);
     $tree->ignore_unknown(0);
+    $tree->p_strict(1);
     $tree->parse($html);
     $tree->eof;
 
