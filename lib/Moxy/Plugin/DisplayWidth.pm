@@ -15,7 +15,7 @@ sub response_filter :Hook {
     # 320px 固定にしておく。だれか Willcom が大好きでたまらないような人があらわれたら対応してください。
     my $width = $attr->is_airh_phone ? 320 : $attr->display->width;
 
-    my $header = qq!<div style="border: 1px black solid; width: ${width}px; margin: 0 auto;float: left;">!;
+    my $header = qq!<div style="border: 1px black solid; width: ${width}px; margin: 0 auto;float: left; height: 90%; overflow: auto;">!;
 
     my $content = $args->{response}->content;
     $content =~ s!(<body[^>]*>)!$1$header!i;
