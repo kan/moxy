@@ -11,10 +11,19 @@ sub response_filter: Hook {
 
     $context->log("debug" => "generate ControlPanel");
 
+    my @parts = do {
+        my @r;
+        for my $hook (@{$context->class_component_hooks->{'control_panel'}}) {
+            my ($plugin, $method) = ($hook->{plugin}, $hook->{method});
+            push @r, { title => sub { (my $x = ref $plugin) =~ s/.+:://; $x }->(), body => $plugin->$method($context, $args) };
+        }
+        @r;
+    };
+
     my $output = $self->render_template(
         $context,
         'panelcontainer.tt' => {
-            parts => $context->run_hook('control_panel' => $args), 
+            parts => \@parts, 
         }
     );
 

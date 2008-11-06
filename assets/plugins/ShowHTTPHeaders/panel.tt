@@ -1,5 +1,4 @@
-<a href="#" onclick="var x=document.getElementById('moxy_show_http_headers');x.style.display = (x.style.display=='none' ? '' : 'none');return false;">show http headers</a>
-<div id="moxy_show_http_headers" style="display:none">
+<div id="moxy_show_http_headers">
     <div>
         <h2 id="moxy_request">Request</h2>
         <pre>[% request | html %]</pre>
