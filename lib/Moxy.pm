@@ -97,10 +97,11 @@ sub rewrite_css {
     my $base_url = URI->new($url);
 
     $css =~ s{url\(([^\)]+)\)}{
+        my $x = $1;
         sprintf "url(%s%s%s)",
             $base,
             ($base =~ m{/$} ? '' : '/'),
-            uri_escape( URI->new($1)->abs($base_url) )
+            uri_escape( URI->new($x)->abs($base_url) )
     }ge;
 
     $css;
