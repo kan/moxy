@@ -6,6 +6,7 @@ use Path::Class;
 use URI;
 use URI::Escape;
 use CGI;
+use Encode ();
 
 sub request_filter_process_agent :Hook {
     my ($self, $context, $args) = @_;
@@ -60,7 +61,10 @@ sub request_filter :Hook {
 
 sub ua_list {
     my ($self, $context) = @_;
-    return $self->{__ua_list} ||= YAML::LoadFile( $self->assets_path($context)->file('useragent.yaml') );
+    return $self->{__ua_list} ||= do {
+        my $yaml = Encode::decode_utf8 $self->assets_path($context)->file('useragent.yaml')->slurp;
+        YAML::Load( $yaml );
+    };
 }
 
 sub get_ua_info {
