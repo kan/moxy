@@ -1,5 +1,9 @@
 Revision history for Moxy
 
+0.48
+
+    - fixed mojibake in Plugin::UserAgentSwitcher
+
 0.47
 
     - ignore optionalEndTags(don't strip </p>)
