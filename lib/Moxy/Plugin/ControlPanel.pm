@@ -30,7 +30,7 @@ sub response_filter: Hook {
     # convert html charset to response charset.
     my $charset = $args->{response}->charset;
     my $enc = Encode::find_encoding($charset);
-    Encode::from_to($output, 'utf-8', $enc ? $enc->name : 'utf-8');
+    $output = Encode::encode(($enc ? $enc->name : 'utf-8'), $output);
 
     # insert control panel to html response.
     my $content = $args->{response}->content;

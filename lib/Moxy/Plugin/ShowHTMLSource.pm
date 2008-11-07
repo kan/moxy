@@ -11,10 +11,12 @@ sub control_panel :Hook {
 
     $context->log(debug => 'dump html source');
 
+    my $charset = $args->{response}->charset;
+    my $enc = Encode::find_encoding($charset);
     return $self->render_template(
         $context,
         'panel.tt' => {
-            html => $args->{response}->content(),
+            html => decode($enc, $args->{response}->content()),
         }
     );
 }

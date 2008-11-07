@@ -21,7 +21,10 @@ sub assets_path {
 sub render_template {
     my ($self, $context, $fname, $args) = @_;
 
-    my $tt = Template->new(ABSOLUTE => 1);
+    my $tt = Template->new(
+        ABSOLUTE => 1,
+        ENCODING => 'utf8',
+    );
     $tt->process(
         $self->assets_path($context)->file($fname)->stringify,
         $args,
