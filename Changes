@@ -1,5 +1,12 @@
 Revision history for Moxy
 
+0.47
+
+    - ignore optionalEndTags(don't strip </p>)
+    - rewrite url() in the css
+    - added Plugin::ShowHTMLSource
+    - added Plugin::ResponseTime
+
 0.46
 
     - use HTTP::Engine 0.17
