@@ -26,7 +26,7 @@
         display: inline;
     }
     #moxy_tab_group .tab_open { background-color: gray; color: white; }
-    #moxy_tab_group .tab_close { background-color: #E0E0E0; }
+    #moxy_tab_group .tab_close { background-color: #E0E0E0; color: black; }
     .moxy_pane {
         border: 2px solid gray;
         height: 357px;
