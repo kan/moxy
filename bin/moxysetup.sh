@@ -20,16 +20,20 @@ cd ..
 echo "---
 global:
   server:
-    module: Interface::Standalone
+    module: ServerSimple
     conf:
       port: 3128
   timeout: 23
   log:
     level: debug
-  storage:
-    module: DBM_File
-    file: ../moxy.dbm
-#    dbm_class: DBM_File
+  session:
+    state:
+      module: BasicAuth
+    store:
+      module: DBM
+      config:
+        file: /tmp/moxy.ndbm
+        dbm_class: NDBM_File
 
 plugins:
   - module: UserID
