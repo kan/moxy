@@ -15,6 +15,7 @@ use HTML::Entities;
 use HTML::Parser;
 use HTML::TreeBuilder::XPath;
 use HTML::TreeBuilder;
+use HTTP::Session;
 use LWP::UserAgent;
 use MIME::Base64;
 use Moxy::Util;
@@ -51,8 +52,6 @@ sub new {
 
     $self->conf->{global}->{log}->{fh} ||= \*STDERR;
 
-    $self->_init_storage;
-
     return $self;
 }
 
@@ -64,19 +63,6 @@ sub assets_path {
             || dir( $FindBin::RealBin, 'assets' )->stringify;
     };
 }
-
-# -------------------------------------------------------------------------
-
-sub _init_storage {
-    my ($self, ) = @_;
-
-    my $mod = $self->{config}->{global}->{storage}->{module};
-       $mod = $mod ? "Moxy::Storage::$mod" : 'Moxy::Storage::DBM_File';
-    $mod->use or die $@;
-    $self->{storage} = $mod->new($self, $self->conf->{global}->{storage} || {});
-}
-
-sub storage { shift->{storage} }
 
 # -------------------------------------------------------------------------
 
@@ -180,15 +166,32 @@ sub render_start_page {
 
 sub handle_request {
     my ($self, $req) = @_;
+    warn "HOGE";
 
-    my $session_id = join ',', $req->headers->authorization_basic;
-    $self->log(debug => "Authorization header: $session_id");
-    if ($session_id) {
-        return $self->_make_response(
-            req => $req,
-            user_id  => $session_id,
-        );
-    } else {
+    my $conf = $self->conf->{global}->{session};
+    my $state_type = $conf->{state}->{module} || 'BasicAuth';
+    my $state = sub {
+        if ($state_type eq 'Cookie') {
+            require HTTP::Session::State::Cookie;
+            HTTP::Session::State::Cookie->new(
+                $conf->{state}->{config}
+            );
+        } else {
+            require Moxy::Session::State::BasicAuth;
+            Moxy::Session::State::BasicAuth->new(
+                $conf->{state}->{config} || {}
+            );
+        }
+    }->();
+    my $store = sub {
+        my $klass = "HTTP::Session::Store::$conf->{store}->{module}";
+        Class::MOP::load_class($klass);
+        $klass->new( $conf->{store}->{config} );
+    }->();
+
+    my $auth = join(',', $req->headers->authorization_basic);
+    if ($state->isa('Moxy::Session::State::BasicAuth') && !$auth) {
+        $self->log(debug => 'basicauth');
         return HTTP::Engine::Response->new(
             status => 401,
             headers => {
@@ -196,6 +199,20 @@ sub handle_request {
             },
             body => 'authentication required',
         );
+    } else {
+        $self->log(debug => "session: state: $state, store: $store");
+        my $session = HTTP::Session->new(
+            state   => $state,
+            store   => $store,
+            request => $req,
+        );
+        $self->log(debug => "session: $session");
+        my $res = $self->_make_response(
+            req     => $req,
+            session => $session,
+        );
+        $session->response_filter($res);
+        return $res;
     }
 }
 
@@ -203,8 +220,8 @@ sub _make_response {
     my $self = shift;
     my %args = validate(
         @_ => +{
-            req     => { isa  => 'HTTP::Engine::Request', },
-            user_id => { type => SCALAR },
+            req     => { isa => 'HTTP::Engine::Request', },
+            session => { type => OBJECT },
         }
     );
     my $req = $args{req};
@@ -221,7 +238,7 @@ sub _make_response {
         my $res = $self->_do_request(
             url     => $url,
             request => $req->as_http_request,
-            user_id => $args{user_id},
+            session => $args{session},
         );
         $self->log(debug => '-- response status: ' . $res->code);
 
@@ -270,7 +287,7 @@ sub _do_request {
         @_ => +{
             url      => qr{^https?://},
             request  => { isa  => 'HTTP::Request' },
-            user_id  => { type => SCALAR },
+            session  => { type => OBJECT },
         }
     );
 
@@ -282,7 +299,7 @@ sub _do_request {
     $self->run_hook(
         'request_filter_process_agent',
         {   request => $req, # HTTP::Request object
-            user    => $args{user_id},
+            session => $args{session},
         }
     );
     my $mobile_attribute = HTTP::MobileAttribute->new($req->headers);
@@ -293,7 +310,7 @@ sub _do_request {
             +{
                 request          => $req,              # HTTP::Request object
                 mobile_attribute => $mobile_attribute,
-                user             => $args{user_id},
+                session          => $args{session},
             }
         );
         if ($response) {
@@ -321,7 +338,7 @@ sub _do_request {
             {
                 response         => $response,           # HTTP::Response object
                 mobile_attribute => $mobile_attribute,
-                user             => $args{user_id},
+                session          => $args{session},
             }
         );
     }

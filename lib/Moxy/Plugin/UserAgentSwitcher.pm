@@ -11,7 +11,7 @@ use Encode ();
 sub request_filter_process_agent :Hook {
     my ($self, $context, $args) = @_;
 
-    my $user_agent = $context->storage->get('user_agent_' . $args->{user}) || 'KDDI-TS3G UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0';
+    my $user_agent = $args->{session}->get('user_agent') || 'KDDI-TS3G UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0';
     my $ua_info = $self->get_ua_info($context, $user_agent);
 
     # set UA to request.
@@ -50,7 +50,7 @@ sub request_filter :Hook {
 
         # store settings
         my $r = CGI->new($args->{request}->content); # CGI.pm は遅いやん。他になんかないんかねー
-        $context->storage->set("user_agent_$args->{user}" => $r->param('moxy_user_agent'));
+        $args->{session}->set("user_agent" => $r->param('moxy_user_agent'));
 
         # back
         my $response = HTTP::Response->new( 302, 'Moxy(UserID)' );

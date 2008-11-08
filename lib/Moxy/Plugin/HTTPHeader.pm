@@ -9,7 +9,7 @@ use CGI;
 sub get_user_id :Hook('request_filter') {
     my ($self, $context, $args) = @_;
 
-    my $http_header = $context->storage->get(__PACKAGE__. $args->{user});
+    my $http_header = $args->{session}->get(__PACKAGE__);
 
     if ($http_header) {
         for my $header (split /\n/, $http_header) {
@@ -34,7 +34,7 @@ sub control_panel :Hook {
         'panel.tt' => {
             params      => \%params,
             current_uri => $args->{response}->request->uri,
-            headers     => $context->storage->get(__PACKAGE__ . $args->{user}),
+            headers     => $args->{session}->get(__PACKAGE__),
         }
     );
 }
@@ -48,7 +48,7 @@ sub save :Hook('request_filter') {
 
         # store settings
         my $r = CGI->new($args->{request}->content);
-        $context->storage->set(__PACKAGE__ . $args->{user} => $r->param('moxy_http_header'));
+        $args->{session}->set(__PACKAGE__ => $r->param('moxy_http_header'));
 
         # back
         my $response = HTTP::Response->new( 302, "Moxy(@{[ __PACKAGE__ ]})" );

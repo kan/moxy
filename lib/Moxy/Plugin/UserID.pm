@@ -8,8 +8,8 @@ use CGI;
 sub get_user_id :Hook('request_filter') {
     my ($self, $context, $args) = @_;
 
-    my $key = join(',', __PACKAGE__, $args->{user}, $args->{mobile_attribute}->user_agent);
-    my $user_id = $context->storage->get($key);
+    my $key = join(',', __PACKAGE__, $args->{mobile_attribute}->user_agent);
+    my $user_id = $args->{session}->get($key);
     if ($user_id) {
         # au subscriber id.
         if ($args->{mobile_attribute}->is_ezweb) {
@@ -30,8 +30,8 @@ sub save_user_id :Hook('request_filter') {
         my $r = CGI->new($args->{request}->content);
 
         # store to user stash.
-        my $key = join(',', __PACKAGE__, $args->{user}, $args->{mobile_attribute}->user_agent);
-        $context->storage->set($key => $r->param('user_id'));
+        my $key = join(',', __PACKAGE__, $args->{mobile_attribute}->user_agent);
+        $args->{session}->set($key => $r->param('user_id'));
 
         my $response = HTTP::Response->new( 302, 'Moxy(UserID)' );
         $response->header(Location => $back);
@@ -43,8 +43,8 @@ sub control_panel :Hook {
     my ($self, $context, $args) = @_;
     return '' unless $args->{mobile_attribute}->is_ezweb || $args->{mobile_attribute}->is_docomo;
 
-    my $key = join(',', __PACKAGE__, $args->{user}, $args->{mobile_attribute}->user_agent);
-    my $user_id = $context->storage->get($key);
+    my $key = join(',', __PACKAGE__, $args->{mobile_attribute}->user_agent);
+    my $user_id = $args->{session}->get($key);
 
     return $self->render_template(
         $context,

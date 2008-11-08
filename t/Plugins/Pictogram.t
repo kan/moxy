@@ -12,11 +12,6 @@ my $c = Moxy->new(
     {
         global => {
             assets_path => File::Spec->catfile( $FindBin::Bin, '..', '..', 'assets' ),
-            storage => {
-                module    => 'DBM_File',
-                file      => 't/testing.ndbm',
-                dbm_class => 'NDBM_File',
-            },
             'log' => {
                 level => 'info',
             },

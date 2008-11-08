@@ -7,10 +7,14 @@ global:
   timeout: 23
   log:
     level: debug
-  storage:
-    module: DBM_File
-    file: /tmp/moxy.ndbm
-    dbm_class: NDBM_File
+  session:
+    state:
+      module: BasicAuth
+    store:
+      module: DBM
+      config:
+        file: /tmp/moxy.ndbm
+        dbm_class: NDBM_File
 
 plugins:
   - module: UserID
