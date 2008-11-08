@@ -15,6 +15,7 @@ use HTML::Entities;
 use HTML::Parser;
 use HTML::TreeBuilder::XPath;
 use HTML::TreeBuilder;
+use HTTP::Cookies;
 use HTTP::Session;
 use LWP::UserAgent;
 use MIME::Base64;
@@ -317,6 +318,12 @@ sub _do_request {
         }
     }
     $req->remove_header('Accept-Encoding'); # I HATE gziped CONTENT
+    $req->remove_header('Cookie');          # remove Cookie from the client
+
+    my $cookie_jar = $args{session}->get('cookies') || HTTP::Cookies->new(); # load cookies
+    if ($mobile_attribute->is_docomo) {
+        undef $cookie_jar; # docomo phone doesn't support cookies
+    }
 
     # do request
     my $ua = LWP::UserAgent->new(
@@ -324,12 +331,15 @@ sub _do_request {
         max_redirects     => 0,
         protocols_allowed => [qw/http https/],
         parse_head        => 0,
+        cookie_jar        => $cookie_jar,
     );
 
     my $t1 = Time::HiRes::gettimeofday();
     my $response = $ua->request($req);
     my $t2 = Time::HiRes::gettimeofday();
     $self->response_time( $t2-$t1 );
+
+    $args{session}->set('cookies' => $cookie_jar); # save cookies
 
     for my $hook ( 'security_filter', 'response_filter', "response_filter_$carrier", 'render_location_bar' ) {
         $self->run_hook(

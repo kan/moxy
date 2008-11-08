@@ -8,10 +8,6 @@
 - Kwalify サポート
 - 認証まわりを flexible にしたい
 -- OpenID に対応するとか
-- cookie support
--- willcom サポート的に必要だな
--- 16:40 kan: でも、Moxy側でユーザを認証できてれば、なんとやれるんじゃない？
--- 16:40 kan: HTTP clientとしての挙動をエミュレーションすれば
 - ezweb の DisplaySize が現在ブラウジング中画像表示サイズになっているが、これは壁紙画像表示サイズであるべき
 
 - plugins

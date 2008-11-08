@@ -29,6 +29,7 @@ requires 'FindBin';
 requires 'HTTP::MobileAttribute';
 requires 'Path::Class';
 requires 'HTTP::Session' => 0.09;
+requires 'HTTP::Cookies';
 
 test_requires('Test::More');
 test_requires('Path::Class');
