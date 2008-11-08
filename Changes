@@ -1,5 +1,9 @@
 Revision history for Moxy
 
+0.49_01
+
+    - use HTTP::Session for better session management
+
 0.48
 
     - fixed mojibake in Plugin::UserAgentSwitcher

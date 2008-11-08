@@ -4,7 +4,6 @@
 - とかとか。
 - Plugin::UserID で serial を自由に設定できるようにしたい
 
-- Store::SQLite つくる?
 - 絵文字入力できるようにしたい
 - Kwalify サポート
 - 認証まわりを flexible にしたい
