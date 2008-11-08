@@ -74,7 +74,7 @@ html: |+
     <body></body>
   </html>
 --- expected
-<html><head></head><body><div style="border: 1px black solid; width: 240px; margin: 0 auto;float: left; height: 90%; overflow: auto;"></div></body></html>
+<html><head></head><body><div style="border: 1px black solid; width: 240px; margin: 0 auto;float: left;"></div></body></html>
 
 === wx310k(willcom)
 --- input
@@ -85,5 +85,5 @@ html: |+
     <body></body>
   </html>
 --- expected
-<html><head></head><body><div style="border: 1px black solid; width: 320px; margin: 0 auto;float: left; height: 90%; overflow: auto;"></div></body></html>
+<html><head></head><body><div style="border: 1px black solid; width: 320px; margin: 0 auto;float: left;"></div></body></html>
 
