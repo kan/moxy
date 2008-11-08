@@ -166,7 +166,6 @@ sub render_start_page {
 
 sub handle_request {
     my ($self, $req) = @_;
-    warn "HOGE";
 
     my $conf = $self->conf->{global}->{session};
     my $state_type = $conf->{state}->{module} || 'BasicAuth';
