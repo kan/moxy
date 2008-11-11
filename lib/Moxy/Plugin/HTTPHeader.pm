@@ -48,7 +48,8 @@ sub save :Hook('request_filter') {
 
         # store settings
         my $r = CGI->new($args->{request}->content);
-        $args->{session}->set(__PACKAGE__ => $r->param('moxy_http_header'));
+        my $pkg = __PACKAGE__;
+        $args->{session}->set($pkg => $r->param('moxy_http_header'));
 
         # back
         my $response = HTTP::Response->new( 302, "Moxy(@{[ __PACKAGE__ ]})" );
