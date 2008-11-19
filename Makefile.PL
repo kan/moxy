@@ -28,7 +28,7 @@ requires 'Class::Accessor';
 requires 'FindBin';
 requires 'HTTP::MobileAttribute';
 requires 'Path::Class';
-requires 'HTTP::Session' => 0.20;
+requires 'HTTP::Session' => 0.21;
 requires 'HTTP::Cookies';
 
 test_requires('Test::More');
