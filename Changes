@@ -1,5 +1,9 @@
 Revision history for Moxy
 
+0.49
+
+    - use HTTP::Session 0.20
+
 0.49_01
 
     - use HTTP::Session for better session management
