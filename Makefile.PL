@@ -28,8 +28,8 @@ requires 'Class::Accessor';
 requires 'FindBin';
 requires 'HTTP::MobileAttribute';
 requires 'Path::Class';
-requires 'HTTP::Session' => 0.21;
-requires 'HTTP::Cookies';
+requires 'HTTP::Session' => 0.24;
+requires 'HTTP::Cookies'; # part of LWP
 
 test_requires('Test::More');
 test_requires('Path::Class');
