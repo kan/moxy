@@ -8,4 +8,12 @@
         : <input type="text" name="user_id" value="[% user_id %]" />
         <input type="submit" value="send" />
     </form>
+    <ul>
+    [% FOR entry IN history %]
+        <li><form style="display:inline" method="post" action="http://userid.moxy/[% referer | uri %]">
+            <input type="hidden" name="user_id" value="[% entry | html %]">
+            <input type="submit" value="[% entry | html %]" />
+        </form></li>
+    [% END %]
+    </ul>
 </div>

@@ -33,6 +33,14 @@ sub save_user_id :Hook('request_filter') {
         my $key = join(',', __PACKAGE__, $args->{mobile_attribute}->user_agent);
         $args->{session}->set($key => $r->param('user_id'));
 
+        # save history
+        do {
+            my $key = join(',', __PACKAGE__, $args->{mobile_attribute}->user_agent, 'history');
+            my $history = $args->{session}->get($key) || [];
+            unshift @$history, $r->param('user_id');
+            $args->{session}->set($key => $history);
+        };
+
         my $response = HTTP::Response->new( 302, 'Moxy(UserID)' );
         $response->header(Location => $back);
         $response;
@@ -45,6 +53,7 @@ sub control_panel :Hook {
 
     my $key = join(',', __PACKAGE__, $args->{mobile_attribute}->user_agent);
     my $user_id = $args->{session}->get($key);
+    my $history = $args->{session}->get(join(',', __PACKAGE__, $args->{mobile_attribute}->user_agent, 'history'));
 
     return $self->render_template(
         $context,
@@ -52,6 +61,7 @@ sub control_panel :Hook {
             user_id          => $user_id,
             referer          => $args->{response}->request->uri,
             mobile_attribute => $args->{mobile_attribute},
+            history          => $history,
         }
     );
 }
