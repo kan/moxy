@@ -10,6 +10,7 @@
 -- OpenID に対応するとか
 - ezweb の DisplaySize が現在ブラウジング中画像表示サイズになっているが、これは壁紙画像表示サイズであるべき
 - あらかじめ登録した端末IDを切り替えられるとよいかも
+- softbank の ID に対応させる
 
 - plugins
  - GPS Support(select point by google map?)
