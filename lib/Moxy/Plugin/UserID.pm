@@ -53,7 +53,7 @@ sub save_user_id :Hook('request_filter') {
 
 sub control_panel :Hook {
     my ($self, $context, $args) = @_;
-    return '' unless $args->{mobile_attribute}->is_ezweb || $args->{mobile_attribute}->is_docomo;
+    return '' unless $args->{mobile_attribute}->is_ezweb || $args->{mobile_attribute}->is_docomo || $args{mobile_attribute}->is_softbank;
 
     my $key = join(',', __PACKAGE__, $args->{mobile_attribute}->user_agent);
     my $user_id = $args->{session}->get($key);
