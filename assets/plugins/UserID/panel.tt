@@ -4,6 +4,8 @@
             X-Up-Subno
         [% ELSIF mobile_attribute.is_docomo %]
             guid
+        [% ELSIF mobile_attribute.is_softbank %]
+            X-JPHONE-UID
         [% END %]
         : <input type="text" name="user_id" value="[% user_id %]" />
         <input type="submit" value="send" />
