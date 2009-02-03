@@ -185,7 +185,7 @@ sub handle_request {
     }->();
     my $store = sub {
         my $klass = "HTTP::Session::Store::$conf->{store}->{module}";
-        Class::MOP::load_class($klass);
+        $klass->require or die $@;
         $klass->new( $conf->{store}->{config} );
     }->();
 
