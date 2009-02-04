@@ -247,8 +247,22 @@ sub _make_response {
             my $location = URI->new($res->header('Location'));
             $self->log(debug => "redirect to $location");
             my $uri = URI->new($url);
-            if ($uri->port != 80 && $location->port != $uri->port) {
+            if ($location->isa('URI::_generic')) {
+                # path only redirect is invalid!
+                #   e.g.   Location: /foo/
+                $self->log(error => "----------------------------");
+                $self->log(error => "INVALID REDIRECT!! $location");
+                $self->log(error => "----------------------------");
+                $location = URI->new( $location->as_string, $uri->scheme );
+                $location->scheme($uri->scheme);
+                $location->host($uri->host);
                 $location->port($uri->port);
+                $self->log(error => "FIXED TO: $location");
+                $self->log(error => "----------------------------");
+            } else {
+                if ($uri->port != 80 && $location->port != $uri->port) {
+                    $location->port($uri->port);
+                }
             }
             my $redirect = $base . '/' . uri_escape($location);
             $self->log(debug => "redirect to $redirect");
