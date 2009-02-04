@@ -308,7 +308,13 @@ sub _do_request {
     # make request
     my $req = $args{request}->clone;
     $req->uri($args{url});
-    $req->header('Host' => URI->new($args{url})->host);
+    $req->header('Host' => do {
+            my $u = URI->new($args{url});
+            my $header = $u->host;
+            $header .= ':' . $u->port if $u->port != 80;
+            $header;
+        }
+    );
 
     $self->run_hook(
         'request_filter_process_agent',
