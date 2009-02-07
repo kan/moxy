@@ -1,0 +1,2 @@
+[TestingAndDebugging::RequireUseStrict]
+equivalent_modules = HTTP::Session::State::Base
