@@ -5,7 +5,7 @@ use warnings;
 use base qw/Class::Accessor::Fast/;
 use Class::Component 0.16;
 
-our $VERSION = '0.49';
+our $VERSION = '0.50';
 
 use Carp;
 use Encode;

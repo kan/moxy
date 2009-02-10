@@ -1,5 +1,13 @@
 Revision history for Moxy
 
+0.50
+
+    - [BUG] append port number on 'Host' header.
+    - [FEATURE] support redirect with relative path.
+    - [FEATURE] Plugin::UserID: added softbank support
+    - depend to HTTP::Engine 0.1.2
+    - depend to HTTP::Session 0.29
+
 0.49
 
     - use HTTP::Session 0.20
