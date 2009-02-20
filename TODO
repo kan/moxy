@@ -11,6 +11,7 @@
 - ezweb の DisplaySize が現在ブラウジング中画像表示サイズになっているが、これは壁紙画像表示サイズであるべき
 - あらかじめ登録した端末IDを切り替えられるとよいかも
 - softbank の ID に対応させる
+- App::Cmd への依存は正直いらないよね。Getopt::Long でいいよ。
 
 - plugins
  - GPS Support(select point by google map?)
