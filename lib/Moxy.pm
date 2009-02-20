@@ -184,7 +184,8 @@ sub handle_request {
         }
     }->();
     my $store = sub {
-        my $klass = "HTTP::Session::Store::$conf->{store}->{module}";
+        my $postfix = $conf->{store}->{module} or die "missing session store module name";
+        my $klass = "HTTP::Session::Store::${postfix}";
         $klass->require or die $@;
         $klass->new( $conf->{store}->{config} );
     }->();
@@ -247,7 +248,7 @@ sub _make_response {
             my $location = URI->new($res->header('Location'));
             $self->log(debug => "redirect to $location");
             my $uri = URI->new($url);
-            if ($location->isa('URI::_generic')) {
+            if (not defined $location->scheme) {
                 # path only redirect is invalid!
                 #   e.g.   Location: /foo/
                 $self->log(error => "----------------------------");
