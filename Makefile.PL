@@ -29,7 +29,6 @@ requires 'HTTP::Session' => 0.29;
 requires 'HTTP::Cookies'; # part of LWP
 
 test_requires('Test::More');
-test_requires('Path::Class');
 
 features(
     'Better Encoding detection' => [
