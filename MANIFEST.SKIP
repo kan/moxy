@@ -18,3 +18,5 @@
 MANIFEST.bak
 \.sw[po]$
 ^config.yaml$
+\.git/
+\.sw[po]$

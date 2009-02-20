@@ -1,5 +1,7 @@
 META.yml
+\.sw[po]
 Makefile
 blib/
 inc/
 pm_to_blib
+MANIFEST

@@ -1,5 +1,10 @@
 Revision history for Moxy
 
+0.51
+
+    - [BUG] fixed uri related bug(injected at 0.50)
+    - depend to HTTP::Engine 0.1.4
+
 0.50
 
     - [BUG] append port number on 'Host' header.
