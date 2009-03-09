@@ -48,7 +48,9 @@ features(
 
 tests 't/*.t t/*/*.t t/*/*/*.t';
 
-author_tests('xt');
+if (eval "use Module::Install::AuthorTests;1;") {
+    author_tests('xt');
+}
 
 use_test_base;
 
