@@ -23,7 +23,7 @@ requires 'Params::Validate'               => 0.91;
 requires 'Template'                       => 2.19;
 requires 'UNIVERSAL::require'             => '0.11';
 requires 'Class::Accessor';
-requires 'HTTP::MobileAttribute';
+requires 'HTTP::MobileAttribute' => 0.13;
 requires 'Path::Class';
 requires 'HTTP::Session' => 0.29;
 requires 'HTTP::Cookies'; # part of LWP

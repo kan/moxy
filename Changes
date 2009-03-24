@@ -1,5 +1,10 @@
 Revision history for Moxy
 
+0.52
+
+    - [BUG] au phone data fetcher is not working... fixed!
+    - updated au phone data
+
 0.51
 
     - [BUG] fixed uri related bug(injected at 0.50)
