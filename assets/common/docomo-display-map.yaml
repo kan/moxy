@@ -119,6 +119,16 @@ D704I:
   depth: 262144
   height: 240
   width: 230
+D705I:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+D705IMYU:
+  color: 1
+  depth: 262144
+  height: 240
+  width: 240
 D800IDS:
   color: 1
   depth: 262144
@@ -179,6 +189,36 @@ ER209I:
   depth: 2
   height: 72
   width: 120
+F-01A:
+  color: 1
+  depth: 16777216
+  height: 352
+  width: 240
+F-02A:
+  color: 1
+  depth: 262144
+  height: 352
+  width: 240
+F-03A:
+  color: 1
+  depth: 16777216
+  height: 352
+  width: 240
+F-04A:
+  color: 1
+  depth: 262144
+  height: 352
+  width: 240
+F-05A:
+  color: 1
+  depth: 65536
+  height: 352
+  width: 240
+F-06A:
+  color: 1
+  depth: 16777216
+  height: 352
+  width: 240
 F2051:
   color: 1
   depth: 65536
@@ -309,6 +349,16 @@ F704I:
   depth: 262144
   height: 240
   width: 230
+F705I:
+  color: 1
+  depth: 262144
+  height: 352
+  width: 240
+F706I:
+  color: 1
+  depth: 262144
+  height: 352
+  width: 240
 F801I:
   color: 1
   depth: 65536
@@ -338,6 +388,26 @@ F883IES:
   color: 1
   depth: 65536
   height: 256
+  width: 240
+F883IESS:
+  color: 1
+  depth: 65536
+  height: 256
+  width: 240
+F883IS:
+  color: 1
+  depth: 65536
+  height: 256
+  width: 240
+F884I:
+  color: 1
+  depth: 262144
+  height: 364
+  width: 240
+F884IES:
+  color: 1
+  depth: 262144
+  height: 282
   width: 240
 F900I:
   color: 1
@@ -399,6 +469,16 @@ F905I:
   depth: 16777216
   height: 352
   width: 240
+F905IBIZ:
+  color: 1
+  depth: 16777216
+  height: 352
+  width: 240
+F906I:
+  color: 1
+  depth: 16777216
+  height: 352
+  width: 240
 KO209I:
   color: 1
   depth: 256
@@ -429,6 +509,26 @@ L704I:
   depth: 262144
   height: 280
   width: 240
+L705I:
+  color: 1
+  depth: 262144
+  height: 280
+  width: 240
+L705IX:
+  color: 1
+  depth: 262144
+  height: 280
+  width: 240
+L706IE:
+  color: 1
+  depth: 262144
+  height: 280
+  width: 240
+L852I:
+  color: 1
+  depth: 65536
+  height: 298
+  width: 240
 M702IG:
   color: 1
   depth: 262144
@@ -438,6 +538,31 @@ M702IS:
   color: 1
   depth: 262144
   height: 267
+  width: 240
+N-01A:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+N-02A:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+N-03A:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+N-04A:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+N-05A:
+  color: 1
+  depth: 262144
+  height: 320
   width: 240
 N2001:
   color: 1
@@ -614,6 +739,31 @@ N704IMYU:
   depth: 262144
   height: 270
   width: 240
+N705I:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+N705IMYU:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+N706I:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+N706IE:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+N706III:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
 N821I:
   color: ''
   depth: 4
@@ -684,7 +834,27 @@ N905I:
   depth: 262144
   height: 320
   width: 240
+N905IBIZ:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
 N905IMYU:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+N906I:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+N906IL:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+N906IMYU:
   color: 1
   depth: 262144
   height: 320
@@ -694,11 +864,51 @@ NM502I:
   depth: 2
   height: 106
   width: 111
+NM705I:
+  color: 1
+  depth: 16777216
+  height: 235
+  width: 231
+NM706I:
+  color: 1
+  depth: 16777216
+  height: 235
+  width: 231
 NM850IG:
   color: 1
   depth: 65536
   height: 144
   width: 176
+P-01A:
+  color: 1
+  depth: 262144
+  height: 350
+  width: 240
+P-02A:
+  color: 1
+  depth: 262144
+  height: 350
+  width: 240
+P-03A:
+  color: 1
+  depth: 262144
+  height: 350
+  width: 240
+P-04A:
+  color: 1
+  depth: 262144
+  height: 350
+  width: 240
+P-05A:
+  color: 1
+  depth: 262144
+  height: 350
+  width: 240
+P-06A:
+  color: 1
+  depth: 262144
+  height: 350
+  width: 240
 P2002:
   color: 1
   depth: 65536
@@ -864,6 +1074,31 @@ P704IMYU:
   depth: 262144
   height: 270
   width: 240
+P705I:
+  color: 1
+  depth: 262144
+  height: 350
+  width: 240
+P705ICL:
+  color: 1
+  depth: 262144
+  height: 350
+  width: 240
+P705IMYU:
+  color: 1
+  depth: 262144
+  height: 350
+  width: 240
+P706IE:
+  color: 1
+  depth: 262144
+  height: 350
+  width: 240
+P706IMYU:
+  color: 1
+  depth: 262144
+  height: 350
+  width: 240
 P821I:
   color: ''
   depth: 4
@@ -934,6 +1169,16 @@ P905I:
   depth: 262144
   height: 350
   width: 240
+P905ITV:
+  color: 1
+  depth: 262144
+  height: 350
+  width: 240
+P906I:
+  color: 1
+  depth: 262144
+  height: 350
+  width: 240
 R209I:
   color: ''
   depth: 4
@@ -968,6 +1213,26 @@ SA800I:
   color: 1
   depth: 65536
   height: 252
+  width: 240
+SH-01A:
+  color: 1
+  depth: 16777216
+  height: 320
+  width: 240
+SH-02A:
+  color: 1
+  depth: 16777216
+  height: 320
+  width: 240
+SH-03A:
+  color: 1
+  depth: 16777216
+  height: 320
+  width: 240
+SH-04A:
+  color: 1
+  depth: 16777216
+  height: 320
   width: 240
 SH2101V:
   color: 1
@@ -1034,6 +1299,31 @@ SH704I:
   depth: 262144
   height: 320
   width: 240
+SH705I:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+SH705III:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+SH706I:
+  color: 1
+  depth: 16777216
+  height: 320
+  width: 240
+SH706IE:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+SH706IW:
+  color: 1
+  depth: 16777216
+  height: 320
+  width: 240
 SH821I:
   color: 1
   depth: 256
@@ -1090,6 +1380,21 @@ SH904I:
   height: 320
   width: 240
 SH905I:
+  color: 1
+  depth: 16777216
+  height: 320
+  width: 240
+SH905ITV:
+  color: 1
+  depth: 16777216
+  height: 320
+  width: 240
+SH906I:
+  color: 1
+  depth: 16777216
+  height: 320
+  width: 240
+SH906ITV:
   color: 1
   depth: 16777216
   height: 320
@@ -1189,6 +1494,16 @@ SO704I:
   depth: 262144
   height: 368
   width: 240
+SO705I:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
+SO706I:
+  color: 1
+  depth: 262144
+  height: 320
+  width: 240
 SO902I:
   color: 1
   depth: 262144
@@ -1210,6 +1525,16 @@ SO903ITV:
   height: 368
   width: 240
 SO905I:
+  color: 1
+  depth: 16777216
+  height: 368
+  width: 240
+SO905ICS:
+  color: 1
+  depth: 16777216
+  height: 368
+  width: 240
+SO906I:
   color: 1
   depth: 16777216
   height: 368
