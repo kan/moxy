@@ -189,32 +189,32 @@ ER209I:
   depth: 2
   height: 72
   width: 120
-F-01A:
+F01A:
   color: 1
   depth: 16777216
   height: 352
   width: 240
-F-02A:
+F02A:
   color: 1
   depth: 262144
   height: 352
   width: 240
-F-03A:
+F03A:
   color: 1
   depth: 16777216
   height: 352
   width: 240
-F-04A:
+F04A:
   color: 1
   depth: 262144
   height: 352
   width: 240
-F-05A:
+F05A:
   color: 1
   depth: 65536
   height: 352
   width: 240
-F-06A:
+F06A:
   color: 1
   depth: 16777216
   height: 352
@@ -539,27 +539,27 @@ M702IS:
   depth: 262144
   height: 267
   width: 240
-N-01A:
+N01A:
   color: 1
   depth: 262144
   height: 320
   width: 240
-N-02A:
+N02A:
   color: 1
   depth: 262144
   height: 320
   width: 240
-N-03A:
+N03A:
   color: 1
   depth: 262144
   height: 320
   width: 240
-N-04A:
+N04A:
   color: 1
   depth: 262144
   height: 320
   width: 240
-N-05A:
+N05A:
   color: 1
   depth: 262144
   height: 320
@@ -879,32 +879,32 @@ NM850IG:
   depth: 65536
   height: 144
   width: 176
-P-01A:
+P01A:
   color: 1
   depth: 262144
   height: 350
   width: 240
-P-02A:
+P02A:
   color: 1
   depth: 262144
   height: 350
   width: 240
-P-03A:
+P03A:
   color: 1
   depth: 262144
   height: 350
   width: 240
-P-04A:
+P04A:
   color: 1
   depth: 262144
   height: 350
   width: 240
-P-05A:
+P05A:
   color: 1
   depth: 262144
   height: 350
   width: 240
-P-06A:
+P06A:
   color: 1
   depth: 262144
   height: 350
@@ -1214,22 +1214,22 @@ SA800I:
   depth: 65536
   height: 252
   width: 240
-SH-01A:
+SH01A:
   color: 1
   depth: 16777216
   height: 320
   width: 240
-SH-02A:
+SH02A:
   color: 1
   depth: 16777216
   height: 320
   width: 240
-SH-03A:
+SH03A:
   color: 1
   depth: 16777216
   height: 320
   width: 240
-SH-04A:
+SH04A:
   color: 1
   depth: 16777216
   height: 320
