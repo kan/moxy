@@ -13,7 +13,7 @@ sub response_filter :CarrierHook('V') {
     $args->{response}->content($content);
 }
 
-sub request_filter :CarrierHook('V') {
+sub url_handle :CarrierHook('V') {
     my ( $self, $context, $args ) = @_;
 
     if ( $args->{request}->uri =~ m{^http://gps\.moxy/softbank/\?redirect_to=(.+)} ) {

@@ -13,7 +13,7 @@ sub response_filter :CarrierHook('E') {
     $args->{response}->content($content);
 }
 
-sub request_filter :CarrierHook('E') {
+sub url_handle :CarrierHook('E') {
     my ( $self, $context, $args ) = @_;
 
     if ( $args->{request}->uri =~ m{^http://gps\.moxy/au/\?redirect_to=(.+)} ) {

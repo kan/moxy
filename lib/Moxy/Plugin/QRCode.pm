@@ -15,7 +15,7 @@ sub control_panel :Hook {
     );
 }
 
-sub request_filter :Hook {
+sub url_handle :Hook {
     my ($self, $context, $args) = @_;
 
     if ($args->{request}->uri =~ m{^http://qrcode\.moxy/(.+)}) {

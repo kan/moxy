@@ -32,7 +32,7 @@ sub get_user_id :Hook('request_filter') {
 }
 
 # save user id
-sub save_user_id :Hook('request_filter') {
+sub save_user_id :Hook('url_handle') {
     my ($self, $context, $args) = @_;
 
     if ($args->{request}->uri =~ m{^http://userid\.moxy/(.+)}) {

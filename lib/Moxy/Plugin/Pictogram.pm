@@ -33,7 +33,7 @@ sub response_filter :Hook {
     );
 }
 
-sub request_filter :Hook {
+sub url_handle :Hook {
     my ($self, $context, $args) = @_;
     die "request missing" unless $args->{request};
 

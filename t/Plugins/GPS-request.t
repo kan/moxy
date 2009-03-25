@@ -33,7 +33,7 @@ sub request {
     my $request = HTTP::Request->new(200);
     $request->header('Content-Type' => 'text/html');
     $request->uri($input->{uri});
-    my $response = $m->run_hook_and_get_response("request_filter_$input->{carrier}", { request => $request });
+    my $response = $m->run_hook_and_get_response("url_handle_$input->{carrier}", { request => $request });
     $response;
 }
 

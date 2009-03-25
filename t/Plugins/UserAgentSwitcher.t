@@ -40,7 +40,8 @@ sub test {
             module          => 'Test',
             args            => {},
             request_handler => sub {
-                $moxy->handle_request(shift);
+                my $req = shift;
+                $moxy->handle_request($req);
             },
         }
     )->run($req);

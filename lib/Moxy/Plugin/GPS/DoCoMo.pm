@@ -5,7 +5,7 @@ use base qw/Moxy::Plugin/;
 
 #  TODO: support navi_pos
 #  TODO: support lcs
-sub request_filter :CarrierHook('I') {
+sub url_handle :CarrierHook('I') {
     my ( $self, $context, $args ) = @_;
 
     if ($args->{request}->uri =~ m{^http://w1m\.docomo\.ne\.jp/cp/iarea}) {

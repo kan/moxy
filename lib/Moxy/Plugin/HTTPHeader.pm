@@ -40,7 +40,7 @@ sub control_panel :Hook {
 }
 
 # set.
-sub save :Hook('request_filter') {
+sub save :Hook('url_handle') {
     my ($self, $context, $args) = @_;
 
     if ($args->{request}->uri =~ m{^http://http-header\.moxy/(.+)}) {

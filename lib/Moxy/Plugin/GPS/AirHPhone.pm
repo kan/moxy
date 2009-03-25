@@ -4,7 +4,7 @@ use warnings;
 use base qw/Moxy::Plugin/;
 use HTTP::Response;
 
-sub request_filter :CarrierHook('H') {
+sub url_handle :CarrierHook('H') {
     my ( $self, $context, $args ) = @_;
 
     if ($args->{request}->uri =~ m{^http://location\.request/dummy\.cgi\?my=(.+)&pos=\$location$}) {

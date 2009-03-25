@@ -28,7 +28,7 @@ my $c = Moxy->new(
 
 sub check_request {
     my $response = $c->run_hook_and_get_response(
-        'request_filter' => {
+        'url_handle' => {
             request => HTTP::Request->new( 'GET', 'http://pictogram.moxy/E/EC69.gif' )
         }
     );
