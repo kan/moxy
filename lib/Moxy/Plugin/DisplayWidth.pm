@@ -14,6 +14,7 @@ sub response_filter :Hook {
     # http://www.willcom-inc.com/ja/lineup/spec/voice/index.html
     # 320px 固定にしておく。だれか Willcom が大好きでたまらないような人があらわれたら対応してください。
     my $width = $attr->is_airh_phone ? 320 : $attr->display->width;
+    $width ||= 320; # なんかうまくとれなかったときのデフォルトのサイズは 320 とする。とくに理由はない。
 
     my $header = qq!<div style="border: 1px black solid; width: ${width}px; margin: 0 auto;float: left;">!;
 
