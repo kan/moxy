@@ -11,12 +11,19 @@ sub get_user_id :Hook('request_filter') {
     my $key = join(',', __PACKAGE__, $args->{mobile_attribute}->user_agent);
     my $user_id = $args->{session}->get($key);
     if ($user_id) {
+        $context->log('debug' => "your user id is $user_id");
+
         if ($args->{mobile_attribute}->is_ezweb) {
             # au subscriber id.
             $args->{request}->header('X-Up-Subno' => $user_id);
-        } elsif ($args->{mobile_attribute}->is_docomo && $args->{request}->uri =~ /guid=ON/i) {
+        } elsif ($args->{mobile_attribute}->is_docomo) {
             # docomo
-            $args->{request}->header('X-DCMGUID' => $user_id);
+            if ($args->{request}->uri =~ /guid=ON/i) {
+                $context->log('debug' => "send x-dcmguid");
+                $args->{request}->header('X-DCMGUID' => $user_id);
+            } else {
+                $context->log('debug' => "your uri does not contains guid=ON @{[ $args->{request}->uri ]}");
+            }
         } elsif ($args->{mobile_attribute}->is_softbank) {
             # softbank
             $args->{request}->header('X-JPHONE-UID' => $user_id);

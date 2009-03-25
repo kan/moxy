@@ -168,6 +168,8 @@ sub render_start_page {
 sub handle_request {
     my ($self, $req) = @_;
 
+    $self->log(debug => "---------------------------");
+
     my $conf = $self->conf->{global}->{session};
     my $state_type = $conf->{state}->{module} || 'BasicAuth';
     my $state = sub {
@@ -354,11 +356,22 @@ sub _do_request {
         parse_head        => 0,
         cookie_jar        => $cookie_jar,
     );
+    $ua->add_handler( response_done => sub {
+        my ($response, $ua, $h) = @_;
+        my $location = $response->header('Location');
+        if ($location) {
+            my $content = $response->content || '';
+            $self->log(info => "redirect to '$location', $content");
+        }
+        $response;
+    });
 
+    $self->log(debug => "request to @{[ $req->uri ]}");
     my $t1 = Time::HiRes::gettimeofday();
     my $response = $ua->request($req);
     my $t2 = Time::HiRes::gettimeofday();
     $self->response_time( $t2-$t1 );
+    $self->log(debug => "and, request was @{[ $response->request->uri ]}");
 
     $args{session}->set('cookies' => $cookie_jar); # save cookies
 
