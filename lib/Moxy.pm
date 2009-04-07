@@ -215,6 +215,8 @@ sub handle_request {
             session => $session,
         );
         $session->response_filter($res);
+        $session->finalize;
+
         return $res;
     }
 }
