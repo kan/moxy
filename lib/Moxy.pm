@@ -397,6 +397,22 @@ sub _do_request {
 
     $args{session}->set('cookies' => $cookie_jar); # save cookies
 
+    # handle internal server error
+    # do not display f*cking plain html page when got a 500.
+    if ($response->code eq 500 && $response->content !~ /<body>/) {
+        $response->content_type('text/html');
+        $response->content(qq{
+            <html>
+                <head><title>internal server error occured</title></head>
+                <body>
+                    <div style="color: red; font-weight: bold; font-size: xx-large;">you got a 500 internal server error</div>
+                    <div>@{[ $response->content ]}</div>
+                    <div>-- moxy</div>
+                </body>
+            </html>
+        });
+    }
+
     for my $hook ( 'security_filter', 'response_filter', "response_filter_$carrier", 'render_location_bar' ) {
         $self->run_hook(
             $hook,
