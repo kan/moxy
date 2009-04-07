@@ -53,7 +53,7 @@ if (eval "use Module::Install::AuthorTests;1;") {
 }
 
 use_test_base;
-
+auto_set_repository();
 install_script glob('script/*.pl');
 WriteAll;
 
