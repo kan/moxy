@@ -43,7 +43,10 @@ use HTTP::MobileAttribute plugins => [
 
 __PACKAGE__->load_components(qw/Plaggerize Autocall::InjectMethod Context/);
 
-__PACKAGE__->load_plugins(qw/DisplayWidth ControlPanel LocationBar Pictogram BasicAuth/);
+__PACKAGE__->load_plugins(qw/
+    DisplayWidth ControlPanel LocationBar Pictogram
+    BasicAuth InternalServerError
+/);
 __PACKAGE__->mk_accessors(qw/response_time/);
 
 sub new {
@@ -396,22 +399,6 @@ sub _do_request {
     $self->log(debug => "and, request was @{[ $response->request->uri ]}");
 
     $args{session}->set('cookies' => $cookie_jar); # save cookies
-
-    # handle internal server error
-    # do not display f*cking plain html page when got a 500.
-    if ($response->code eq 500 && $response->content !~ /<body>/) {
-        $response->content_type('text/html');
-        $response->content(qq{
-            <html>
-                <head><title>internal server error occured</title></head>
-                <body>
-                    <div style="color: red; font-weight: bold; font-size: xx-large;">you got a 500 internal server error</div>
-                    <div>@{[ $response->content ]}</div>
-                    <div>-- moxy</div>
-                </body>
-            </html>
-        });
-    }
 
     for my $hook ( 'status_handler', 'security_filter', 'response_filter', "response_filter_$carrier", 'render_location_bar' ) {
         $self->run_hook(
