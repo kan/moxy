@@ -1,6 +1,5 @@
 use strict;
 use warnings;
-use Moxy::Plugin::RefererCutter;
 use Moxy;
 use HTTP::Request;
 use Test::More tests => 4;
