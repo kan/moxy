@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use Moxy;
 use HTTP::Request;
-use Test::More tests => 4;
+use Test::More tests => 1;
 use HTTP::Session::State::Test;
 use HTTP::Session::Store::Test;
 use CGI;
