@@ -43,7 +43,7 @@ use HTTP::MobileAttribute plugins => [
 
 __PACKAGE__->load_components(qw/Plaggerize Autocall::InjectMethod Context/);
 
-__PACKAGE__->load_plugins(qw/DisplayWidth ControlPanel LocationBar Pictogram/);
+__PACKAGE__->load_plugins(qw/DisplayWidth ControlPanel LocationBar Pictogram BasicAuth/);
 __PACKAGE__->mk_accessors(qw/response_time/);
 
 sub new {
@@ -413,7 +413,7 @@ sub _do_request {
         });
     }
 
-    for my $hook ( 'security_filter', 'response_filter', "response_filter_$carrier", 'render_location_bar' ) {
+    for my $hook ( 'status_handler', 'security_filter', 'response_filter', "response_filter_$carrier", 'render_location_bar' ) {
         $self->run_hook(
             $hook,
             {
