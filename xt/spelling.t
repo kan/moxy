@@ -81,6 +81,10 @@ Akiko
 Yokoyama
 Bookmark
 html
+tokuhirom
+dankogai
+kogaidan
+auth
 ...
 
 add_stopwords(@stopwords);
