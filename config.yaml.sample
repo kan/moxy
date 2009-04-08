@@ -16,17 +16,3 @@ global:
         file: /tmp/moxy.ndbm
         dbm_class: NDBM_File
 
-plugins:
-  - module: UserID
-  - module: XMLisHTML
-  - module: UserAgentSwitcher
-  - module: RefererCutter
-  - module: CookieCutter
-  - module: FlashUseImgTag
-  - module: DisableTableTag
-  - module: GPS
-  - module: HTTPHeader
-  - module: QRCode
-  - module: ShowHTTPHeaders
-
-
