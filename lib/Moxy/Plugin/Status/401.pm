@@ -1,4 +1,4 @@
-package Moxy::Plugin::BasicAuth;
+package Moxy::Plugin::Status::401;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;

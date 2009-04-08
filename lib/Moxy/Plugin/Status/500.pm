@@ -1,4 +1,4 @@
-package Moxy::Plugin::InternalServerError;
+package Moxy::Plugin::Status::500;
 use strict;
 use warnings;
 use base qw/Moxy::Plugin/;
