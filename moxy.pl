@@ -9,6 +9,7 @@ use File::Temp ();
 use Moxy;
 use HTTP::Engine;
 use Hash::Merge;
+use Pod::Usage; # core module
 
 &main; exit;
 
