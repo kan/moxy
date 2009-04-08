@@ -12,7 +12,6 @@ all_from("lib/Moxy.pm");
         \&recommends;
 }
 
-requires 'App::Cmd'                       => 0.200;
 requires 'Class::Component'               => 0.17;
 requires 'Encode::JP::Mobile'             => 0.25;
 requires 'HTML::ReplacePictogramMobileJp' => 0.06;
