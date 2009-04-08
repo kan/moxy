@@ -1,5 +1,10 @@
 Revision history for Moxy
 
+0.54
+
+    - do not hide control panel when got a text/plain internal server error message
+    - support basic-auth
+
 0.53
 
     - process request filter on redirection
