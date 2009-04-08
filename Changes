@@ -1,5 +1,11 @@
 Revision history for Moxy
 
+0.55
+
+    - better startup page
+    - better default settings
+    - load major plugins automatically
+
 0.54
 
     - do not hide control panel when got a text/plain internal server error message

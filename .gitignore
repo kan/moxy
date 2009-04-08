@@ -1,5 +1,5 @@
 META.yml
-\.sw[po]
+*\.sw[po]
 Makefile
 blib/
 inc/
