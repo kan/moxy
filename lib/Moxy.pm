@@ -45,7 +45,7 @@ __PACKAGE__->load_components(qw/Plaggerize Autocall::InjectMethod Context/);
 
 __PACKAGE__->load_plugins(qw/
     DisplayWidth ControlPanel LocationBar Pictogram
-    BasicAuth InternalServerError
+    BasicAuth InternalServerError Status::404
     UserID XMLisHTML UserAgentSwitcher RefererCutter CookieCutter FlashUseImgTag
     DisableTableTag GPS HTTPHeader QRCode ShowHTTPHeaders
 /);
