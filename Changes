@@ -1,5 +1,9 @@
 Revision history for Moxy
 
+0.56
+
+    - added '404 file not found' handler
+
 0.55
 
     - better startup page
