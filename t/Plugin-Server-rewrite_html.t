@@ -94,5 +94,5 @@ __END__
 --- input
 <a href="tel:09044444444" title="foo">bar</a>
 --- expected
-<html><a href="tel:09044444444" onclick="alert(&quot;tel:09044444444&quot;);return false;" title="foo">bar</a></html>
+<html><a href="tel:09044444444" onclick="prompt(&#39;tel&#39;, &#39;09044444444&#39;);return false;" title="foo">bar</a></html>
 

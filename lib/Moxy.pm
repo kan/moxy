@@ -121,11 +121,10 @@ sub rewrite_html {
         for my $node ( $tree->findnodes("//$tag") ) {
             if ( my $attr = $node->attr($attr_name) ) {
                 next if $attr =~ /^mailto:/;
-                if ($attr =~ /^tel:/) {
+                if ($attr =~ /^tel:([0-9-]+)$/) {
+                    my $tel = $1;
                     $node->attr(
-                        'onclick' => sprintf(q{alert("%s");return false;},
-                            $attr
-                        )
+                        'onclick' => qq{prompt('tel', '$1');return false;}
                     );
                 } else {
                     # maybe /https?/
