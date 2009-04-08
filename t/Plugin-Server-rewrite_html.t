@@ -90,3 +90,9 @@ __END__
 --- expected
 <html><a href="mailto:foo@example.com" title="foo">bar</a></html>
 
+=== tel:
+--- input
+<a href="tel:09044444444" title="foo">bar</a>
+--- expected
+<html><a href="tel:09044444444" onclick="alert(&quot;tel:09044444444&quot;);return false;" title="foo">bar</a></html>
+
