@@ -40,8 +40,8 @@ my $session_store = HTTP::Session::Store::Test->new();
       [ 'id' => 'dankogai', 'pw' => 'kogaidan' ],
       ;
     my $res = $m->run_hook_and_get_response('url_handle' => { request => $req, session => session()});
-    is $res->code, 302;
-    is($res->header('Location'), 'http://example.com/');
+    is $res->code, 302, 'save id/pw';
+    is($res->header('Location'), 'http://example.com/', 'location');
 }
 
 # request filter works?
@@ -51,8 +51,14 @@ my $session_store = HTTP::Session::Store::Test->new();
             'Host' => 'example.com',
         ],
       ;
-    $m->run_hook('request_filter' => { request => $req, session => session()});
-    is($req->authorization_basic, 'dankogai:kogaidan');
+    $m->run_hook(
+        'request_filter' => {
+            request          => $req,
+            session          => session(),
+            mobile_attribute => HTTP::MobileAttribute->new( $req->headers )
+        }
+    );
+    is($req->authorization_basic, 'dankogai:kogaidan', 'authorization basic');
 }
 
 sub session {
