@@ -120,6 +120,7 @@ sub rewrite_html {
 
         for my $node ( $tree->findnodes("//$tag") ) {
             if ( my $attr = $node->attr($attr_name) ) {
+                next if $attr =~ /^mailto:/;
                 $node->attr(
                     $attr_name => sprintf( qq{%s%s%s},
                         $base,

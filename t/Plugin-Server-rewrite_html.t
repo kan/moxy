@@ -84,3 +84,9 @@ __END__
 --- expected
 <html><p>foo</p></html>
 
+=== mailto
+--- input
+<a href="mailto:foo@example.com" title="foo">bar</a>
+--- expected
+<html><a href="mailto:foo@example.com" title="foo">bar</a></html>
+
