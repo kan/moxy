@@ -8,6 +8,7 @@ use Getopt::Long qw/GetOptions/;
 use File::Temp ();
 use Moxy;
 use HTTP::Engine;
+use Hash::Merge;
 
 &main; exit;
 
@@ -19,6 +20,7 @@ sub main {
         'timeout=i' => \my $timeout,
         'db=s'      => \my $sessiondb,
         'assets=s'  => \my $assets,
+        'conf=s'    => \my $conffile,
         'help'      => \my $help,
     ) or pod2usage();
     pod2usage() if $help;
@@ -51,6 +53,12 @@ sub main {
             assets_path => $assets,
         },
     };
+
+    if ($conffile) {
+        my $fconf = YAML::LoadFile($conffile);
+        Hash::Merge::set_behavior('RIGHT_PRECEDENT');
+        $conf = Hash::Merge::merge($conf, $fconf);
+    }
 
     _run($daemonize, $conf);
 }

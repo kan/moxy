@@ -85,6 +85,7 @@ tokuhirom
 dankogai
 kogaidan
 auth
+pl
 ...
 
 add_stopwords(@stopwords);
