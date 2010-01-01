@@ -86,8 +86,10 @@ dankogai
 kogaidan
 auth
 pl
+Sugano
 ...
 
 add_stopwords(@stopwords);
 all_pod_files_spelling_ok;
+
 
