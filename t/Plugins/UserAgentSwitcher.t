@@ -7,14 +7,14 @@ use FindBin;
 use File::Spec::Functions;
 use HTTP::Response;
 use HTTP::Request;
-use HTTP::Engine;
+use HTTP::Message::PSGI;
 
 my $moxy = Moxy->new(
     {
         global => {
             assets_path => catfile( $FindBin::Bin, '..', '..', 'assets' ),
             'log' => {
-                level => 'debug',
+                level => 'info',
             },
             session => {
                 store => {
@@ -35,16 +35,8 @@ sub test {
         GET => $input
     );
     $req->authorization_basic('foobar');
-    my $res = HTTP::Engine->new(
-        interface => {
-            module          => 'Test',
-            args            => {},
-            request_handler => sub {
-                my $req = shift;
-                $moxy->handle_request($req);
-            },
-        }
-    )->run($req);
+    my $app = $moxy->to_app();
+    my $res = res_from_psgi($app->($req->to_psgi));
     is $res->header('Location'), $expected;
 }
 

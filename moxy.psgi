@@ -6,7 +6,6 @@ use lib File::Spec->catfile( dirname(__FILE__), 'lib' );
 use File::Temp;
 use Plack::Builder;
 
-use HTTP::Engine;
 use Moxy;
 
 # preload
@@ -31,17 +30,10 @@ my $config = +{
     },
 };
 my $moxy = Moxy->new($config);
-my $engine = HTTP::Engine->new(
-    interface => {
-        module => 'PSGI',
-        request_handler => sub {
-            $moxy->handle_request( @_ );
-        },
-    }
-);
 builder {
     enable_if { $_[0]->{REMOTE_ADDR} eq '127.0.0.1' } 
             "Plack::Middleware::ReverseProxy";
-    sub { $engine->run(@_) };
+
+    $moxy->to_app();
 };
 

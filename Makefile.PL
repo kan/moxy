@@ -17,7 +17,6 @@ requires 'Encode::JP::Mobile'             => 0.25;
 requires 'HTML::ReplacePictogramMobileJp' => 0.06;
 requires 'HTML::Tree'                     => 3.23;
 requires 'HTML::TreeBuilder::XPath'       => 0.09;
-requires 'HTTP::Engine'                   => '0.03001';
 requires 'Params::Validate'               => 0.91;
 requires 'Template'                       => 2.19;
 requires 'UNIVERSAL::require'             => '0.11';
@@ -27,8 +26,10 @@ requires 'HTTP::MobileAttribute' => 0.13;
 requires 'Path::Class';
 requires 'HTTP::Session' => 0.29;
 requires 'HTTP::Cookies'; # part of LWP
+requires 'Test::More' => 0.88;
 
 test_requires('Test::More');
+test_requires('Test::Requires');
 
 features(
     'Better Encoding detection' => [

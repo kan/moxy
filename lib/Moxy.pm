@@ -29,6 +29,9 @@ use URI::Heuristic qw(uf_uristr);
 use URI;
 use YAML;
 use Time::HiRes ();
+use Plack::Response;
+use Moxy::Request;
+use HTTP::Message::PSGI;
 use HTTP::MobileAttribute plugins => [
     qw/CarrierLetter IS/,
     {
@@ -68,6 +71,18 @@ sub assets_path {
         $self->conf->{global}->{assets_path}
             || dir( $FindBin::RealBin, 'assets' )->stringify;
     };
+}
+
+sub res {
+    Plack::Response->new(@_);
+}
+sub HTTP::Response::to_plack_response {
+    my $self = shift;
+    return res(
+        $self->code,
+        $self->headers,
+        $self->content,
+    );
 }
 
 # -------------------------------------------------------------------------
@@ -154,6 +169,17 @@ sub rewrite_html {
     return $result;
 }
 
+sub to_app {
+    my ($self) = @_;
+    sub {
+        my $env = shift;
+        my $req = Moxy::Request->new($env);
+        my $res = $self->handle_request($req);
+           $res->content_length( length($res->content) ); # adjust content-length.
+           $res->finalize();
+    };
+}
+
 sub handle_request {
     my ($self, $req) = @_;
 
@@ -184,12 +210,12 @@ sub handle_request {
     my $auth = join(',', $req->headers->authorization_basic);
     if ($state->isa('Moxy::Session::State::BasicAuth') && !$auth) {
         $self->log(debug => 'basicauth');
-        return HTTP::Engine::Response->new(
-            status => 401,
-            headers => {
+        return res(
+            401,
+            [
                 WWW_Authenticate => qq{Basic realm="Moxy needs basic auth.Only for identification.Password is dummy."},
-            },
-            body => 'authentication required',
+            ],
+            'authentication required',
         );
     } else {
         $self->log(debug => "session: state: $state, store: $store");
@@ -214,7 +240,7 @@ sub _make_response {
     my $self = shift;
     my %args = validate(
         @_ => +{
-            req     => { isa => 'HTTP::Engine::Request', },
+            req     => { isa => 'Moxy::Request', },
             session => { type => OBJECT },
         }
     );
@@ -260,11 +286,10 @@ sub _make_response {
             }
             my $redirect = $base . '/' . uri_escape($location);
             $self->log(debug => "redirect to $redirect");
-            return HTTP::Engine::Response->new(
-                status  => 302,
-                headers => {
+            return res(
+                302, [
                     Location => $redirect,
-                },
+                ],
             );
         } else {
             my $content_type = $res->header('Content-Type');
@@ -275,9 +300,7 @@ sub _make_response {
                 $res->content( encode($res->charset, rewrite_css($base, decode($res->charset, $res->content), $url), Encode::FB_HTMLCREF) );
             }
 
-            my $response = HTTP::Engine::Response->new();
-            $response->set_http_response($res);
-            return $response;
+            return $res->to_plack_response();
         }
     } else {
         # please input url.
@@ -305,9 +328,7 @@ sub _make_response {
             mobile_attribute => HTTP::MobileAttribute->new('KDDI-KC26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0'),
             session          => $args{session},
         );
-        my $res = HTTP::Engine::Response->new;
-        $res->set_http_response($response);
-        $res;
+        return $response->to_plack_response();
     }
 }
 
