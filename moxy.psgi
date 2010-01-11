@@ -26,7 +26,7 @@ my $config = +{
                 },
             },
         },
-        assets_path => '/usr/local/webapp/moxy/assets',
+        assets_path => File::Spec->catfile(dirname(__FILE__), 'assets'),
     },
 };
 my $moxy = Moxy->new($config);
