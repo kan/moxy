@@ -10,16 +10,11 @@ use Moxy;
 # preload
 use Encode::JP::Mobile;
 
-my $config = +{
-    global => {
-        timeout => 16,
-        session => {
-            state => { module => 'BasicAuth', },
-        },
-        assets_path => File::Spec->catfile(dirname(__FILE__), 'assets'),
-    },
-};
-my $moxy = Moxy->new($config);
+my $moxy = Moxy->new(+{
+    # configuration here
+});
+print "assets path is: @{[ $moxy->assets_path ]}\n";
+
 builder {
     enable_if { $_[0]->{REMOTE_ADDR} eq '127.0.0.1' } 
             "Plack::Middleware::ReverseProxy";

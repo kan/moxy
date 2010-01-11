@@ -60,6 +60,14 @@ sub new {
 
     $config->{global}->{log}->{level} ||= 'info';
 
+    $config->{global}->{assets_path} ||= do {
+        my $libpath = $INC{'Moxy.pm'};
+        $libpath =~ s!(?:blib/)?lib/+Moxy\.pm$!!;
+        $libpath ||= './';
+        $libpath = File::Spec->rel2abs($libpath);
+        File::Spec->catdir($libpath, 'assets');
+    };
+
     my $self = $class->NEXT( 'new' => { config => $config } );
 
     $self->conf->{global}->{session}->{store} = +{
@@ -80,18 +88,7 @@ sub new {
     return $self;
 }
 
-sub assets_path {
-    my $self = shift;
-
-    return $self->{__assets_path} ||= do {
-        $self->conf->{global}->{assets_path} || do {
-            my $libpath = $INC{'Moxy.pm'};
-            $libpath =~ s!(?:blib/)?lib/+Moxy\.pm$!!;
-            my $assets = File::Spec->catdir($libpath, 'assets');
-            File::Spec->rel2abs($assets);
-        };
-    };
-}
+sub assets_path { shift->conf->{global}->{assets_path} }
 
 sub res {
     Plack::Response->new(@_);
