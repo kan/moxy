@@ -12,12 +12,6 @@ plan tests => 3;
 
 my $c = Moxy->new(
     {
-        global => {
-            assets_path => File::Spec->catfile( $FindBin::Bin, '..', '..', 'assets' ),
-            'log' => {
-                level => 'info',
-            },
-        },
         plugins => [
             { module => 'Pictogram' },
         ]

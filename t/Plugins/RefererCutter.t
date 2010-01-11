@@ -9,16 +9,7 @@ use HTTP::Session::Store::Test;
 use CGI;
 
 Moxy->load_plugins(qw/RefererCutter/);
-my $m = Moxy->new(
-    {
-        global => {
-            assets_path => File::Spec->catfile( $FindBin::Bin, '..', 'assets' ),
-            'log' => {
-                level => 'info',
-            },
-        },
-    }
-);
+my $m = Moxy->new();
 my $req = HTTP::Request->new();
 $req->header('Referer' => 'http://wassr.jp/');
 $req->header('X-Moe' => 'nishiohirokazu');

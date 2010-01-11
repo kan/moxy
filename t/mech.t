@@ -9,25 +9,7 @@ use File::Spec::Functions qw/catfile/;
 
 binmode Test::More->builder->$_, ":utf8" for qw/output failure_output todo_output/;
 
-my $moxy = Moxy->new(
-    {
-        global => {
-            assets_path => catfile( $FindBin::Bin, '..', 'assets' ),
-            'log' => {
-                level => 'info',
-            },
-            session => {
-                store => {
-                    module => 'Test',
-                    config => {},
-                },
-            }
-        },
-        plugins => [
-            { module => 'UserAgentSwitcher' },
-        ],
-    }
-);
+my $moxy = Moxy->new();
 my $app = $moxy->to_app();
 
 # -------------------------------------------------------------------------

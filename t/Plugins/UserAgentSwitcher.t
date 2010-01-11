@@ -11,18 +11,6 @@ use HTTP::Message::PSGI;
 
 my $moxy = Moxy->new(
     {
-        global => {
-            assets_path => catfile( $FindBin::Bin, '..', '..', 'assets' ),
-            'log' => {
-                level => 'info',
-            },
-            session => {
-                store => {
-                    module => 'Test',
-                    config => {},
-                },
-            }
-        },
         plugins => [
             { module => 'UserAgentSwitcher' },
         ],

@@ -10,6 +10,7 @@ our $VERSION = '0.56';
 use Carp;
 use Encode;
 use File::Spec::Functions;
+use File::Basename;
 use FindBin;
 use HTML::Entities;
 use HTML::Parser;
@@ -57,7 +58,22 @@ __PACKAGE__->mk_accessors(qw/response_time/);
 sub new {
     my ($class, $config) = @_;
 
+    $config->{global}->{log}->{level} ||= 'info';
+
     my $self = $class->NEXT( 'new' => { config => $config } );
+
+    $self->conf->{global}->{session}->{store} = +{
+        module => 'DBM',
+        config => {
+            file => do {
+                require File::Temp;
+                my $db = File::Temp->new();
+                $self->{__session} = $db;
+                "$db", # we need stringify for file::temp
+            },
+            dbm_class => 'NDBM_File',
+        },
+    };
 
     $self->conf->{global}->{log}->{fh} ||= \*STDERR;
 
@@ -68,8 +84,12 @@ sub assets_path {
     my $self = shift;
 
     return $self->{__assets_path} ||= do {
-        $self->conf->{global}->{assets_path}
-            || dir( $FindBin::RealBin, 'assets' )->stringify;
+        $self->conf->{global}->{assets_path} || do {
+            my $libpath = $INC{'Moxy.pm'};
+            $libpath =~ s!(?:blib/)?lib/+Moxy\.pm$!!;
+            my $assets = File::Spec->catdir($libpath, 'assets');
+            File::Spec->rel2abs($assets);
+        };
     };
 }
 

@@ -11,12 +11,6 @@ plan tests => 1*blocks;
 
 my $m = Moxy->new(
     {
-        global => {
-            assets_path => catfile( $FindBin::Bin, '..', 'assets' ),
-            'log' => {
-                level => 'info',
-            },
-        },
         plugins => [
             { module => 'DisableTableTag' },
         ],
