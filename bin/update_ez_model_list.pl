@@ -10,8 +10,6 @@ use Data::Dumper;
 use Encode;
 use File::Slurp;
 
-local $Web::Scraper::UseLibXML = 1;
-
 &main; exit;
 
 sub main {
@@ -48,6 +46,8 @@ sub ez_data {
         my $res = {};
         my $device_id = $device_id_dat->{$model->{model_long}};
         if ($model->{browser_type} eq 'HDML') {
+            warn "HDML!!";
+            die;
             $res->{agent} = "UP.Browser/3.04-$device_id UP.Link/3.4.5.9";
         } else {
             if (ref $device_id) {
