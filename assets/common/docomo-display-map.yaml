@@ -194,16 +194,31 @@ F01A:
   depth: 16777216
   height: 352
   width: 240
+F01B:
+  color: 1
+  depth: 16777216
+  height: 648
+  width: 480
 F02A:
   color: 1
   depth: 262144
   height: 352
   width: 240
+F02B:
+  color: 1
+  depth: 262144
+  height: 648
+  width: 480
 F03A:
   color: 1
   depth: 16777216
   height: 352
   width: 240
+F03B:
+  color: 1
+  depth: 262144
+  height: 648
+  width: 480
 F04A:
   color: 1
   depth: 262144
@@ -218,6 +233,26 @@ F06A:
   color: 1
   depth: 16777216
   height: 352
+  width: 240
+F07A:
+  color: 1
+  depth: 262144
+  height: 256
+  width: 240
+F08A:
+  color: 1
+  depth: 262144
+  height: 648
+  width: 480
+F09A:
+  color: 1
+  depth: 16777216
+  height: 648
+  width: 480
+F10A:
+  color: 1
+  depth: 262144
+  height: 330
   width: 240
 F2051:
   color: 1
@@ -544,11 +579,21 @@ N01A:
   depth: 262144
   height: 320
   width: 240
+N01B:
+  color: 1
+  depth: 262144
+  height: 640
+  width: 480
 N02A:
   color: 1
   depth: 262144
   height: 320
   width: 240
+N02B:
+  color: 1
+  depth: 262144
+  height: 640
+  width: 480
 N03A:
   color: 1
   depth: 262144
@@ -564,6 +609,26 @@ N05A:
   depth: 262144
   height: 320
   width: 240
+N06A:
+  color: 1
+  depth: 262144
+  height: 640
+  width: 480
+N07A:
+  color: 1
+  depth: 262144
+  height: 640
+  width: 480
+N08A:
+  color: 1
+  depth: 262144
+  height: 640
+  width: 480
+N09A:
+  color: 1
+  depth: 262144
+  height: 640
+  width: 480
 N2001:
   color: 1
   depth: 4096
@@ -884,6 +949,11 @@ P01A:
   depth: 262144
   height: 350
   width: 240
+P01B:
+  color: 1
+  depth: 262144
+  height: 662
+  width: 480
 P02A:
   color: 1
   depth: 262144
@@ -905,6 +975,26 @@ P05A:
   height: 350
   width: 240
 P06A:
+  color: 1
+  depth: 262144
+  height: 350
+  width: 240
+P07A:
+  color: 1
+  depth: 262144
+  height: 662
+  width: 480
+P08A:
+  color: 1
+  depth: 262144
+  height: 662
+  width: 480
+P09A:
+  color: 1
+  depth: 262144
+  height: 662
+  width: 480
+P10A:
   color: 1
   depth: 262144
   height: 350
@@ -1219,11 +1309,21 @@ SH01A:
   depth: 16777216
   height: 320
   width: 240
+SH01B:
+  color: 1
+  depth: 16777216
+  height: 646
+  width: 480
 SH02A:
   color: 1
   depth: 16777216
   height: 320
   width: 240
+SH02B:
+  color: 1
+  depth: 16777216
+  height: 646
+  width: 480
 SH03A:
   color: 1
   depth: 16777216
@@ -1234,6 +1334,31 @@ SH04A:
   depth: 16777216
   height: 320
   width: 240
+SH04B:
+  color: 1
+  depth: 16777216
+  height: 592
+  width: 480
+SH05A:
+  color: 1
+  depth: 16777216
+  height: 592
+  width: 480
+SH06A:
+  color: 1
+  depth: 16777216
+  height: 592
+  width: 480
+SH07A:
+  color: 1
+  depth: 16777216
+  height: 592
+  width: 480
+SH08A:
+  color: 1
+  depth: 16777216
+  height: 592
+  width: 480
 SH2101V:
   color: 1
   depth: 65536
