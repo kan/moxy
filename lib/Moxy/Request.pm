@@ -9,7 +9,7 @@ sub as_http_request {
         $self->method,
         $self->uri,
         $self->headers,
-        $self->raw_body,
+        $self->content,
     );
 }
 
