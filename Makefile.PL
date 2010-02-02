@@ -13,6 +13,7 @@ all_from("lib/Moxy.pm");
 }
 
 requires 'Plack'                          => '0.9032';
+requires 'Plack::Middleware::ReverseProxy' => '0.05';
 requires 'Class::Component'               => 0.17;
 requires 'Encode::JP::Mobile'             => 0.25;
 requires 'HTML::ReplacePictogramMobileJp' => 0.06;
