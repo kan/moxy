@@ -19,6 +19,7 @@ $mech->get('/');
 is $mech->res->code(), 401;
 $mech->credentials('oh', 'my god');
 $mech->get_ok('/');
+$mech->content_contains('http%3A%2F%2Fuaswitcher.moxy%2F', "user agent switcher's url is converted");
 $mech->get_ok('/http://wassr.jp/');
 $mech->content_contains('お気軽');
 

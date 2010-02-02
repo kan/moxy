@@ -160,11 +160,13 @@ sub rewrite_html {
                     );
                 } else {
                     # maybe /https?/
+                    my $target_url = URI->new($attr);
+                       $target_url = $target_url->abs($base_url) if $base_url;
                     $node->attr(
                         $attr_name => sprintf( qq{%s%s%s},
                             $base,
                             ($base =~ m{/$} ? '' : '/'),
-                            uri_escape( URI->new($attr)->abs($base_url) ) )
+                            uri_escape( $target_url ) )
                     );
                 }
             }
@@ -338,13 +340,13 @@ sub _make_response {
                 </body>
             </html>},
         );
-        $response->content( encode($response->charset, rewrite_html($base, decode($response->charset, $response->content), $url), Encode::FB_HTMLCREF) );
         $response->request($req->as_http_request);
         $self->_post_process(
             response         => $response,
             mobile_attribute => HTTP::MobileAttribute->new('KDDI-KC26 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0'),
             session          => $args{session},
         );
+        $response->content( encode($response->charset, rewrite_html($base, decode($response->charset, $response->content), ''), Encode::FB_HTMLCREF) );
         return $response->to_plack_response();
     }
 }
