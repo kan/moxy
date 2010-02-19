@@ -50,8 +50,8 @@ __PACKAGE__->load_components(qw/Plaggerize Autocall::InjectMethod Context/);
 __PACKAGE__->load_plugins(qw/
     DisplayWidth ControlPanel LocationBar Pictogram
     Status::401 Status::500 Status::404
-    OpenSocial UserID XMLisHTML UserAgentSwitcher RefererCutter CookieCutter FlashUseImgTag
-    DisableTableTag GPS HTTPHeader ShowHTTPHeaders
+    UserID XMLisHTML UserAgentSwitcher RefererCutter CookieCutter FlashUseImgTag
+    DisableTableTag GPS HTTPHeader QRCode ShowHTTPHeaders
 /);
 __PACKAGE__->mk_accessors(qw/response_time/);
 
