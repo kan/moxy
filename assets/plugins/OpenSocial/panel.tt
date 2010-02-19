@@ -1,0 +1,28 @@
+<form method="post" action="http://opensocial.moxy/[% current_uri | uri %]">
+[%- FOR query IN params.keys %]
+<input type="hidden" name="[% query | html %]" value="[% params.item(query) | html %]" />
+[%- END %]
+
+<p>
+  <label for="app_id">app id:</label>
+  <input type="text" name="app_id" id="app_id" value="[% app_id | html %]"/>
+</p>
+
+<p>
+  <label for="owner_id">owner id:</label>
+  <input type="text" name="owner_id" id="owner_id" value="[% owner_id | html %]"/>
+</p>
+
+<p>
+  <label for="consumer_key">consumer key:</label>
+  <input type="text" name="consumer_key" id="consumer_key" value="[% consumer_key | html %]"/>
+</p>
+
+<p>
+  <label for="consumer_secret">consumer secret:</label>
+  <input type="text" name="consumer_secret" id="consumer_secret" value="[% consumer_secret | html %]"/>
+</p>
+
+<input type="submit" value="設定" />
+
+</form>
