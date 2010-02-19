@@ -12,6 +12,18 @@ use Encode::JP::Mobile;
 
 my $moxy = Moxy->new(+{
     # configuration here
+    log => { level => 'debug' },
+    global => {
+        log => { level => 'debug' },
+    },
+    plugins => [
+        {
+            module => 'QRCode',
+            config => {
+                engine => 'Google',
+            },
+        },
+    ],
 });
 print "assets path is: @{[ $moxy->assets_path ]}\n";
 
