@@ -58,6 +58,10 @@ __PACKAGE__->mk_accessors(qw/response_time/);
 sub new {
     my ($class, $config) = @_;
 
+    if ( $config->{global}->{plugins} ) {
+        $class->load_plugins(@{ $config->{global}->{plugins} });
+    }
+
     $config->{global}->{log}->{level} ||= 'info';
 
     $config->{global}->{assets_path} ||= do {
@@ -271,6 +275,7 @@ sub _make_response {
 
     (my $url = $req->uri->path_query) =~ s!^/!!;
     $url = uf_uristr(uri_unescape $url);
+
 
     if ($url) {
         # do proxy
