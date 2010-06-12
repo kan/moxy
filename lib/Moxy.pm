@@ -139,6 +139,7 @@ sub rewrite_html {
     my ($base, $html, $url) = @_;
 
     my $base_url = URI->new($url);
+    $base =~ s/#.+$//; # ignore after fragment
 
     # parse.
     my $tree = HTML::TreeBuilder::XPath->new;
