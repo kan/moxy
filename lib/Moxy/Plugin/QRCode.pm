@@ -48,7 +48,7 @@ sub _generate_qr {
         require GD::Barcode;
         require GD::Barcode::QRcode;
         return GD::Barcode::QRcode->new( $url,
-            { Ecc => 'M', ModuleSize => 5, Version => 5 } )
+            { Ecc => 'M', ModuleSize => 5, Version => 8 } )
             ->plot->png;
     } elsif ($engine =~ /^Google$/i) {
         require Google::Chart;
