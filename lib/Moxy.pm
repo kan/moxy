@@ -274,7 +274,7 @@ sub _make_response {
     $base->query_form({});
 
     (my $url = $req->uri->path_query) =~ s!^/!!;
-    $url = uf_uristr($url);
+    $url = uf_uristr(uri_unescape($url));
 
     if ($url) {
         # do proxy
