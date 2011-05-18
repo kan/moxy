@@ -21,3 +21,4 @@ MANIFEST.bak
 \.git/
 \.sw[pon]$
 \.shipit
+^MYEMTA.yml$
