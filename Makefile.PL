@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use inc::Module::Install;
+use inc::Module::Install 0.70;
 
 name("Moxy");
 all_from("lib/Moxy.pm");
