@@ -28,6 +28,7 @@ requires 'Path::Class';
 requires 'HTTP::Session' => 0.41;
 requires 'HTTP::Cookies'; # part of LWP
 requires 'Test::More' => 0.96;
+requires 'NDBM_File';
 
 test_requires('Test::More');
 test_requires('Test::Requires');
@@ -56,7 +57,6 @@ if (eval "use Module::Install::AuthorTests;1;") {
 
 use_test_base;
 auto_set_repository();
-auto_install;
 install_script glob('script/*.pl');
 WriteAll;
 
