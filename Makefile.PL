@@ -54,6 +54,9 @@ tests 't/*.t t/*/*.t t/*/*/*.t';
 if (eval "use Module::Install::AuthorTests;1;") {
     author_tests('xt');
 }
+if ($Module::Install::AUTHOR) {
+	test_requires 'HTML::StripScripts::Parser';
+}
 
 use_test_base;
 auto_set_repository();
