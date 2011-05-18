@@ -1,5 +1,9 @@
 Revision history for Moxy
 
+0.61
+
+    - depend to NDBM_File
+
 0.60 - Switch to Plack release
 
     - switch to plack!(tokuhirom)
