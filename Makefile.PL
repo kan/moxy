@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use inc::Module::Install 0.70;
+use inc::Module::Install;
 
 name("Moxy");
 all_from("lib/Moxy.pm");
@@ -12,7 +12,7 @@ all_from("lib/Moxy.pm");
         \&recommends;
 }
 
-requires 'Plack'                          => '0.9978';
+requires 'Plack'                          => '0.9032';
 requires 'Plack::Middleware::ReverseProxy' => '0.05';
 requires 'Class::Component'               => 0.17;
 requires 'Encode::JP::Mobile'             => 0.25;
@@ -23,14 +23,13 @@ requires 'Params::Validate'               => 0.91;
 requires 'Template'                       => 2.19;
 requires 'UNIVERSAL::require'             => '0.11';
 requires 'Class::Accessor';
-requires 'HTTP::MobileAttribute' => 0.23;
+requires 'HTTP::MobileAttribute' => 0.13;
 requires 'Path::Class';
-requires 'HTTP::Session' => 0.29;
+requires 'HTTP::Session' => 0.41;
 requires 'HTTP::Cookies'; # part of LWP
-requires 'Test::More' => 0.88;
-requires 'NDBM_File';
+requires 'Test::More' => 0.96;
 
-test_requires('Test::More' => 0.96);
+test_requires('Test::More');
 test_requires('Test::Requires');
 
 features(
@@ -54,12 +53,10 @@ tests 't/*.t t/*/*.t t/*/*/*.t';
 if (eval "use Module::Install::AuthorTests;1;") {
     author_tests('xt');
 }
-if ($Module::Install::AUTHOR) {
-	test_requires 'HTML::StripScripts::Parser';
-}
 
 use_test_base;
 auto_set_repository();
+auto_install;
 install_script glob('script/*.pl');
 WriteAll;
 

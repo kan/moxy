@@ -1,8 +1,32 @@
 Revision history for Moxy
 
-0.57
+0.60 - Switch to Plack release
 
-    - fixed deps
+    - switch to plack!(tokuhirom)
+    - updated useragent data
+    - bump up deps
+    - fixed uri_escape error. thanks haoyayoi.(walf443)
+    - patu_queryの値は最初からun_escapeされているので、double unscapeになっていた
+      unescape処理を消した
+      anchorに対する特別扱いは不要なので戻した
+      (mikihoshi)
+    - QRCodeのバージョン増やす。長いURL対応(kan)
+    - テスト例が単純すぎるのでもろもろの要素の入ってるURLにする(walf443)
+    - フラグメント(#など)を含んだURLにアクセスした際にリンクの書き変えなどがうまく動作しなくなるbugを修正(walf443)
+    - 中のコードをいじらずに、Plugin::ShowHTMLSourceを使いたいのです(walf443)
+    - added Google::Chart support on Plugin::QRCode(typester)
+    - updated docomo display map(tokuhirom)
+    - remove HDML model support(tokuhirom)
+    - fixed better path detection(tokuhirom)
+    - remote default configuration(tokuhirom)
+    - simplified code(tokuhirom)
+    - better detection algorithm for assets_dir.(tokuhirom)
+    - setup default session store automatically(tokuhirom)
+    - make default log level as 'info'(tokuhirom)
+    - cleanup test code(tokuhirom)
+    - Add plugin AuthorizationCutter(koshian)
+    - tel: link convert to javascript popup(suggested by lopnor++)(tokuhirom)
+    - do not mention the mailto: link(tokuhirom)
 
 0.56
 
