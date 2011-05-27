@@ -33,6 +33,8 @@ use Time::HiRes ();
 use Plack::Response;
 use Moxy::Request;
 use HTTP::Message::PSGI;
+use File::Temp;
+use File::Spec;
 use HTTP::MobileAttribute plugins => [
     qw/CarrierLetter IS/,
     {
@@ -74,16 +76,14 @@ sub new {
 
     my $self = $class->NEXT( 'new' => { config => $config } );
 
-    $self->conf->{global}->{session}->{store} = +{
-        module => 'DBM',
+    $self->conf->{global}->{session}->{store} ||= +{
+        module => 'File',
         config => {
-            file => do {
-                require File::Temp;
-                my $db = File::Temp->new();
-                $self->{__session} = $db;
-                "$db", # we need stringify for file::temp
-            },
-            dbm_class => 'NDBM_File',
+            dir => do {
+                my $dir = File::Temp::tempdir('moxyXXXXXX', CLEANUP => 1, DIR => File::Spec->tmpdir);
+                $self->{__session} = $dir;
+                "$dir", # we need stringify for file::temp
+            }
         },
     };
 
