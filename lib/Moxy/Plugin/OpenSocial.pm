@@ -22,6 +22,7 @@ sub control_panel :Hook {
             owner_id        => $args->{session}->get('opensocial_owner_id'),
             consumer_key    => $args->{session}->get('opensocial_consumer_key'),
             consumer_secret => $args->{session}->get('opensocial_consumer_secret'),
+            validate_post   => $args->{session}->get('validate_post'),
         },
     );
 }
@@ -37,6 +38,7 @@ sub url_handle :Hook {
         $args->{session}->set( opensocial_owner_id => $r->param('owner_id') );
         $args->{session}->set( opensocial_consumer_key => $r->param('consumer_key') );
         $args->{session}->set( opensocial_consumer_secret => $r->param('consumer_secret') );
+        $args->{session}->set( validate_post => $r->param('validate_post') );
 
         # back
         my $response = HTTP::Response->new( 302, 'Moxy(UserID)' );
@@ -51,12 +53,17 @@ sub request_filter :Hook {
     my $req = $args->{request};
 
     my %param = $req->uri->query_form;
+
     $param{opensocial_app_id}    = $args->{session}->get('opensocial_app_id');
     $param{opensocial_owner_id}  = $args->{session}->get('opensocial_owner_id');
     $param{opensocial_viewer_id} = $args->{session}->get('opensocial_owner_id');
 
     my $consumer_key    = $args->{session}->get('opensocial_consumer_key');
     my $consumer_secret = $args->{session}->get('opensocial_consumer_secret');
+
+    if ($args->{session}->get('validate_post')) {
+        %param = (%{$self->_parse_request_body($req)}, %param);
+    }
 
     return unless $consumer_key && $consumer_secret;
 
@@ -71,7 +78,6 @@ sub request_filter :Hook {
             . $req->uri->authority . $req->uri->path,
         headers => [map { $_ => $req->header($_) } $req->header_field_names],
         params  => \%param,
-        content => $req->content,
     );
 
     $req->uri( $oauth_req->uri );
@@ -87,19 +93,24 @@ sub response_filter :Hook {
         my $tree = HTML::TreeBuilder->new;
         $tree->parse_content($res->decoded_content);
 
-        my @links = $tree->look_down(
-            _tag => 'a',
-            href => qr/^\?/,
-        );
-        for my $link (@links) {
-            my $u      = URI->new( $link->attr('href') );
+        for my $t (['a', 'href'], ['form', 'action']) {
+            my $tag  = $t->[0];
+            my $attr = $t->[1];
 
-            my %params = $u->query_form;
+            my @links = $tree->look_down(
+                _tag   => $tag,
+                $attr  => qr/^\?/,
+            );
+            for my $link (@links) {
+                my $u      = URI->new( $link->attr($attr) );
 
-            my $uri = URI->new( delete $params{url} );
-            $uri->query_form(%params);
+                my %params = $u->query_form;
 
-            $link->attr('href', $uri);
+                my $uri = URI->new( delete $params{url} );
+                $uri->query_form(%params);
+
+                $link->attr($attr, $uri);
+            }
         }
 
         $res->content( $tree->as_HTML );
@@ -107,5 +118,16 @@ sub response_filter :Hook {
     }
 }
 
-1;
+sub _parse_request_body {
+    my ($self, $r) = @_;
 
+    my $content_type   = $r->header('Content-Type');
+    my $content_length = $r->header('Content-Length');
+
+    my $body = HTTP::Body->new($content_type, $content_length);
+    $body->add($r->content);
+
+    return $body->param;
+}
+
+1;
