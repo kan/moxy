@@ -183,6 +183,7 @@ sub rewrite_html {
     $replace->( 'form'   => 'action' );
     $replace->( 'a'      => 'href' );
     $replace->( 'link'   => 'href' );
+    $replace->( 'object' => 'data' );
 
     # dump.
     my $result = $tree->as_HTML(q{<>"&'}, '', {});
