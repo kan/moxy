@@ -107,6 +107,7 @@ sub response_filter :Hook {
                 my %params = $u->query_form;
 
                 my $uri = URI->new( delete $params{url} );
+                %params = ($uri->query_form, %params);
                 $uri->query_form(%params);
 
                 $link->attr($attr, $uri);
