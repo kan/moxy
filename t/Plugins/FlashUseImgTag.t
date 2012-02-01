@@ -52,7 +52,7 @@ __END__
 <html><img src="http://example.com/hoge.swf" width="30" height="40" /></html>
 --- expected
 <html>
-   <object data="http://example.com/hoge.swf" width="30" height="40" 
+   <object data="http://example.com/hoge.swf" width="30" height="40"
            type="application/x-shockwave-flash">
        <param name="bgcolor" value="#ffffff" />
        <param name="loop" value="off" />
