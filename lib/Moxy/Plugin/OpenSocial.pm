@@ -91,6 +91,11 @@ sub response_filter :Hook {
     my $res = $args->{response};
     if ($res->header('Content-Type') =~ /html/) {
         my $tree = HTML::TreeBuilder->new;
+        $tree->implicit_tags(0);
+        $tree->no_space_compacting(1);
+        $tree->ignore_ignorable_whitespace(0);
+        $tree->store_comments(1);
+        $tree->ignore_unknown(0);
         $tree->parse_content($res->decoded_content);
 
         for my $t (['a', 'href'], ['form', 'action']) {
