@@ -1284,3 +1284,17 @@
     - agent: Mozilla/3.0(WILLCOM;KYOCERA/WX310K/2;1.1.5.15.000000/0.1/C100) Opera 7.0
       name: WX310K
   carrier: willcom
+- agents:
+    - agent: Mozilla/5.0 (iPhone; CPU iPhone OS 5_0_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3
+      header:
+        X-DISPLAY-SIZE: 240*320
+      name: iPhone iOS5
+    - agent: Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_2_1 like Mac OS X; ja-jp) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8C148a Safari/6533.18.5
+      header:
+        X-DISPLAY-SIZE: 240*320
+      name: iPhone iOS4.2
+    - agent: Mozilla/5.0 (Linux; U; Android 2.3.2; ja-jp; SonyEricssonSO-01C Build/3.0.D.2.79) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1
+      header:
+        X-DISPLAY-SIZE: 240*320
+      name: Xperia arc
+  carrier: smartphone
