@@ -6,6 +6,7 @@ use base 'Moxy::Plugin';
 use URI::Escape;
 use OAuth::Lite::Consumer;
 use HTML::TreeBuilder;
+use Encode;
 
 sub control_panel :Hook {
     my ($self, $context, $args) = @_;
@@ -94,7 +95,7 @@ sub response_filter :Hook {
         $tree->implicit_tags(0);
         $tree->no_space_compacting(1);
         $tree->ignore_ignorable_whitespace(0);
-        #$tree->store_comments(1);
+        $tree->store_comments(1);
         $tree->ignore_unknown(0);
         $tree->parse_content($res->decoded_content);
 
@@ -119,7 +120,7 @@ sub response_filter :Hook {
             }
         }
 
-        $res->content( $tree->as_HTML );
+        $res->content( encode( $res->charset, $tree->as_HTML(q{<>"&'}, '', {}) ));
         $tree->delete;
     }
 }
