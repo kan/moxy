@@ -193,6 +193,7 @@ sub rewrite_html {
     $tree->delete; # cleanup :-) HTML::TreeBuilder needs this.
 
     # return result.
+    $result = '<html>'.$result.'</html>' unless $result =~ /<\s*html/;
     return $result;
 }
 
