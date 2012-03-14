@@ -119,9 +119,13 @@ sub response_filter :Hook {
                 $link->attr($attr, $uri);
             }
         }
-
-        $res->content( encode( $res->charset, $tree->as_HTML(q{<>"&'}, '', {}) ));
+        my $result = '';
+        for my $elm ($tree->guts) {
+            $result .= ref $elm ? $elm->as_HTML(q{<>"&'}, '', {}) : $elm;
+        }
         $tree->delete;
+
+        $res->content(encode($res->charset, $result));
     }
 }
 
