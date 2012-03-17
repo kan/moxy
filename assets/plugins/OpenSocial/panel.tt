@@ -23,11 +23,6 @@
   <input type="text" name="consumer_secret" id="consumer_secret" value="[% consumer_secret | html %]"/>
 </p>
 
-<p>
-  <label for="validate_post">validate_post:</label>
-  <input type="checkbox" name="validate_post" id="validate_post" value="1" [% IF validate_post %] checked [% END %]/>
-</p>
-
 <input type="submit" value="設定" />
 
 </form>

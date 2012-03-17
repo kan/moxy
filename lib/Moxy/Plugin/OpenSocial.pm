@@ -23,7 +23,6 @@ sub control_panel :Hook {
             owner_id        => $args->{session}->get('opensocial_owner_id'),
             consumer_key    => $args->{session}->get('opensocial_consumer_key'),
             consumer_secret => $args->{session}->get('opensocial_consumer_secret'),
-            validate_post   => $args->{session}->get('validate_post'),
         },
     );
 }
@@ -39,7 +38,6 @@ sub url_handle :Hook {
         $args->{session}->set( opensocial_owner_id => $r->param('owner_id') );
         $args->{session}->set( opensocial_consumer_key => $r->param('consumer_key') );
         $args->{session}->set( opensocial_consumer_secret => $r->param('consumer_secret') );
-        $args->{session}->set( validate_post => $r->param('validate_post') );
 
         # back
         my $response = HTTP::Response->new( 302, 'Moxy(UserID)' );
@@ -51,33 +49,8 @@ sub url_handle :Hook {
 sub request_filter :Hook {
     my ($self, $context, $args) = @_;
 
-    my $req = $args->{request};
-
-    my %param = $req->uri->query_form;
-
-    $param{opensocial_app_id}    = $args->{session}->get('opensocial_app_id');
-    $param{opensocial_owner_id}  = $args->{session}->get('opensocial_owner_id');
-    $param{opensocial_viewer_id} = $args->{session}->get('opensocial_owner_id');
-
     my $consumer_key    = $args->{session}->get('opensocial_consumer_key');
     my $consumer_secret = $args->{session}->get('opensocial_consumer_secret');
-
-    if ($args->{session}->get('validate_post')) {
-        my %body_param = %{$self->_parse_request_body($req)};
-        for my $key (keys %body_param) {
-            my $value = $body_param{$key};
-            if (exists $param{$key}) {
-                my @values = ref $value eq 'ARRAY' ? @$value : ($value);
-                my $v = $param{$key};
-                $v = [$v] unless ref $v eq 'ARRAY';
-                push @$v, @values;
-                $param{$key} = $v;
-            }
-            else {
-                $param{$key} = $value;
-            }
-        }
-    }
 
     return unless $consumer_key && $consumer_secret;
 
@@ -85,6 +58,27 @@ sub request_filter :Hook {
         consumer_key    => $consumer_key,
         consumer_secret => $consumer_secret,
     );
+
+    my $req = $args->{request};
+    my %param = $req->uri->query_form;
+    $param{opensocial_app_id}    = $args->{session}->get('opensocial_app_id');
+    $param{opensocial_owner_id}  = $args->{session}->get('opensocial_owner_id');
+    $param{opensocial_viewer_id} = $args->{session}->get('opensocial_owner_id');
+
+    my %body_param = %{$self->_parse_request_body($req)};
+    for my $key (keys %body_param) {
+        my $value = $body_param{$key};
+        if (exists $param{$key}) {
+            my @values = ref $value eq 'ARRAY' ? @$value : ($value);
+            my $v = $param{$key};
+            $v = [$v] unless ref $v eq 'ARRAY';
+            push @$v, @values;
+            $param{$key} = $v;
+        }
+        else {
+            $param{$key} = $value;
+        }
+    }
 
     my $oauth_req = $consumer->gen_oauth_request(
         method  => $req->method,
