@@ -63,7 +63,20 @@ sub request_filter :Hook {
     my $consumer_secret = $args->{session}->get('opensocial_consumer_secret');
 
     if ($args->{session}->get('validate_post')) {
-        %param = (%{$self->_parse_request_body($req)}, %param);
+        my %body_param = %{$self->_parse_request_body($req)};
+        for my $key (keys %body_param) {
+            my $value = $body_param{$key};
+            if (exists $param{$key}) {
+                my @values = ref $value eq 'ARRAY' ? @$value : ($value);
+                my $v = $param{$key};
+                $v = [$v] unless ref $v eq 'ARRAY';
+                push @$v, @values;
+                $param{$key} = $v;
+            }
+            else {
+                $param{$key} = $value;
+            }
+        }
     }
 
     return unless $consumer_key && $consumer_secret;
