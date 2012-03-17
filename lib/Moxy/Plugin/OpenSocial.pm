@@ -149,3 +149,28 @@ sub _parse_request_body {
 }
 
 1;
+__END__
+
+=head1 NAME
+
+Moxy::Plugin::OpenSoscial - OpenSocial plugin for moxy
+
+=head1 SYNOPSIS
+
+  - module: OpenSocial
+
+=head1 DESCRIPTION
+
+By this plugin moxy could emulates opensocial gadget server.
+
+=head1 AUTHOR
+
+    Daisuke Murase
+    Shinichiro Sei
+    Soh Kitahara
+    Wataru Seto
+    Masayuki Matsuki
+
+=head1 SEE ALSO
+
+L<Moxy>
