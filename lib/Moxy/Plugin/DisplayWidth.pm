@@ -8,11 +8,11 @@ sub response_filter :Hook {
     my ($class, $context, $args) = @_;
     my $attr = $args->{mobile_attribute};
 
-    # スマートフォンの場合はnon_mobileになるが、X-DISPLAY-SIZEヘッダーが定義されていれば
+    # スマートフォンの場合はnon_mobileになるが、X-Display-Sizeヘッダーが定義されていれば
     # それをdisplay sizeとして採用する
     my $width;
     if ($attr->is_non_mobile) {
-        $width = $attr->request->get('X-DISPLAY-SIZE');
+        $width = $attr->request->get('X-Display-Size');
         return if !$width || $width !~ /^\d+\*\d+$/;
         $width =~ s/\*.+//;
     }
