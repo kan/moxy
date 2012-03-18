@@ -51,7 +51,7 @@ __PACKAGE__->load_components(qw/Plaggerize Autocall::InjectMethod Context/);
 
 __PACKAGE__->load_plugins(qw/
     DisplayWidth ControlPanel LocationBar Pictogram
-    Status::401 Status::500 Status::404
+    Status::401 Status::500 Status::404 OpenSocial
     UserID XMLisHTML UserAgentSwitcher RefererCutter CookieCutter FlashUseImgTag
     DisableTableTag GPS HTTPHeader QRCode ShowHTTPHeaders
 /);
@@ -186,10 +186,14 @@ sub rewrite_html {
     $replace->( 'object' => 'data' );
 
     # dump.
-    my $result = $tree->as_HTML(q{<>"&'}, '', {});
-    $tree = $tree->delete; # cleanup :-) HTML::TreeBuilder needs this.
+    my $result = '';
+    for my $elm ($tree->guts) {
+        $result .= ref $elm ? $elm->as_HTML(q{<>"&'}, '', {}) : $elm;
+    }
+    $tree->delete; # cleanup :-) HTML::TreeBuilder needs this.
 
     # return result.
+    $result = '<html>'.$result.'</html>' unless $result =~ /<\s*html/;
     return $result;
 }
 
