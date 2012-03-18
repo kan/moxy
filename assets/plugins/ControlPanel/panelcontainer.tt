@@ -31,7 +31,7 @@
         border: 2px solid gray;
         height: 357px;
         overflow: auto;
-        width: 600px;
+        width: 700px;
     }
 </style>
 <script>
@@ -50,7 +50,7 @@
         moxy_current_tab = i;
     }
 </script>
-<div id="moxy-control-panel" style="margin-left: 10px;float: left; width: 500px;">
+<div id="moxy-control-panel" style="margin-left: 10px;float: left; width: 700px;">
     <ul id="moxy_tab_group">
     [% FOR part IN parts %]
         <li id="moxytab[% loop.count %]" onclick="moxy_switch_tab([% loop.count %])" class="tab tab_[% IF loop.count == 1 %]open[% ELSE %]close[% END %]">[% part.title %]</li>
