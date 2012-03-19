@@ -183,12 +183,17 @@ sub rewrite_html {
     $replace->( 'form'   => 'action' );
     $replace->( 'a'      => 'href' );
     $replace->( 'link'   => 'href' );
+    $replace->( 'object' => 'data' );
 
     # dump.
-    my $result = $tree->as_HTML(q{<>"&'}, '', {});
-    $tree = $tree->delete; # cleanup :-) HTML::TreeBuilder needs this.
+    my $result = '';
+    for my $elm ($tree->guts) {
+        $result .= ref $elm ? $elm->as_HTML(q{<>"&'}, '', {}) : $elm;
+    }
+    $tree->delete; # cleanup :-) HTML::TreeBuilder needs this.
 
     # return result.
+    $result = '<html>'.$result.'</html>' unless $result =~ /<\s*html/;
     return $result;
 }
 
