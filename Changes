@@ -1,5 +1,13 @@
 Revision history for Moxy
 
+0.63
+
+    - use File storage for deafult session storage
+
+0.62
+
+    - depend to latest NDBM_File
+
 0.61
 
     - depend to NDBM_File
