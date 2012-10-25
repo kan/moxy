@@ -23,7 +23,7 @@ sub response_filter: Hook {
     my $output = $self->render_template(
         $context,
         'panelcontainer.tt' => {
-            parts => \@parts, 
+            parts => \@parts,
         }
     );
 

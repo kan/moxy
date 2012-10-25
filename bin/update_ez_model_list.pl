@@ -52,7 +52,7 @@ sub ez_data {
         $res->{agent} = "KDDI-$device_id UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0";
         $res->{name}   = $model->{model_long};
         $res->{cookie} = 1;
-        $res->{header}->{'X-UP-DEVCAP-SCREENPIXELS'} = join(',', 
+        $res->{header}->{'X-UP-DEVCAP-SCREENPIXELS'} = join(',',
             $model->{display_browsing}->{width},
             $model->{display_browsing}->{height},
         );

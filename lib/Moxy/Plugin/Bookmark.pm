@@ -11,7 +11,7 @@ sub control_panel :Hook {
     return $self->render_template(
         $context,
         'panel.tt' => {
-            bookmark => $bookmark, 
+            bookmark => $bookmark,
         }
     );
 }

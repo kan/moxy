@@ -18,7 +18,7 @@ sub response_filter :CarrierHook('E') {
 
             if ($tagname =~ /^img$/i && $attr->{src} =~ /\.swf$/) {
                 $output .= qq|
-                    <object data="@{[$attr->{src}]}" width="@{[$attr->{width}]}" height="@{[$attr->{height}]}" 
+                    <object data="@{[$attr->{src}]}" width="@{[$attr->{width}]}" height="@{[$attr->{height}]}"
                             type="application/x-shockwave-flash">
                         <param name="bgcolor" value="#ffffff" />
                         <param name="loop" value="off" />

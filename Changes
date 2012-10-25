@@ -160,7 +160,7 @@ Revision history for Moxy
 
     - MAJOR VERSION UP RELEASE!!
     - THIS RELEASE HAVE MANY INCOMPATIBLE CHANGES
-    
+
     - based on Class::Component(tokuhirom)
     - Plugin::Filter::* renamed to Plugin::*(tokuhirom)
     - Plugin::Server::* renamed to Server::*(tokuhirom)
