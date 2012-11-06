@@ -1,4 +1,6 @@
 package Moxy::Session::State::BasicAuth;
+use strict;
+use warnings;
 use HTTP::Session::State::Base;
 
 sub realm { 'Moxy needs basic auth.Only for identification.Password is dummy.' }
