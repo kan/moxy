@@ -1,5 +1,0 @@
-[TestingAndDebugging::RequireUseStrict]
-equivalent_modules = HTTP::Session::State::Base
-
-# note: PPI cannot parse Moxy::Plugin::Status::500 ...
-[-Modules::RequireFilenameMatchesPackage]
