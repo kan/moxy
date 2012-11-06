@@ -87,6 +87,8 @@ kogaidan
 auth
 pl
 Sugano
+OpenSocial
+opensocial
 ...
 
 add_stopwords(@stopwords);
