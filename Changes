@@ -1,5 +1,17 @@
 Revision history for Moxy
 
+0.70
+
+    - Added OpenSocial Plugin
+      (Masayuki Matsuki, Shinichiro Sei)
+
+    - add html tag at rewrite_html for content not having html element.
+      (Masayuki Matsuki)
+    - add smartphone useragents in useragent.yaml and Plugin::DisplayWidth could handle smartphone.
+      (Masayuki Matsuki)
+    - Fixed broken link rewriting, that should not remove query parameters.
+      (mix3)
+
 0.63
 
     - use File storage for deafult session storage
