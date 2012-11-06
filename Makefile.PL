@@ -27,9 +27,9 @@ requires 'HTTP::MobileAttribute' => 0.13;
 requires 'Path::Class';
 requires 'HTTP::Session' => 0.41;
 requires 'HTTP::Cookies'; # part of LWP
-requires 'Test::More' => 0.96;
+requires 'Test::More' => 0.98;
 
-test_requires('Test::More');
+test_requires('Test::More' => 0.98);
 test_requires('Test::Requires');
 
 features(
@@ -54,7 +54,8 @@ if (eval "use Module::Install::AuthorTests;1;") {
     author_tests('xt');
 }
 
-use_test_base;
+test_requires 'Test::Base';
+
 auto_set_repository();
 install_script glob('script/*.pl');
 WriteAll;
