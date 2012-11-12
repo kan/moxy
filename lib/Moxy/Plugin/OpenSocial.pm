@@ -4,6 +4,7 @@ use warnings;
 use base 'Moxy::Plugin';
 
 use URI::Escape;
+use URI::QueryParam;
 use OAuth::Lite::Consumer;
 use HTML::TreeBuilder;
 use Encode;
@@ -60,7 +61,8 @@ sub request_filter :Hook {
     );
 
     my $req = $args->{request};
-    my %param = $req->uri->query_form;
+    my %param = %{ $req->uri->query_form_hash };
+
     $param{opensocial_app_id}    = $args->{session}->get('opensocial_app_id');
     $param{opensocial_owner_id}  = $args->{session}->get('opensocial_owner_id');
     $param{opensocial_viewer_id} = $args->{session}->get('opensocial_owner_id');
